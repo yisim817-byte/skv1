@@ -207,19 +207,24 @@
   z-index: 1;
 }
 
-.header-tel {
+.header-ask {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 24px;
-  font-weight: 500;
-  letter-spacing: -0.03em;
+  gap: 10px;
   line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.03em;
 }
 
-.header-tel img {
-  width: 28px;
-  height: 28px;
+.ask-label {
+  color: #d50613;
+  font-size: 18px;
+}
+
+.ask-num {
+  color: #ff6a00;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .hamburger {
@@ -977,14 +982,16 @@
     display: inline-flex;
   }
 
-  .header-tel {
-    font-size: 16px;
+  .header-ask {
     gap: 6px;
   }
 
-  .header-tel img {
-    width: 22px;
-    height: 22px;
+  .ask-label {
+    font-size: 14px;
+  }
+
+  .ask-num {
+    font-size: 16px;
   }
 
   .hero {

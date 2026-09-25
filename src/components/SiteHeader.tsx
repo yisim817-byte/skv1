@@ -59,9 +59,9 @@ export function SiteHeader({ tone }: { tone: "home" | "sub" }) {
             </ul>
           </nav>
           <div className="header-right">
-            <a className="header-tel" href={`tel:${SITE_PHONE_TEL}`}>
-              <img src="/skv1/assets/images/common/header-tel-icon.png" alt="" />
-              <span>{SITE_PHONE}</span>
+            <a className="header-ask" href={`tel:${SITE_PHONE_TEL}`}>
+              <span className="ask-label">문의</span>
+              <span className="ask-num">{SITE_PHONE}</span>
             </a>
             <button
               type="button"

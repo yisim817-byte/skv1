@@ -24,7 +24,6 @@ export const Route = createRootRoute({
       },
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },
       { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
-      { rel: "canonical", href: "https://www.skv1.site/" },
     ],
   }),
   component: () => (

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NAV } from "@/lib/site-data";
+import { NAV, SITE_PHONE, SITE_PHONE_TEL } from "@/lib/site-data";
 
 export function SiteHeader({ tone }: { tone: "home" | "sub" }) {
   const [on, setOn] = useState(tone === "sub");
@@ -59,6 +59,10 @@ export function SiteHeader({ tone }: { tone: "home" | "sub" }) {
             </ul>
           </nav>
           <div className="header-right">
+            <a className="header-tel" href={`tel:${SITE_PHONE_TEL}`}>
+              <img src="/skv1/assets/images/common/header-tel-icon.png" alt="" />
+              <span>{SITE_PHONE}</span>
+            </a>
             <button
               type="button"
               className={open ? "hamburger is-open" : "hamburger"}

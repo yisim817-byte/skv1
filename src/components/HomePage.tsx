@@ -19,16 +19,11 @@ export function HomePage() {
     <div className="home">
       <SiteHeader tone="home" />
       <section className="hero">
-        <video
-          className="hero-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/skv1/assets/images/main/video-bg.jpg"
-        >
-          <source src="/media/hero.mp4" type="video/mp4" />
-        </video>
+        <img
+          className="hero-still"
+          src="/skv1/assets/images/main/video-bg.jpg"
+          alt=""
+        />
         <div className="hero-copy">
           <p className="hero-kicker">다시 없을 SK V1</p>
           <p className="hero-line">성공의 기어를 올리다!</p>

@@ -200,20 +200,8 @@
   display: flex;
   align-items: center;
   gap: 14px;
-}
-
-.move-in {
-  background: #fff;
-  color: var(--color-red);
-  border: 1px solid #ddd;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  padding: 8px 16px 10px;
-  line-height: 1.15;
-  text-align: center;
-  width: 108px;
-  font-size: 15px;
-  line-height: 1.25;
+  position: relative;
+  z-index: 1;
 }
 
 .header-tel {
@@ -221,8 +209,9 @@
   align-items: center;
   gap: 8px;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: -0.03em;
+  line-height: 1;
 }
 
 .header-tel img {
@@ -264,48 +253,53 @@
 
 .hero {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 720px;
   color: #fff;
-  display: flex;
-  align-items: center;
   overflow: hidden;
   background: #0d1b2a;
 }
 
-.hero-video {
+.hero-still {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
 }
 
 .hero-copy {
   position: relative;
   z-index: 1;
-  padding: 120px 8vw 80px;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+  padding: 210px 0 0 160px;
 }
 
 .hero-kicker,
 .hero-line {
   margin: 0;
-  font-size: clamp(28px, 3vw, 42px);
-  font-weight: 300;
+  font-size: 42px;
+  font-weight: 500;
   letter-spacing: -0.04em;
+  line-height: 1.35;
+}
+
+.hero-line {
+  margin-bottom: 30px;
 }
 
 .hero-logo {
-  width: min(420px, 70vw);
-  margin: 12px 0 18px;
-  filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.35));
+  display: block;
+  width: 261px;
+  height: auto;
+  margin: 0 0 30px;
 }
 
 .hero-sub {
   margin: 0;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.5;
 }
 
 .pillar {
@@ -937,8 +931,42 @@
     display: inline-flex;
   }
 
-  .header-tel span {
-    display: none;
+  .header-tel {
+    font-size: 16px;
+    gap: 6px;
+  }
+
+  .header-tel img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .hero {
+    min-height: 100vh;
+    height: 100vh;
+  }
+
+  .hero-copy {
+    padding: 28vw 6vw 0;
+  }
+
+  .hero-kicker,
+  .hero-line {
+    font-size: 7vw;
+  }
+
+  .hero-line {
+    margin-bottom: 5vw;
+  }
+
+  .hero-logo {
+    width: 48vw;
+    max-width: 261px;
+    margin-bottom: 5vw;
+  }
+
+  .hero-sub {
+    font-size: 3.6vw;
   }
 
   .site-header,

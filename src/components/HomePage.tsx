@@ -174,7 +174,7 @@ export function HomePage() {
           poster="/skv1/assets/images/main/video-poster-new.png"
           preload="metadata"
         >
-          <source src="/media/promo.mp4" type="video/mp4" />
+          <source src="/media/promo.mp4?v=20260907" type="video/mp4" />
         </video>
       </section>
 

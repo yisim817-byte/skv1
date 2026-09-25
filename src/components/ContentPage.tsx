@@ -172,7 +172,7 @@ function PromoFilm() {
       poster="/skv1/assets/images/sub/media_thum.jpg"
       preload="metadata"
     >
-      <source src="/media/promo.mp4" type="video/mp4" />
+      <source src="/media/promo.mp4?v=20260907" type="video/mp4" />
     </video>
   );
 }

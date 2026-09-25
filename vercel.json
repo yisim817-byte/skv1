@@ -1,0 +1,11 @@
+{
+  "installCommand": "npm install --omit=dev --no-audit --no-fund",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "skv1.site" }],
+      "destination": "https://www.skv1.site/:path*",
+      "permanent": true
+    }
+  ]
+}

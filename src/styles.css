@@ -297,10 +297,23 @@
 }
 
 .hero-logo {
-  display: block;
-  width: 261px;
-  height: auto;
   margin: 0 0 30px;
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.c-name {
+  color: #111;
+}
+
+.c-sk {
+  color: #d50613;
+}
+
+.c-v1 {
+  color: #ff6a00;
 }
 
 .hero-sub {
@@ -1013,8 +1026,9 @@
   }
 
   .hero-logo {
-    width: 48vw;
-    max-width: 261px;
+    width: auto;
+    max-width: none;
+    font-size: 9vw;
     margin-bottom: 5vw;
   }
 

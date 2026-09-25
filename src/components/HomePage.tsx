@@ -30,13 +30,13 @@ export function HomePage() {
           <source src="/media/hero.mp4" type="video/mp4" />
         </video>
         <div className="hero-copy">
-          <p className="hero-kicker">다시 없을 SK V1</p>
+          <p className="hero-kicker">
+            다시 없을 <span className="c-sk">SK</span> <span className="c-v1">V1</span>
+          </p>
           <p className="hero-line">성공의 기어를 올리다!</p>
-          <img
-            className="hero-logo"
-            src="/skv1/assets/images/main/visual-logo-white.png"
-            alt="청라 SK V1"
-          />
+          <p className="hero-logo">
+            <span className="c-name">청라</span> <span className="c-sk">SK</span> <span className="c-v1">V1</span>
+          </p>
           <p className="hero-sub">
             혁신적인 직선형 드라이브인을 갖춘
             <br />

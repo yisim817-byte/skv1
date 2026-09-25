@@ -5,6 +5,7 @@ export function SiteHeader({ tone }: { tone: "home" | "sub" }) {
   const [on, setOn] = useState(tone === "sub");
   const [open, setOpen] = useState(false);
   const [acc, setAcc] = useState<string | null>(null);
+  const [hover, setHover] = useState(false);
 
   useEffect(() => {
     if (tone !== "home") return;
@@ -21,13 +22,20 @@ export function SiteHeader({ tone }: { tone: "home" | "sub" }) {
     };
   }, [open]);
 
-  const cls = ["site-header", tone === "sub" ? "is-sub" : "", on || open ? "is-on" : ""]
+  const solid = tone === "sub" || on || open || hover;
+  const cls = ["site-header", tone === "sub" ? "is-sub" : "", solid ? "is-on" : "", hover ? "is-menu" : ""]
     .filter(Boolean)
     .join(" ");
 
   return (
     <>
-      <header className={cls}>
+      <header
+        className={cls}
+        onMouseEnter={() => {
+          if (window.innerWidth > 1100) setHover(true);
+        }}
+        onMouseLeave={() => setHover(false)}
+      >
         <div className="header-inner">
           <h1 className="brand">
             <a href="/">청라 SK V1</a>

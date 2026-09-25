@@ -56,6 +56,25 @@
   border-bottom: 1px solid transparent;
 }
 
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 0;
+  background: #fff;
+  opacity: 0;
+  transition: height 0.45s ease, opacity 0.45s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.site-header.is-menu::after {
+  height: 168px;
+  opacity: 1;
+}
+
 .site-header.is-sub,
 .site-header.is-on {
   background: #fff;
@@ -64,7 +83,9 @@
 }
 
 .header-inner {
+  position: relative;
   width: min(1760px, calc(100% - 48px));
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -77,6 +98,8 @@
   height: 27px;
   background: url("/skv1/assets/images/common/main-logo.png") center / contain no-repeat;
   flex: none;
+  position: relative;
+  z-index: 1;
 }
 
 .site-header.is-sub .brand,
@@ -91,6 +114,14 @@
   font-size: 0;
 }
 
+.gnb {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100px;
+  transform: translateX(-50%);
+}
+
 .gnb > ul {
   display: flex;
   margin: 0;
@@ -102,40 +133,61 @@
 .gnb > ul > li {
   position: relative;
   display: flex;
+  justify-content: center;
 }
 
 .gnb > ul > li > a {
+  position: relative;
   display: flex;
   align-items: center;
-  padding: 0 28px;
+  height: 100%;
+  padding: 0 36px;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: -0.04em;
+}
+
+.gnb > ul > li > a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-red);
+  transition: width 0.4s ease, left 0.4s ease;
+}
+
+.gnb > ul > li:hover > a::after {
+  left: 0;
+  width: 100%;
 }
 
 .gnb > ul > li > ul {
   position: absolute;
   top: 100%;
-  left: 0;
-  min-width: 140px;
+  left: 50%;
+  transform: translateX(-50%);
   margin: 0;
-  padding: 16px 0 20px;
+  padding: 22px 0 8px;
   list-style: none;
+  text-align: center;
+  white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.35s ease;
 }
 
-.site-header.is-on .gnb > ul > li:hover > ul,
-.site-header.is-sub .gnb > ul > li:hover > ul {
+.site-header.is-menu .gnb > ul > li > ul {
   opacity: 1;
   pointer-events: auto;
 }
 
 .gnb > ul > li > ul a {
   display: block;
-  padding: 6px 20px;
+  padding: 5px 10px;
   font-size: 15px;
+  font-weight: 400;
   color: var(--color-ink);
   white-space: nowrap;
 }
@@ -873,6 +925,11 @@
 
 @media (max-width: 1100px) {
   .gnb {
+    display: none;
+  }
+
+  .site-header.is-menu::after,
+  .site-header.is-menu .gnb > ul > li > ul {
     display: none;
   }
 

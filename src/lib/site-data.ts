@@ -315,20 +315,23 @@ export const PILLARS = [
 export const SPECIALS = [
   {
     no: "01",
-    kicker: "3번 회전만으로 7층까지 도달하여 동선이 편리한",
-    title: "직선형 드라이브인 시스템",
+    thumb: img("main/special-img-02-new-01.jpg"),
     image: img("main/special-img-01-new.jpg"),
+    lines: ["3번 회전만으로", "7층까지 도달하여 동선이 편리한"],
+    title: ["직선형", "드라이브인 시스템"],
   },
   {
     no: "02",
-    kicker: "차량이 각 사업장 안으로 진입하여 운반, 물류 작업에 유리한",
-    title: "도어투도어 시스템 적용",
+    thumb: img("main/special-img-02-new-02.jpg"),
     image: img("main/special-img-02-new.jpg"),
+    lines: ["차량이 각 사업장 안으로 진입하여 운반,", "물류 작업에 유리한"],
+    title: ["도어투도어", "시스템 적용"],
   },
   {
     no: "03",
-    kicker: "오피스 전호실 발코니 특화, 라이브오피스 테라스설계, 옥상정원 등",
-    title: "쾌적하고 개방감·채광을 고려한 설계",
+    thumb: img("main/special-img-02-new-03.jpg"),
     image: img("main/special-img-03-new.jpg"),
+    lines: ["오피스 전호실 발코니 특화,", "라이브오피스 테라스설계, 옥상정원 등"],
+    title: ["쾌적하고", "개방감·채광을 고려한 설계"],
   },
 ];

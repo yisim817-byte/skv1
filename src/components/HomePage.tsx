@@ -13,7 +13,9 @@ import { SiteHeader } from "./SiteHeader";
 
 export function HomePage() {
   const [map, setMap] = useState(0);
+  const [special, setSpecial] = useState(0);
   const active = MAP_TABS[map] ?? MAP_TABS[0];
+  const feature = SPECIALS[special] ?? SPECIALS[0];
 
   return (
     <div className="home">
@@ -103,29 +105,53 @@ export function HomePage() {
       </section>
 
       <section className="specials">
-        <div className="section-intro">
-          <p>CHEONGNA SK V1</p>
-          <h2>
-            물류부터 첨단 제조 비즈니스를 위한
-            <br />
-            No.1 특화설계
-          </h2>
+        <div className="special-stage">
+          <div className="special-visual">
+            <img src={feature.image} alt="" />
+            <a className="special-more" href="/pages/drive.html">
+              <span>View</span>
+              <span>More</span>
+              <span>+</span>
+            </a>
+            <p className="special-info">
+              CHEONGNA <span>SK V1</span>
+            </p>
+          </div>
+          <div className="special-copy">
+            <p className="special-lead">물류부터 첨단 제조 비즈니스를 위한</p>
+            <h2>No.1 특화설계</h2>
+            <img className="special-thumb" src={feature.thumb} alt="" />
+            <p className="special-en">Special Design {feature.no}</p>
+            <p className="special-sub">
+              {feature.lines.map((line) => (
+                <span key={line}>
+                  {line}
+                  <br />
+                </span>
+              ))}
+            </p>
+            <h3>
+              {feature.title.map((line) => (
+                <span key={line}>
+                  {line}
+                  <br />
+                </span>
+              ))}
+            </h3>
+            <div className="special-nav">
+              {SPECIALS.map((item, index) => (
+                <button
+                  key={item.no}
+                  type="button"
+                  className={index === special ? "is-active" : ""}
+                  onClick={() => setSpecial(index)}
+                >
+                  {item.no}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="special-grid">
-          {SPECIALS.map((item) => (
-            <article key={item.no}>
-              <img src={item.image} alt="" />
-              <p className="special-no">Special Design {item.no}</p>
-              <p className="special-kicker">{item.kicker}</p>
-              <h3>{item.title}</h3>
-            </article>
-          ))}
-        </div>
-        <p className="more-wrap">
-          <a className="more" href="/pages/drive.html">
-            View More +
-          </a>
-        </p>
       </section>
 
       <section className="media-zone">

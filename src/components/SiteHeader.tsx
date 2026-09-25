@@ -38,11 +38,7 @@ export function SiteHeader({ tone }: { tone: "home" | "sub" }) {
       >
         <div className="header-inner">
           <h1 className="brand">
-            <a href="/">
-              <span className="c-name">청라</span>
-              <span className="c-sk">SK</span>
-              <span className="c-v1">V1</span>
-            </a>
+            <a href="/">청라 SK V1</a>
           </h1>
           <nav className="gnb" aria-label="주요 메뉴">
             <ul>

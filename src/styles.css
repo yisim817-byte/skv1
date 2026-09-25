@@ -94,32 +94,24 @@
 
 .brand {
   margin: 0;
+  width: 139px;
+  height: 27px;
+  background: url("/skv1/assets/images/common/main-logo.png") center / contain no-repeat;
   flex: none;
   position: relative;
   z-index: 1;
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1;
-  white-space: nowrap;
+}
+
+.site-header.is-sub .brand,
+.site-header.is-on .brand {
+  background-image: url("/skv1/assets/images/common/main-logo-dark.png");
 }
 
 .brand a {
-  display: flex;
-  align-items: baseline;
-  gap: 5px;
-  width: auto;
-  height: auto;
-  font-size: inherit;
-}
-
-.brand .c-name {
-  color: #fff;
-}
-
-.site-header.is-sub .brand .c-name,
-.site-header.is-on .brand .c-name {
-  color: #111;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
 }
 
 .gnb {

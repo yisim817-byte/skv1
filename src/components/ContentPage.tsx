@@ -193,10 +193,11 @@ function YoutubeFilm() {
 function MapButtons() {
   return (
     <div className="map-links sub-maps">
-      <a href={NAVER_MAP} target="_blank" rel="noreferrer">
+      <a className="naver" href={NAVER_MAP} target="_blank" rel="noreferrer">
         <img src="/skv1/assets/images/main/naver.png" alt="네이버 지도" />
+        <img className="hover" src="/skv1/assets/images/main/naver-hover.png" alt="" />
       </a>
-      <a href={KAKAO_MAP} target="_blank" rel="noreferrer">
+      <a className="kakao" href={KAKAO_MAP} target="_blank" rel="noreferrer">
         <img src="/skv1/assets/images/main/kakao.png" alt="카카오맵" />
       </a>
     </div>

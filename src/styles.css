@@ -546,8 +546,8 @@
 
 .visit {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 36px;
+  grid-template-columns: minmax(280px, 1fr) minmax(0, 626px);
+  gap: 48px;
   align-items: center;
 }
 
@@ -585,18 +585,61 @@
 
 .map-links {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   margin: 16px 0 20px;
+  flex-wrap: wrap;
+}
+
+.map-links a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 50px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.map-links a.naver {
+  border: 1px solid #01c04e;
+}
+
+.map-links a.kakao {
+  border: 1px solid #06033c;
+}
+
+.map-links a.naver:hover {
+  background: #01c04e;
+}
+
+.map-links a.kakao:hover {
+  background: #fee800;
+  border-color: #fee800;
 }
 
 .map-links img {
-  width: 46px;
-  height: 46px;
+  width: auto;
+  height: 20px;
+  max-width: 70%;
+}
+
+.map-links img.hover {
+  position: absolute;
+  opacity: 0;
+}
+
+.map-links a:hover img.hover {
+  opacity: 1;
 }
 
 .visit-map {
   width: 100%;
+  max-width: 626px;
+  height: auto;
   display: block;
+  justify-self: end;
+  object-fit: contain;
 }
 
 .site-footer {

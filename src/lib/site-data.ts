@@ -363,7 +363,7 @@ export const SPECIALS = [
     thumb: img("main/special-img-02-new-02.jpg"),
     image: img("main/special-img-02-new.jpg"),
     lines: ["차량이 각 사업장 안으로 진입하여 운반,", "물류 작업에 유리한"],
-    title: ["직선형", "드라이브인 시스템"],
+    title: ["도어투도어", "시스템 적용"],
   },
   {
     no: "03",

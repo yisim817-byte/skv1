@@ -13,6 +13,26 @@ import { SiteHeader } from "./SiteHeader";
 
 const PAGE_SIZE = 6;
 
+// Same visual as `.sub-hero h2` in styles.css; the page title is now the semantic H1.
+const SUB_HERO_H1 = {
+  margin: "8px 0 0",
+  fontSize: "clamp(36px, 5vw, 60px)",
+  fontWeight: 300,
+  letterSpacing: "-0.04em",
+} as const;
+
+const VISUALLY_HIDDEN = {
+  position: "absolute",
+  width: 1,
+  height: 1,
+  padding: 0,
+  margin: -1,
+  overflow: "hidden",
+  clip: "rect(0, 0, 0, 0)",
+  whiteSpace: "nowrap",
+  border: 0,
+} as const;
+
 export function ContentPage({ slug }: { slug: string }) {
   const page = getPage(slug);
   if (!page) return null;
@@ -23,7 +43,10 @@ export function ContentPage({ slug }: { slug: string }) {
         <div className="sub-hero-bg" />
         <div className="sub-hero-inner">
           <p className="sub-en">{page.en}</p>
-          <h2>{page.title}</h2>
+          <h1 style={SUB_HERO_H1}>
+            <span style={VISUALLY_HIDDEN}>청라 SK V1 </span>
+            {page.title}
+          </h1>
         </div>
       </section>
       <div className="crumb-bar">

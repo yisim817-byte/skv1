@@ -119,7 +119,7 @@ export function HomePage() {
           </div>
           <div className="special-copy">
             <p className="special-lead">물류부터 첨단 제조 비즈니스를 위한</p>
-            <h2>No.1 특화설계</h2>
+            <h2>특화설계</h2>
             <img className="special-thumb" src={feature.thumb} alt="" />
             <p className="special-en">Special Design {feature.no}</p>
             <p className="special-sub">
@@ -158,7 +158,7 @@ export function HomePage() {
         <div className="section-intro light">
           <p>Media zone</p>
           <h2>
-            다시 없을 SK V1
+            SK V1
             <br />
             성공의 기어를 올리다
           </h2>
@@ -181,7 +181,7 @@ export function HomePage() {
       <section className="visit">
         <div className="visit-copy">
           <h2>오시는길</h2>
-          <p className="fine">※ 셔틀버스의 운영 주체는 인천 서구청으로 당사와는 무관합니다.</p>
+          <p className="fine">※ 셔틀버스의 운영 주체는 인천 서해구청으로 당사와는 무관합니다.</p>
           <ul className="visit-facts">
             <li>
               <strong>셔틀 버스</strong>
@@ -192,16 +192,16 @@ export function HomePage() {
               </span>
             </li>
             <li>
-              <strong>즉시 입주 가능</strong>
+              <strong>분양 문의</strong>
               <a href={`tel:${SITE_PHONE_TEL}`}>{SITE_PHONE}</a>
             </li>
             <li>
               <strong>현장</strong>
-              <span>인천시 서구 파랑로 451</span>
+              <span>인천광역시 서해구 파랑로 451</span>
             </li>
             <li>
               <strong>홍보관</strong>
-              <span>인천시 서구 파랑로 451 (청라 SK V1, 105호)</span>
+              <span>인천광역시 서해구 파랑로 451 (청라 SK V1, 105호)</span>
             </li>
           </ul>
           <div className="map-links">

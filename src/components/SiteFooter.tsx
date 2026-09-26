@@ -7,7 +7,7 @@ export function SiteFooter() {
         <p className="footer-desc">
           혁신적인 직선형 드라이브인을 갖춘
           <br />
-          청라에 다시 없을 비즈니스 캠퍼스
+          청라 비즈니스 캠퍼스
         </p>
         <div className="footer-logo-box">
           <img
@@ -18,8 +18,7 @@ export function SiteFooter() {
           <img className="sigong" src="/skv1/assets/images/common/sigong.png" alt="교보자산신탁" />
         </div>
         <ul className="footer-address">
-          <li>현장 : 인천시 서구 파랑로 451</li>
-          <li>지식산업센터 : 574호실</li>
+          <li>현장 : 인천광역시 서해구 파랑로 451</li>
           <li>분양창고 : 26호실</li>
           <li>근린생활시설 : 46호실</li>
         </ul>
@@ -36,13 +35,13 @@ export function SiteFooter() {
             개발사업과 관련된 사항은 지자체 및 개발주체, 관계기관의 사정에 따라 변경 또는 취소될 수
             있으며, 당사와는 무관합니다.
           </li>
+          <li>
+            본 사이트는 SK V1 분양 정보 안내를 위한 홍보 페이지이며, 시행사·시공사의 공식 홈페이지가
+            아닙니다. 공식 정보는 사업주체 공고를 확인하시기 바랍니다. 홈페이지운영 휴메인코리아
+          </li>
         </ul>
-        <p className="footer-copy">© SK V1 All rights reserved.</p>
-        <p className="footer-op">
-          홈페이지 운영·관리 | 휴메인코리아
-          <br />
-          SITE OPERATED BY HUMANE KOREA
-        </p>
+        <p className="footer-copy">© 휴메인코리아</p>
+        <p className="footer-op">홈페이지운영 휴메인코리아</p>
         <div className="footer-btn-box">
           <a href={TERMS_URL} target="_blank" rel="noreferrer">
             이용약관

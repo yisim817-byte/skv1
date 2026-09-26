@@ -125,7 +125,7 @@ export const PAGES: PageDef[] = [
       "7호선 연장(예정·개통 시기 미정) 관련 내용은 [인천경제자유구역 보도자료(22.03.22)]를 참고한 것이며, 개통 시기는 미정이고 역명은 향후 변경이 있을 수 있습니다.",
       "청라의료복합타운 관련 내용은 [서울아산병원 보도자료(21.10.15)]를 참고한 것입니다.",
       "청라 시티타워 관련 내용은 [인천경제자유구역 보도자료(20.06.12)], 로봇랜드 관련 내용은 [인천경제자유구역 보도자료(21.06.09)]를 참고한 것이며 개발사업과 관련된 사항은 지자체 및 개발주체, 관계기관의 사정에 따라 변경 또는 취소될 수 있으며, 당사와는 무관합니다.",
-      "스타필드 청라 2027년 예정, 서울아산청라병원 2029년 예정은 네이버지도 정보 기준으로 오픈 시기는 변경될 수 있으며 당사와는 무관합니다.",
+      "스타필드 청라(예정), 서울아산청라병원(예정)은 네이버지도 정보 기준으로 오픈 시기는 변경될 수 있으며 당사와는 무관합니다.",
     ],
     "sub/environment.jpg",
     "m/assets/images/sub/m_environment.jpg",
@@ -213,7 +213,7 @@ export const PAGES: PageDef[] = [
     "오시는길",
     "CONTACT",
     "location",
-    ["셔틀버스의 운영 주체는 인천 서구청으로 당사와는 무관합니다."],
+    ["셔틀버스의 운영 주체는 인천 서해구청으로 당사와는 무관합니다."],
     "sub/location.jpg",
     "m/assets/images/sub/m_location.jpg",
   ),
@@ -301,7 +301,7 @@ export const NEWS = news as NewsItem[];
 
 export const MAP_TABS = [
   { id: "00", label: "전체 보기", image: img("main/envi6-map.jpg") },
-  { id: "01", label: "제3연륙교 (2025년 개통예정)", image: img("main/envi6-map-01.jpg") },
+  { id: "01", label: "청라하늘대교(제3연륙교) 개통", image: img("main/envi6-map-01.jpg") },
   { id: "02", label: "인천지하철2호선", image: img("main/envi6-map-02.jpg") },
   { id: "03", label: "7호선연장 (예정·개통 시기 미정)", image: img("main/envi6-map-03.jpg") },
   { id: "04", label: "청라국제도시", image: img("main/envi6-map-04.jpg") },
@@ -316,7 +316,7 @@ export const PILLARS = [
     bg: img("main/envi2-bg.jpg"),
     title: "제3연륙교 개통으로\n쾌속교통",
     points: [
-      "제3연륙교 개통으로, 여의도~인천공항 최대 20분 단축",
+      "제3연륙교 개통으로, 여의도~인천공항 이동 시간 단축",
       "지하철 7호선 연장(예정·개통 시기 미정)으로 서울 수도권을 더 가깝게",
     ],
   },
@@ -327,7 +327,7 @@ export const PILLARS = [
     title: "4차 산업 연계\n비즈니스 거점",
     points: [
       "현대 무벡스 R&D센터, 지엠테크니컬센터",
-      "로봇산업 특화도시(로봇랜드 테마파크 27년 예정)",
+      "로봇산업 특화도시(로봇랜드 테마파크 예정)",
     ],
   },
   {
@@ -344,8 +344,8 @@ export const PILLARS = [
     mobile: "/skv1/m/assets/images/main/m_infra-bg.png",
     title: "더 가깝게 누리는\n생활인프라",
     points: [
-      "코스트코 청라점, 스타필드 청라(27년 예정)",
-      "의료복합타운 내 서울아산청라병원(29년 예정)",
+      "코스트코 청라점, 스타필드 청라(예정)",
+      "의료복합타운 내 서울아산청라병원(예정)",
     ],
   },
 ];
@@ -363,7 +363,7 @@ export const SPECIALS = [
     thumb: img("main/special-img-02-new-02.jpg"),
     image: img("main/special-img-02-new.jpg"),
     lines: ["차량이 각 사업장 안으로 진입하여 운반,", "물류 작업에 유리한"],
-    title: ["도어투도어", "시스템 적용"],
+    title: ["직선형", "드라이브인 시스템"],
   },
   {
     no: "03",

@@ -301,7 +301,7 @@ export const NEWS = news as NewsItem[];
 
 export const MAP_TABS = [
   { id: "00", label: "전체 보기", image: img("main/envi6-map.jpg") },
-  { id: "01", label: "제3연륙교 (예정)", image: img("main/envi6-map-01.jpg") },
+  { id: "01", label: "청라하늘대교(제3연륙교) 개통", image: img("main/envi6-map-01.jpg") },
   { id: "02", label: "인천지하철2호선", image: img("main/envi6-map-02.jpg") },
   { id: "03", label: "7호선연장 (예정·개통 시기 미정)", image: img("main/envi6-map-03.jpg") },
   { id: "04", label: "청라국제도시", image: img("main/envi6-map-04.jpg") },
@@ -314,9 +314,9 @@ export const PILLARS = [
     key: "Traffic",
     sign: img("main/envi2-sign.png"),
     bg: img("main/envi2-bg.jpg"),
-    title: "제3연륙교 개통으로\n쾌속교통",
+    title: "청라하늘대교(제3연륙교) 개통으로\n쾌속교통",
     points: [
-      "제3연륙교 개통으로, 여의도~인천공항 이동 시간 단축",
+      "청라하늘대교(제3연륙교) 개통으로, 여의도~인천공항 이동 시간 단축",
       "지하철 7호선 연장(예정·개통 시기 미정)으로 서울 수도권을 더 가깝게",
     ],
   },

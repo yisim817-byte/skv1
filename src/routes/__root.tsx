@@ -1,6 +1,7 @@
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
+import { SITE_DESCRIPTION, SITE_JSON_LD } from "@/lib/site-data";
 import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
@@ -11,7 +12,7 @@ export const Route = createRootRoute({
       { title: "청라 SK V1" },
       {
         name: "description",
-        content: "혁신적인 직선형 드라이브인을 갖춘 청라에서 다시 없을 비즈니스 캠퍼스",
+        content: SITE_DESCRIPTION,
       },
       { name: "theme-color", content: "#111111" },
     ],
@@ -24,6 +25,12 @@ export const Route = createRootRoute({
       },
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },
       { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(SITE_JSON_LD),
+      },
     ],
   }),
   component: () => (

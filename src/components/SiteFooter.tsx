@@ -38,11 +38,7 @@ export function SiteFooter() {
           </li>
         </ul>
         <p className="footer-copy">© SK V1 All rights reserved.</p>
-        <p className="footer-op">
-          홈페이지 운영·관리 | 휴메인코리아
-          <br />
-          SITE OPERATED BY HUMANE KOREA
-        </p>
+        <p className="footer-op">홈페이지운영 휴메인코리아</p>
         <div className="footer-btn-box">
           <a href={TERMS_URL} target="_blank" rel="noreferrer">
             이용약관

@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { ContentPage } from "@/components/ContentPage";
-import { getPage } from "@/lib/site-data";
+import { PAGE_DESCRIPTIONS, SITE_DESCRIPTION, getPage } from "@/lib/site-data";
 
 export const Route = createFileRoute("/pages/$")({
   beforeLoad: ({ params }) => {
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/pages/$")({
         { title },
         {
           name: "description",
-          content: "혁신적인 직선형 드라이브인을 갖춘 청라에서 다시 없을 비즈니스 캠퍼스",
+          content: PAGE_DESCRIPTIONS[slug] ?? SITE_DESCRIPTION,
         },
       ],
       links: [{ rel: "canonical", href: `https://www.skv1.site/pages/${slug}` }],

@@ -23,6 +23,7 @@ export function SiteHeader({ tone }: { tone: "home" | "sub" }) {
   }, [open]);
 
   const solid = tone === "sub" || on || open || hover;
+  const BrandTag = tone === "home" ? "h1" : "div";
   const cls = ["site-header", tone === "sub" ? "is-sub" : "", solid ? "is-on" : "", hover ? "is-menu" : ""]
     .filter(Boolean)
     .join(" ");
@@ -37,9 +38,9 @@ export function SiteHeader({ tone }: { tone: "home" | "sub" }) {
         onMouseLeave={() => setHover(false)}
       >
         <div className="header-inner">
-          <h1 className="brand">
+          <BrandTag className="brand">
             <a href="/">청라 SK V1</a>
-          </h1>
+          </BrandTag>
           <nav className="gnb" aria-label="주요 메뉴">
             <ul>
               {NAV.map((item) => (

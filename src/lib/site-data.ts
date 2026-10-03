@@ -311,12 +311,13 @@ export const PAGE_DESCRIPTIONS: Record<string, string> = {
 export const SITE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${SITE_ORIGIN}/#website`,
   name: SITE_NAME,
   url: `${SITE_ORIGIN}/`,
   inLanguage: "ko-KR",
   publisher: {
     "@type": "Organization",
-    "@id": "https://www.humanekorea.co.kr/#org",
+    "@id": "https://www.humanekorea.co.kr/#organization",
     name: "휴메인코리아",
     telephone: SITE_PHONE,
   },
@@ -438,3 +439,64 @@ export const SPECIALS = [
     title: ["쾌적하고", "개방감·채광을 고려한 설계"],
   },
 ];
+
+// AEO/GEO (2026-10-04): 사업개요 페이지 질문형 요약 — OVERVIEW_FACTS(분양 상담자료 2025-09)에 있는 사실만 사용
+export const PAGE_LAST_MODIFIED = "2026-10-04";
+
+export const OVERVIEW_QA: [string, string][] = [
+  [
+    "청라 SK V1은 어디에 있나요?",
+    "청라 SK V1은 인천광역시 서해구 파랑로 451(종전 표기: 인천광역시 서구 파랑로 451)에 있는 지식산업센터입니다. 지역지구는 준공업지역·지구단위계획구역으로, 청라국제도시 도시첨단산업단지에 속합니다.",
+  ],
+  [
+    "청라 SK V1의 건물 규모는 어떻게 되나요?",
+    "지하 2층~지상 10층 철근콘크리트구조이며, 대지면적 16,159.1㎡, 연면적 126,011.73㎡입니다. 주차는 895대(전기차 22대 제외)로 안내되어 있습니다.",
+  ],
+  [
+    "청라 SK V1의 호실은 어떻게 구성되나요?",
+    "공장(지식산업센터) 574실, 공장(부대창고) 26실, 지원시설(근린생활시설) 46실로 합계 646실입니다. 지상 8~9층은 업무형 오피스, 10층은 라이브오피스로 구성되며, 호실별 면적·잔여 여부·분양조건은 홍보관 또는 대표번호 1833-3872로 확인하시기 바랍니다.",
+  ],
+];
+
+const ORG_REF = { "@id": "https://www.humanekorea.co.kr/#organization" };
+
+export function pageJsonLd(slug: string, title: string, description: string) {
+  const url = slug ? `${SITE_ORIGIN}/pages/${slug}` : `${SITE_ORIGIN}/`;
+  const graph: Record<string, unknown>[] = [
+    {
+      "@type": "WebPage",
+      "@id": `${url}#webpage`,
+      url,
+      name: slug ? `${SITE_NAME} ${title}` : SITE_NAME,
+      description,
+      inLanguage: "ko-KR",
+      isPartOf: { "@id": `${SITE_ORIGIN}/#website` },
+      publisher: ORG_REF,
+      dateModified: PAGE_LAST_MODIFIED,
+    },
+  ];
+  if (slug) {
+    graph.push({
+      "@type": "BreadcrumbList",
+      "@id": `${url}#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "HOME", item: `${SITE_ORIGIN}/` },
+        { "@type": "ListItem", position: 2, name: title, item: url },
+      ],
+    });
+    (graph[0] as Record<string, unknown>).breadcrumb = { "@id": `${url}#breadcrumb` };
+  }
+  if (slug === "overview.html") {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      isPartOf: { "@id": `${url}#webpage` },
+      mainEntity: OVERVIEW_QA.map(([q, a]) => ({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: { "@type": "Answer", text: a },
+      })),
+    });
+  }
+  return { "@context": "https://schema.org", "@graph": graph };
+}

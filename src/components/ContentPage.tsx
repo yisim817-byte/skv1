@@ -4,6 +4,8 @@ import {
   KAKAO_MAP,
   NAVER_MAP,
   NEWS,
+  OVERVIEW_FACTS,
+  OVERVIEW_FACTS_NOTE,
   UNITS,
   getPage,
   pageImage,
@@ -72,6 +74,7 @@ export function ContentPage({ slug }: { slug: string }) {
         {page.kind === "image" || page.kind === "location" ? (
           <Picture image={page.image} mobile={page.mobile} alt={page.title} />
         ) : null}
+        {page.slug === "overview.html" ? <OverviewFacts /> : null}
         {page.kind === "floor" ? <FloorBoard /> : null}
         {page.kind === "unit" ? <UnitBoard /> : null}
         {page.kind === "news" ? <NewsBoard /> : null}
@@ -224,5 +227,26 @@ function MapButtons() {
         <img src="/skv1/assets/images/main/kakao.png" alt="카카오맵" />
       </a>
     </div>
+  );
+}
+
+function OverviewFacts() {
+  return (
+    <section className="overview-facts" aria-labelledby="overview-facts-title">
+      <h2 id="overview-facts-title" className="overview-facts-title">
+        청라 SK V1 사업개요 요약
+      </h2>
+      <table>
+        <tbody>
+          {OVERVIEW_FACTS.map(([k, v]) => (
+            <tr key={k}>
+              <th scope="row">{k}</th>
+              <td>{v}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="overview-facts-note">{OVERVIEW_FACTS_NOTE}</p>
+    </section>
   );
 }

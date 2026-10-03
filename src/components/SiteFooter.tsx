@@ -19,6 +19,7 @@ export function SiteFooter() {
         </div>
         <ul className="footer-address">
           <li>현장 : 인천광역시 서해구 파랑로 451</li>
+          <li>지식산업센터 : 574호실</li>
           <li>분양창고 : 26호실</li>
           <li>근린생활시설 : 46호실</li>
         </ul>

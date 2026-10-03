@@ -6,6 +6,7 @@ import {
   NEWS,
   OVERVIEW_FACTS,
   OVERVIEW_FACTS_NOTE,
+  PAGE_SUMMARIES,
   UNITS,
   getPage,
   pageImage,
@@ -75,6 +76,7 @@ export function ContentPage({ slug }: { slug: string }) {
           <Picture image={page.image} mobile={page.mobile} alt={page.title} />
         ) : null}
         {page.slug === "overview.html" ? <OverviewFacts /> : null}
+        {PAGE_SUMMARIES[page.slug] ? <PageSummaryTable slug={page.slug} /> : null}
         {page.kind === "floor" ? <FloorBoard /> : null}
         {page.kind === "unit" ? <UnitBoard /> : null}
         {page.kind === "news" ? <NewsBoard /> : null}
@@ -247,6 +249,30 @@ function OverviewFacts() {
         </tbody>
       </table>
       <p className="overview-facts-note">{OVERVIEW_FACTS_NOTE}</p>
+    </section>
+  );
+}
+
+function PageSummaryTable({ slug }: { slug: string }) {
+  const summary = PAGE_SUMMARIES[slug];
+  if (!summary) return null;
+  const id = `summary-${slug.replace(/\W+/g, "-")}`;
+  return (
+    <section className="overview-facts" aria-labelledby={id}>
+      <h2 id={id} className="overview-facts-title">
+        {summary.title}
+      </h2>
+      <table>
+        <tbody>
+          {summary.rows.map(([k, v]) => (
+            <tr key={k}>
+              <th scope="row">{k}</th>
+              <td>{v}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="overview-facts-note">{summary.note}</p>
     </section>
   );
 }

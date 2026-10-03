@@ -107,7 +107,7 @@ export function HomePage() {
       <section className="specials">
         <div className="special-stage">
           <div className="special-visual">
-            <img src={feature.image} alt="" />
+            <img src={feature.image} alt={`청라 SK V1 특화설계 ${feature.no}`} />
             <a className="special-more" href="/pages/drive.html">
               <span>View</span>
               <span>More</span>

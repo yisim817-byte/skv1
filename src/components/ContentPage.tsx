@@ -6,6 +6,7 @@ import {
   NEWS,
   OVERVIEW_FACTS,
   OVERVIEW_FACTS_NOTE,
+  OVERVIEW_QA,
   PAGE_SUMMARIES,
   UNITS,
   getPage,
@@ -249,6 +250,16 @@ function OverviewFacts() {
         </tbody>
       </table>
       <p className="overview-facts-note">{OVERVIEW_FACTS_NOTE}</p>
+      {/* AEO:qa — 질문형 요약 (상기 사업개요 표 기준) */}
+      {OVERVIEW_QA.map(([q, a]) => (
+        <div className="overview-qa" key={q}>
+          <h2 className="overview-facts-title">{q}</h2>
+          <p>{a}</p>
+        </div>
+      ))}
+      <p className="overview-facts-note">
+        출처: 분양 상담자료(2025-09) 사업개요 · 기준일 2026.10.04 게시 확인
+      </p>
     </section>
   );
 }

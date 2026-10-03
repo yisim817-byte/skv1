@@ -1317,3 +1317,56 @@
     animation: none;
   }
 }
+
+.overview-facts {
+  margin: 40px 0 0;
+}
+
+.overview-facts-title {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+}
+
+.overview-facts table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 2px solid #111;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.overview-facts th,
+.overview-facts td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: left;
+  vertical-align: top;
+}
+
+.overview-facts th {
+  width: 160px;
+  background: #f7f7f7;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+}
+
+.overview-facts-note {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: var(--color-note);
+}
+
+@media (max-width: 768px) {
+  .overview-facts th {
+    width: 96px;
+    white-space: normal;
+  }
+  .overview-facts th,
+  .overview-facts td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

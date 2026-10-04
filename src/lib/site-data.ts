@@ -401,7 +401,7 @@ export const PILLARS = [
     sign: img("main/envi4-sign.png"),
     bg: img("main/envi4-bg.jpg"),
     title: "빛나는 청라의\n미래비전",
-    points: ["청라 하나드림타운 헤드쿼터(HQ) 조성 중", "청라 호수공원에 조성되는 시티타워 예정"],
+    points: ["청라 하나드림타운 그룹헤드쿼터 ’26.5.21 준공", "청라 호수공원에 조성되는 시티타워 예정"],
   },
   {
     key: "Infra",

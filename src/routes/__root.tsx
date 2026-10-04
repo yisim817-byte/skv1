@@ -9,6 +9,7 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "naver-site-verification", content: "1cf19d6134c13c55a96fcf80255b72ba696f4b98" },
       { title: "청라 SK V1" },
       {
         name: "description",

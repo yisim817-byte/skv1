@@ -285,7 +285,7 @@ export const PAGE_SUMMARIES: Record<string, PageSummary> = {
 };
 
 export const SITE_DESCRIPTION =
-  "청라 SK V1 홈페이지 — 청라국제도시 지식산업센터 청라 SK V1의 입지환경, 직선형 드라이브인 시스템 등 특화설계, 상품안내, 홍보자료와 오시는길을 안내합니다.";
+  "청라 SK V1 — 청라국제도시 지식산업센터 청라 SK V1의 입지환경, 직선형 드라이브인 시스템 등 특화설계, 상품안내, 홍보자료, 오시는길 안내.";
 
 export const PAGE_DESCRIPTIONS: Record<string, string> = {
   "overview.html": "청라 SK V1 사업개요 — 지식산업센터·분양창고·근린생활시설로 구성된 청라 SK V1의 사업 개요를 이미지로 안내합니다.",

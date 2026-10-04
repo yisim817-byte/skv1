@@ -10,7 +10,8 @@ export const Route = createFileRoute("/pages/$")({
   },
   head: ({ params }) => {
     const page = getPage(params._splat ?? "");
-    const title = page ? `청라 SK V1 ${page.title}` : "청라 SK V1";
+    const shareTitle = page ? `청라 SK V1 ${page.title}` : "청라 SK V1";
+    const title = page ? `청라 SK V1 ${page.title} | 청라 지식산업센터` : "청라 SK V1";
     const slug = params._splat ?? "";
     const description = PAGE_DESCRIPTIONS[slug] ?? SITE_DESCRIPTION;
     const url = `https://www.skv1.site/pages/${slug}`;
@@ -24,11 +25,11 @@ export const Route = createFileRoute("/pages/$")({
         { property: "og:type", content: "website" },
         { property: "og:site_name", content: "청라 SK V1" },
         { property: "og:locale", content: "ko_KR" },
-        { property: "og:title", content: title },
+        { property: "og:title", content: shareTitle },
         { property: "og:description", content: description },
         { property: "og:url", content: url },
         { name: "twitter:card", content: "summary" },
-        { name: "twitter:title", content: title },
+        { name: "twitter:title", content: shareTitle },
         { name: "twitter:description", content: description },
       ],
       links: [{ rel: "canonical", href: url }],

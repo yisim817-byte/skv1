@@ -11,7 +11,7 @@ export const Route = createRootRoute({
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "naver-site-verification", content: "1cf19d6134c13c55a96fcf80255b72ba696f4b98" },
       { name: "msvalidate.01", content: "1CA8C4AC579A0BA4C40BC37CD046AC48" },
-      { title: "청라 SK V1" },
+      { title: "청라 SK V1 | 청라국제도시 지식산업센터 안내" },
       {
         name: "description",
         content: SITE_DESCRIPTION,
@@ -20,6 +20,7 @@ export const Route = createRootRoute({
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "alternate", type: "application/rss+xml", title: "청라 SK V1 RSS", href: "https://www.skv1.site/rss.xml" },
       { rel: "stylesheet", href: appCss },
       {
         rel: "stylesheet",

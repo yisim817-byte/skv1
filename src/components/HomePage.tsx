@@ -8,6 +8,7 @@ import {
   SITE_PHONE_TEL,
   SPECIALS,
 } from "@/lib/site-data";
+import { Img } from "./Img";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 
@@ -49,10 +50,10 @@ export function HomePage() {
 
       {PILLARS.map((pillar) => (
         <section className="pillar" key={pillar.key}>
-          <img className="pillar-bg pc-only" src={pillar.bg} alt="" />
-          <img className="pillar-bg mo-only" src={pillar.mobile ?? pillar.bg} alt="" />
+          <Img className="pillar-bg pc-only" src={pillar.bg} alt="" />
+          <Img className="pillar-bg mo-only" src={pillar.mobile ?? pillar.bg} alt="" />
           <div className="pillar-copy">
-            <img className="pillar-sign" src={pillar.sign} alt="" />
+            <Img className="pillar-sign" src={pillar.sign} alt="" />
             <h2>
               {pillar.title.split("\n").map((line) => (
                 <span key={line}>
@@ -97,8 +98,8 @@ export function HomePage() {
             ))}
           </ul>
           <div className="map-stage">
-            <img src={active.image} alt={active.label} />
-            <img className="map-logo" src="/skv1/assets/images/main/envi6-logo.png" alt="" />
+            <Img src={active.image} alt={active.label} />
+            <Img className="map-logo" src="/skv1/assets/images/main/envi6-logo.png" alt="" />
           </div>
         </div>
         <p className="fine center">※ 클릭하시면 해당 영역을 확인하실 수 있습니다.</p>
@@ -107,7 +108,7 @@ export function HomePage() {
       <section className="specials">
         <div className="special-stage">
           <div className="special-visual">
-            <img src={feature.image} alt={`청라 SK V1 특화설계 ${feature.no}`} />
+            <Img src={feature.image} alt={`청라 SK V1 특화설계 ${feature.no}`} />
             <a className="special-more" href="/pages/drive.html">
               <span>View</span>
               <span>More</span>
@@ -120,7 +121,7 @@ export function HomePage() {
           <div className="special-copy">
             <p className="special-lead">물류부터 첨단 제조 비즈니스를 위한</p>
             <h2>특화설계</h2>
-            <img className="special-thumb" src={feature.thumb} alt="" />
+            <Img className="special-thumb" src={feature.thumb} alt="" />
             <p className="special-en">Special Design {feature.no}</p>
             <p className="special-sub">
               {feature.lines.map((line) => (
@@ -171,7 +172,7 @@ export function HomePage() {
         <video
           controls
           playsInline
-          poster="/skv1/assets/images/main/video-poster-new.png"
+          poster="/skv1/assets/images/main/video-poster-new.webp"
           preload="metadata"
         >
           <source src="/media/promo.mp4?v=20260907" type="video/mp4" />
@@ -206,20 +207,20 @@ export function HomePage() {
           </ul>
           <div className="map-links">
             <a className="naver" href={NAVER_MAP} target="_blank" rel="noreferrer">
-              <img src="/skv1/assets/images/main/naver.png" alt="네이버 지도" />
-              <img className="hover" src="/skv1/assets/images/main/naver-hover.png" alt="" />
+              <Img src="/skv1/assets/images/main/naver.png" alt="네이버 지도" />
+              <Img className="hover" src="/skv1/assets/images/main/naver-hover.png" alt="" />
             </a>
             <a className="kakao" href={KAKAO_MAP} target="_blank" rel="noreferrer">
-              <img src="/skv1/assets/images/main/kakao.png" alt="카카오맵" />
+              <Img src="/skv1/assets/images/main/kakao.png" alt="카카오맵" />
             </a>
           </div>
           <a className="more" href="/pages/location.html">
             View More +
           </a>
         </div>
-        <img
+        <Img
           className="visit-map"
-          src="/skv1/assets/images/main/contact-map.jpg"
+          src="/skv1/assets/images/main/contact-map.webp"
           alt="청라 SK V1 위치"
         />
       </section>

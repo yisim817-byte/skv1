@@ -1,4 +1,5 @@
 import { PRIVACY_URL, TERMS_URL } from "@/lib/site-data";
+import { Img } from "./Img";
 
 export function SiteFooter() {
   return (
@@ -10,12 +11,12 @@ export function SiteFooter() {
           청라 비즈니스 캠퍼스
         </p>
         <div className="footer-logo-box">
-          <img
+          <Img
             className="footer-logo"
             src="/skv1/assets/images/common/footer-logo-white.png"
             alt="청라 SK V1"
           />
-          <img className="sigong" src="/skv1/assets/images/common/sigong.png" alt="교보자산신탁" />
+          <Img className="sigong" src="/skv1/assets/images/common/sigong.png" alt="교보자산신탁" />
         </div>
         <ul className="footer-address">
           <li>현장 : 인천광역시 서해구 파랑로 451</li>

@@ -37,7 +37,7 @@ export const PAGE_BODY: Record<string, PageBody> = {
             src: "IMG:sub/location.jpg 지도 표기 · CB p29",
           },
           {
-            t: "배치도에는 파랑로(20m), 봉수대로, 501번길(30m)과 함께 차량진입구·차량진출구, 주출입구·부출입구, 공개공지가 표기되어 있습니다.",
+            t: "배치도에는 파랑로(20m), 봉수대로501번길(30m)과 함께 차량진입구·차량진출구, 주출입구·부출입구, 공개공지가 표기되어 있습니다.",
             src: "IMG:sub/place.jpg · CB p10 배치도",
           },
           {

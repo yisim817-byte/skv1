@@ -1,7 +1,7 @@
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
-import { SITE_DESCRIPTION, SITE_JSON_LD } from "@/lib/site-data";
+import { SITE_DESCRIPTION, SITE_JSON_LD, SITE_TITLE } from "@/lib/site-data";
 import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
@@ -11,7 +11,7 @@ export const Route = createRootRoute({
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "naver-site-verification", content: "1cf19d6134c13c55a96fcf80255b72ba696f4b98" },
       { name: "msvalidate.01", content: "1CA8C4AC579A0BA4C40BC37CD046AC48" },
-      { title: "청라 SK V1 | 청라국제도시 지식산업센터 안내" },
+      { title: SITE_TITLE },
       {
         name: "description",
         content: SITE_DESCRIPTION,

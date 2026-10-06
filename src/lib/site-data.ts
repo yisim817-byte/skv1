@@ -1,4 +1,5 @@
 import news from "./news.json";
+import { LOCATION_FAQ } from "./page-body";
 
 export const SITE_PHONE = "1833-3872";
 export const SITE_PHONE_TEL = "18333872";
@@ -13,6 +14,8 @@ export const PRIVACY_URL =
   "https://www.skview.co.kr:442/html/etc/?dp1=privacy&dp2=privacy";
 
 const img = (file: string) => `/skv1/assets/images/${file}`;
+// SEO_PUSH 2026-10-06 P1-5: same pixels re-encoded as WebP (q85~92, same dimensions); originals stay in public/.
+export const webp = (path: string) => path.replace(/\.(jpe?g|png)$/i, ".webp");
 
 export type NavChild = { label: string; href: string };
 export type NavItem = { label: string; href: string; children?: NavChild[] };
@@ -284,8 +287,18 @@ export const PAGE_SUMMARIES: Record<string, PageSummary> = {
   },
 };
 
+// SEO_PUSH 2026-10-06 P0-2: 'SKV1' 붙여쓰기 병기 + 홈 title '분양'. 수치·주소는 사업개요 표·푸터에 이미 있는 값만 사용.
+export const SITE_TITLE = "청라 SK V1 | 청라 지식산업센터 분양 안내";
 export const SITE_DESCRIPTION =
-  "청라 SK V1 — 청라국제도시 지식산업센터 청라 SK V1의 입지환경, 직선형 드라이브인 시스템 등 특화설계, 상품안내, 홍보자료, 오시는길 안내.";
+  "청라 SK V1(SKV1)은 인천 서해구 파랑로 451 청라국제도시 지식산업센터입니다. 지식산업센터 574실·분양창고 26실·근린생활시설 46실, 직선형 드라이브인 설계. 분양 문의 1833-3872.";
+
+// SEO_PUSH 2026-10-06 P0-3: 하위 페이지 <title> (og:title·H1은 그대로). 없는 페이지는 기존 형식 "청라 SK V1 {제목} | 청라 지식산업센터".
+export const PAGE_TITLES: Record<string, string> = {
+  "location.html": "청라 SK V1 주소·오시는길 | 서해구 파랑로 451",
+  "drive.html": "청라 SK V1 드라이브인 | 제조물류 특화설계",
+  "unit.html": "청라 SK V1 라이브오피스 | 타입별 평면",
+  "overview.html": "청라 SK V1 사업개요 | 청라 지식산업센터 646실",
+};
 
 export const PAGE_DESCRIPTIONS: Record<string, string> = {
   "overview.html": "청라 SK V1 사업개요 — 지식산업센터·분양창고·근린생활시설로 구성된 청라 SK V1의 사업 개요를 이미지로 안내합니다.",
@@ -329,8 +342,8 @@ export function getPage(slug: string) {
 
 export function pageImage(file?: string) {
   if (!file) return "";
-  if (file.startsWith("m/")) return `/skv1/${file}`;
-  return img(file);
+  if (file.startsWith("m/")) return webp(`/skv1/${file}`);
+  return webp(img(file));
 }
 
 export const FLOORS = [
@@ -366,20 +379,20 @@ export type NewsItem = {
 export const NEWS = news as NewsItem[];
 
 export const MAP_TABS = [
-  { id: "00", label: "전체 보기", image: img("main/envi6-map.jpg") },
-  { id: "01", label: "청라하늘대교(제3연륙교) 개통", image: img("main/envi6-map-01.jpg") },
-  { id: "02", label: "인천지하철2호선", image: img("main/envi6-map-02.jpg") },
-  { id: "03", label: "7호선연장 (예정·개통 시기 미정)", image: img("main/envi6-map-03.jpg") },
-  { id: "04", label: "청라국제도시", image: img("main/envi6-map-04.jpg") },
-  { id: "05", label: "GRT노선 (702번)", image: img("main/envi6-map-05.jpg") },
-  { id: "06", label: "GRT노선 (701번)", image: img("main/envi6-map-06.jpg") },
+  { id: "00", label: "전체 보기", image: webp(img("main/envi6-map.jpg")) },
+  { id: "01", label: "청라하늘대교(제3연륙교) 개통", image: webp(img("main/envi6-map-01.jpg")) },
+  { id: "02", label: "인천지하철2호선", image: webp(img("main/envi6-map-02.jpg")) },
+  { id: "03", label: "7호선연장 (예정·개통 시기 미정)", image: webp(img("main/envi6-map-03.jpg")) },
+  { id: "04", label: "청라국제도시", image: webp(img("main/envi6-map-04.jpg")) },
+  { id: "05", label: "GRT노선 (702번)", image: webp(img("main/envi6-map-05.jpg")) },
+  { id: "06", label: "GRT노선 (701번)", image: webp(img("main/envi6-map-06.jpg")) },
 ];
 
 export const PILLARS = [
   {
     key: "Traffic",
     sign: img("main/envi2-sign.png"),
-    bg: img("main/envi2-bg.jpg"),
+    bg: webp(img("main/envi2-bg.jpg")),
     title: "청라하늘대교(제3연륙교) 개통으로\n쾌속교통",
     points: [
       "청라하늘대교(제3연륙교) 개통으로, 여의도~인천공항 이동 시간 단축",
@@ -389,7 +402,7 @@ export const PILLARS = [
   {
     key: "Business",
     sign: img("main/envi5-sign.png"),
-    bg: img("main/business-bg.jpg"),
+    bg: webp(img("main/business-bg.jpg")),
     title: "4차 산업 연계\n비즈니스 거점",
     points: [
       "현대 무벡스 R&D센터, 지엠테크니컬센터",
@@ -399,15 +412,15 @@ export const PILLARS = [
   {
     key: "Vision",
     sign: img("main/envi4-sign.png"),
-    bg: img("main/envi4-bg.jpg"),
+    bg: webp(img("main/envi4-bg.jpg")),
     title: "빛나는 청라의\n미래비전",
     points: ["청라 하나드림타운 그룹헤드쿼터 ’26.5.21 준공", "청라 호수공원에 조성되는 시티타워 예정"],
   },
   {
     key: "Infra",
     sign: img("main/envi3-sign.png"),
-    bg: img("main/infra-bg.jpg"),
-    mobile: "/skv1/m/assets/images/main/m_infra-bg.png",
+    bg: webp(img("main/infra-bg.jpg")),
+    mobile: webp("/skv1/m/assets/images/main/m_infra-bg.png"),
     title: "더 가깝게 누리는\n생활인프라",
     points: [
       "코스트코 청라점, 스타필드 청라(예정)",
@@ -419,22 +432,22 @@ export const PILLARS = [
 export const SPECIALS = [
   {
     no: "01",
-    thumb: img("main/special-img-02-new-01.jpg"),
-    image: img("main/special-img-01-new.jpg"),
+    thumb: webp(img("main/special-img-02-new-01.jpg")),
+    image: webp(img("main/special-img-01-new.jpg")),
     lines: ["3번 회전만으로", "7층까지 도달하여 동선이 편리한"],
     title: ["직선형", "드라이브인 시스템"],
   },
   {
     no: "02",
-    thumb: img("main/special-img-02-new-02.jpg"),
-    image: img("main/special-img-02-new.jpg"),
+    thumb: webp(img("main/special-img-02-new-02.jpg")),
+    image: webp(img("main/special-img-02-new.jpg")),
     lines: ["차량이 각 사업장 안으로 진입하여 운반,", "물류 작업에 유리한"],
     title: ["도어투도어", "시스템 적용"],
   },
   {
     no: "03",
-    thumb: img("main/special-img-02-new-03.jpg"),
-    image: img("main/special-img-03-new.jpg"),
+    thumb: webp(img("main/special-img-02-new-03.jpg")),
+    image: webp(img("main/special-img-03-new.jpg")),
     lines: ["오피스 전호실 발코니 특화,", "라이브오피스 테라스설계, 옥상정원 등"],
     title: ["쾌적하고", "개방감·채광을 고려한 설계"],
   },
@@ -442,6 +455,20 @@ export const SPECIALS = [
 
 // AEO/GEO (2026-10-04): 사업개요 페이지 질문형 요약 — OVERVIEW_FACTS(분양 상담자료 2025-09)에 있는 사실만 사용
 export const PAGE_LAST_MODIFIED = "2026-10-04";
+// SEO_PUSH 2026-10-06: 본문을 바꾼 페이지는 dateModified 갱신
+export const PAGE_MODIFIED_20261006 = new Set([
+  "",
+  "location.html",
+  "drive.html",
+  "unit.html",
+  "overview.html",
+  "floor.html",
+  "office.html",
+  "amenities.html",
+  "managesystey.html",
+  "finance.html",
+  "benefit.html",
+]);
 
 export const OVERVIEW_QA: [string, string][] = [
   [
@@ -472,7 +499,7 @@ export function pageJsonLd(slug: string, title: string, description: string) {
       inLanguage: "ko-KR",
       isPartOf: { "@id": `${SITE_ORIGIN}/#website` },
       publisher: ORG_REF,
-      dateModified: PAGE_LAST_MODIFIED,
+      dateModified: PAGE_MODIFIED_20261006.has(slug) ? "2026-10-06" : PAGE_LAST_MODIFIED,
     },
   ];
   if (slug) {
@@ -497,6 +524,34 @@ export function pageJsonLd(slug: string, title: string, description: string) {
         acceptedAnswer: { "@type": "Answer", text: a },
       })),
     });
+  }
+  if (slug === "location.html") {
+    // P0-5: 화면에 보이는 FAQ 2문항과 같은 문자열
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      isPartOf: { "@id": `${url}#webpage` },
+      mainEntity: LOCATION_FAQ.map(({ q, a }) => ({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: { "@type": "Answer", text: a },
+      })),
+    });
+    // P1-7: 본문 주소 표와 같은 값만 사용 (우편번호 등 화면에 없는 값은 넣지 않음)
+    graph.push({
+      "@type": "Place",
+      "@id": `${SITE_ORIGIN}/#place`,
+      name: SITE_NAME,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "파랑로 451",
+        addressLocality: "서해구",
+        addressRegion: "인천광역시",
+        addressCountry: "KR",
+      },
+      telephone: SITE_PHONE,
+    });
+    (graph[0] as Record<string, unknown>).about = { "@id": `${SITE_ORIGIN}/#place` };
   }
   return { "@context": "https://schema.org", "@graph": graph };
 }

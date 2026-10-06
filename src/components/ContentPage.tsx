@@ -12,6 +12,8 @@ import {
   getPage,
   pageImage,
 } from "@/lib/site-data";
+import { LOCATION_FAQ, PAGE_BODY } from "@/lib/page-body";
+import { Img, imgDims } from "./Img";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 
@@ -84,6 +86,8 @@ export function ContentPage({ slug }: { slug: string }) {
         {page.kind === "tv" ? <PromoFilm /> : null}
         {page.kind === "youtube" ? <YoutubeFilm /> : null}
         {page.kind === "location" ? <MapButtons /> : null}
+        {PAGE_BODY[page.slug] ? <PageBodyText slug={page.slug} /> : null}
+        {page.slug === "location.html" ? <LocationFaq /> : null}
         {page.notes.length ? (
           <ul className="page-info">
             {page.notes.map((note) => (
@@ -97,12 +101,31 @@ export function ContentPage({ slug }: { slug: string }) {
   );
 }
 
-function Picture({ image, mobile, alt }: { image?: string; mobile?: string; alt: string }) {
+// P1-5: WebP(same pixels) + intrinsic width/height. The page's main image stays eager (LCP); tab images are lazy.
+function Picture({
+  image,
+  mobile,
+  alt,
+  lazy = false,
+}: {
+  image?: string;
+  mobile?: string;
+  alt: string;
+  lazy?: boolean;
+}) {
   if (!image) return null;
+  const src = pageImage(image);
+  const mobileSrc = mobile ? pageImage(mobile) : "";
   return (
     <picture className="content-picture">
-      {mobile ? <source media="(max-width: 768px)" srcSet={pageImage(mobile)} /> : null}
-      <img src={pageImage(image)} alt={alt} />
+      {mobile ? (
+        <source media="(max-width: 768px)" srcSet={mobileSrc} {...imgDims(mobileSrc)} />
+      ) : null}
+      {lazy ? (
+        <Img src={src} alt={alt} />
+      ) : (
+        <img src={src} alt={alt} decoding="async" {...imgDims(src)} />
+      )}
     </picture>
   );
 }
@@ -126,7 +149,7 @@ function FloorBoard() {
           </button>
         ))}
       </div>
-      <Picture image={current[1]} mobile={current[2]} alt={`${current[0]} 층별안내`} />
+      <Picture image={current[1]} mobile={current[2]} alt={`${current[0]} 층별안내`} lazy={index !== 2} />
     </div>
   );
 }
@@ -150,7 +173,7 @@ function UnitBoard() {
           </button>
         ))}
       </div>
-      <Picture image={current[1]} mobile={current[2]} alt={current[0]} />
+      <Picture image={current[1]} mobile={current[2]} alt={current[0]} lazy={index !== 0} />
     </div>
   );
 }
@@ -223,11 +246,11 @@ function MapButtons() {
   return (
     <div className="map-links sub-maps">
       <a className="naver" href={NAVER_MAP} target="_blank" rel="noreferrer">
-        <img src="/skv1/assets/images/main/naver.png" alt="네이버 지도" />
-        <img className="hover" src="/skv1/assets/images/main/naver-hover.png" alt="" />
+        <Img src="/skv1/assets/images/main/naver.png" alt="네이버 지도" />
+        <Img className="hover" src="/skv1/assets/images/main/naver-hover.png" alt="" />
       </a>
       <a className="kakao" href={KAKAO_MAP} target="_blank" rel="noreferrer">
-        <img src="/skv1/assets/images/main/kakao.png" alt="카카오맵" />
+        <Img src="/skv1/assets/images/main/kakao.png" alt="카카오맵" />
       </a>
     </div>
   );
@@ -284,6 +307,78 @@ function PageSummaryTable({ slug }: { slug: string }) {
         </tbody>
       </table>
       <p className="overview-facts-note">{summary.note}</p>
+    </section>
+  );
+}
+
+// SEO_PUSH 2026-10-06 P0-4: 이미지 안 문구를 HTML 본문으로 (출처는 page-body.ts의 src, 화면 미출력)
+function PageBodyText({ slug }: { slug: string }) {
+  const body = PAGE_BODY[slug];
+  if (!body) return null;
+  const id = `body-${slug.replace(/\W+/g, "-")}`;
+  return (
+    <section className="overview-facts page-body-text" aria-labelledby={id}>
+      <h2 id={id} className="overview-facts-title">
+        {body.title}
+      </h2>
+      {body.blocks.map((block, bi) => (
+        <div className="page-body-block" key={bi}>
+          {block.h3 ? <h3 className="page-body-h3">{block.h3}</h3> : null}
+          {block.p?.map((para) => (
+            <p key={para.t}>{para.t}</p>
+          ))}
+          {block.rows ? (
+            <div className="page-body-table">
+              <table>
+                {block.head ? (
+                  <thead>
+                    <tr>
+                      {block.head.map((h) => (
+                        <th key={h} scope="col">
+                          {h}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                ) : null}
+                <tbody>
+                  {block.rows.map((row) => (
+                    <tr key={row.cells.join("|")}>
+                      {row.cells.map((cell, ci) =>
+                        ci === 0 ? (
+                          <th key={ci} scope="row">
+                            {cell}
+                          </th>
+                        ) : (
+                          <td key={ci}>{cell}</td>
+                        ),
+                      )}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : null}
+        </div>
+      ))}
+      <p className="overview-facts-note">{body.note}</p>
+    </section>
+  );
+}
+
+// SEO_PUSH 2026-10-06 P0-5: 보이는 FAQ (FAQPage JSON-LD와 같은 문자열)
+function LocationFaq() {
+  return (
+    <section className="overview-facts" aria-labelledby="location-faq-title">
+      <h2 id="location-faq-title" className="overview-facts-title">
+        청라 SK V1 오시는길 자주 묻는 질문
+      </h2>
+      {LOCATION_FAQ.map(({ q, a }) => (
+        <div className="overview-qa" key={q}>
+          <h3 className="page-body-h3">{q}</h3>
+          <p>{a}</p>
+        </div>
+      ))}
     </section>
   );
 }

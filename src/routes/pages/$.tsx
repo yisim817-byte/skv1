@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { ContentPage } from "@/components/ContentPage";
-import { PAGE_DESCRIPTIONS, SITE_DESCRIPTION, getPage, pageJsonLd } from "@/lib/site-data";
+import { PAGE_DESCRIPTIONS, PAGE_TITLES, SITE_DESCRIPTION, getPage, pageJsonLd } from "@/lib/site-data";
 
 export const Route = createFileRoute("/pages/$")({
   beforeLoad: ({ params }) => {
@@ -11,8 +11,10 @@ export const Route = createFileRoute("/pages/$")({
   head: ({ params }) => {
     const page = getPage(params._splat ?? "");
     const shareTitle = page ? `청라 SK V1 ${page.title}` : "청라 SK V1";
-    const title = page ? `청라 SK V1 ${page.title} | 청라 지식산업센터` : "청라 SK V1";
     const slug = params._splat ?? "";
+    const title = page
+      ? (PAGE_TITLES[slug] ?? `청라 SK V1 ${page.title} | 청라 지식산업센터`)
+      : "청라 SK V1";
     const description = PAGE_DESCRIPTIONS[slug] ?? SITE_DESCRIPTION;
     const url = `https://www.skv1.site/pages/${slug}`;
     return {

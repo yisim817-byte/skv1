@@ -34,6 +34,9 @@ export const Route = createRootRoute({
         type: "application/ld+json",
         children: JSON.stringify(SITE_JSON_LD),
       },
+      // 분양조건 팝업(3개 사이트 공용 단일 원장). 문구·수치·만료일은 public/popup/skv1-popup.js 의 CONFIG에서만 수정.
+      // 청라지식산업센터.store / .site 는 https://www.skv1.site/popup/skv1-popup.js 를 그대로 불러간다.
+      { src: "/popup/skv1-popup.js", defer: true },
     ],
   }),
   component: () => (

@@ -403,6 +403,36 @@ export const PAGE_FAQ: Record<string, { q: string; a: string; src: string }[]> =
       src: "page-body.ts office.html",
     },
   ],
+
+  "managesystey.html": [
+    {
+      q: "감시 시스템은 어떻게 운영되나요?",
+      a: "24시간 CCTV 운영을 통해 회사보안 및 직원 안전을 강화합니다.",
+      src: "page-body.ts managesystey.html",
+    },
+    {
+      q: "에너지 절감은 어떤 방식인가요?",
+      a: "로이복층 유리, 기밀성 높은 창호 설치 등으로 관리비 절감 효과를 기대할 수 있습니다.",
+      src: "page-body.ts managesystey.html",
+    },
+    {
+      q: "정보통신은 어떻게 설계되어 있나요?",
+      a: "광케이블을 이용한 정보통신 인프라를 구축하여 입주 기업의 업무 효율성을 높입니다.",
+      src: "page-body.ts managesystey.html",
+    },
+  ],
+  "floor.html": [
+    {
+      q: "층별 평면 이미지에는 어떤 면적이 표기되어 있나요?",
+      a: "층별 평면 이미지에는 호수별 전용면적, 주거공용면적, 공급면적, 기타공용면적, 계약면적이 ㎡ 단위로 표기되어 있습니다.",
+      src: "page-body.ts floor.html",
+    },
+    {
+      q: "연면적 합계는 어떻게 안내되어 있나요?",
+      a: "지상층 소계는 98,724.51㎡, 지하층 소계는 27,287.22㎡로 연면적 합계 126,011.73㎡입니다. 호실은 공장(지식산업센터) 574실, 공장(부대창고) 26실, 지원시설(근린생활시설) 46실입니다.",
+      src: "page-body.ts floor.html",
+    },
+  ],
   "amenities.html": [
     {
       q: "옥상 하늘정원은 어떤 시설인가요?",

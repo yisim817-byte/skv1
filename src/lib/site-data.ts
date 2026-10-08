@@ -456,6 +456,7 @@ export const SPECIALS = [
 // AEO/GEO (2026-10-04): 사업개요 페이지 질문형 요약 — OVERVIEW_FACTS(분양 상담자료 2025-09)에 있는 사실만 사용
 export const PAGE_LAST_MODIFIED = "2026-10-04";
 // SEO_PUSH 2026-10-06: 본문을 바꾼 페이지는 dateModified 갱신
+export const PAGE_MODIFIED_20261009 = new Set(["managesystey.html", "floor.html"]);
 export const PAGE_MODIFIED_20261008 = new Set(["drive.html", "unit.html", "office.html", "amenities.html"]);
 export const PAGE_MODIFIED_20261006 = new Set([
   "",
@@ -500,7 +501,7 @@ export function pageJsonLd(slug: string, title: string, description: string) {
       inLanguage: "ko-KR",
       isPartOf: { "@id": `${SITE_ORIGIN}/#website` },
       publisher: ORG_REF,
-      dateModified: PAGE_MODIFIED_20261008.has(slug) ? "2026-10-08" : PAGE_MODIFIED_20261006.has(slug) ? "2026-10-06" : PAGE_LAST_MODIFIED,
+      dateModified: PAGE_MODIFIED_20261009.has(slug) ? "2026-10-09" : PAGE_MODIFIED_20261008.has(slug) ? "2026-10-08" : PAGE_MODIFIED_20261006.has(slug) ? "2026-10-06" : PAGE_LAST_MODIFIED,
     },
   ];
   if (slug) {

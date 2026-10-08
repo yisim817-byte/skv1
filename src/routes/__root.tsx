@@ -24,7 +24,9 @@ export const Route = createRootRoute({
       { rel: "stylesheet", href: appCss },
       {
         rel: "stylesheet",
-        href: "https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css",
+        rel: "preconnect", href: "https://cdn.jsdelivr.net" },
+      { rel: "preload", as: "style", href: "https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css" },
+      { rel: "stylesheet", href: "https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css",
       },
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },
       { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },

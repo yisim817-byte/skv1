@@ -295,10 +295,20 @@
 
   function start() {
     if (getItem("session", KEY_CLOSED)) { showChip(); return; }
-    window.setTimeout(function () {
-      if (hiddenToday() || isExpired()) return;
+    var opened = false;
+    function showLater() {
+      if (opened || hiddenToday() || isExpired()) return;
+      opened = true;
       open("view");
-    }, CONFIG.delayMs);
+    }
+    function onInput() {
+      window.removeEventListener("scroll", onInput);
+      window.removeEventListener("touchstart", onInput);
+      showLater();
+    }
+    window.addEventListener("scroll", onInput, { passive: true });
+    window.addEventListener("touchstart", onInput, { passive: true });
+    window.setTimeout(showLater, 6000);
   }
 
   window.__skv1Popup.open = function () { open("reopen"); };

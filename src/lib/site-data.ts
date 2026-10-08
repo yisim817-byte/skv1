@@ -161,8 +161,8 @@ export const PAGES: PageDef[] = [
   page("drive.html", "제조물류 특화", "DRIVE-IN", "image", [cgNote, photoNote], "sub/drive.jpg"),
   page("office.html", "오피스업무 특화", "OFFICE", "image", [cgNote, photoNote], "sub/office.jpg"),
   page("managesystey.html", "시스템 특화", "SYSTEM", "image", [cgNote, photoNote], "sub/managesystey.jpg"),
-  page("amenities.html", "부대시설 특화", "AMENITIES", "image", [cgNote, photoNote], "sub/amenities.jpg", "m/assets/images/sub/m_amenities.jpg"),
-  page("place.html", "배치도", "SITE PLAN", "image", [], "sub/place.jpg", "m/assets/images/sub/m_place.jpg"),
+  page("amenities.html", "부대시설 특화", "AMENITIES", "image", [cgNote, photoNote], "sub/amenities.webp", "m/assets/images/sub/m_amenities.jpg"),
+  page("place.html", "배치도", "SITE PLAN", "image", [], "sub/place.webp", "m/assets/images/sub/m_place.jpg"),
   page(
     "floorplan.html",
     "횡단면도",

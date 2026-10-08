@@ -354,3 +354,70 @@ export const LOCATION_FAQ: { q: string; a: string; src: string }[] = [
     src: "SITE:홈 오시는길 셔틀 버스·주석",
   },
 ];
+
+// 2026-10-08: 해당 페이지 page-body 문장만. 새 숫자 없음. 화면 FAQ와 JSON-LD가 같은 문자열.
+export const PAGE_FAQ: Record<string, { q: string; a: string; src: string }[]> = {
+  "drive.html": [
+    {
+      q: "직선형 드라이브인은 어떻게 구성되어 있나요?",
+      a: "3번 회전으로 7층까지 도달하는 직선형 드라이브인 설계입니다.",
+      src: "page-body.ts drive.html",
+    },
+    {
+      q: "도어투도어 시스템은 무엇인가요?",
+      a: "각 사업장 안으로 들어가는 도어투도어 시스템이 적용되었습니다.",
+      src: "page-body.ts drive.html",
+    },
+    {
+      q: "차량 진입은 어떻게 되나요?",
+      a: "차량이 각 사업장 안으로 진입하여 운반, 물류 작업에 유리한 구조입니다.",
+      src: "page-body.ts drive.html",
+    },
+  ],
+  "unit.html": [
+    {
+      q: "라이브오피스는 어디에 있나요?",
+      a: "라이브오피스는 지상 10층에 있으며, 횡단면도 기준 층고 4,800mm, 천정고 4,100mm입니다.",
+      src: "page-body.ts unit.html",
+    },
+    {
+      q: "라이브오피스 공간은 어떻게 구성되어 있나요?",
+      a: "사무실 공간과 함께 화장실, 다락 공간으로 설계된 라이브 오피스는 각 호실별 다락을 서비스공간으로 제공합니다.",
+      src: "page-body.ts unit.html",
+    },
+    {
+      q: "타입별 평면은 어떻게 표시되나요?",
+      a: "타입별 평면은 'TYPE - 다락'과 'TYPE - 1층' 두 장면으로 나누어 표시되어 있습니다.",
+      src: "page-body.ts unit.html",
+    },
+  ],
+  "office.html": [
+    {
+      q: "라이브오피스 테라스 설계는 어떤 내용인가요?",
+      a: "채광과 환기를 고려하고, 타 세대 대비 서비스 면적 추가 효과가 기대되는 라이브오피스 테라스 설계입니다.",
+      src: "page-body.ts office.html",
+    },
+    {
+      q: "오피스 설계에는 어떤 요소가 적용되어 있나요?",
+      a: "오피스 전호실 발코니 특화, 라이브오피스 테라스설계, 옥상정원 등 개방감·채광을 고려한 설계가 적용되었습니다.",
+      src: "page-body.ts office.html",
+    },
+  ],
+  "amenities.html": [
+    {
+      q: "옥상 하늘정원은 어떤 시설인가요?",
+      a: "하늘 정원에서 힐링을 누리는 입주사 편의시설입니다.",
+      src: "page-body.ts amenities.html",
+    },
+    {
+      q: "8층에는 어떤 편의시설이 있나요?",
+      a: "테라스 정원, 휴게공간 등 입주사 편의시설이 마련되어 있습니다.",
+      src: "page-body.ts amenities.html",
+    },
+    {
+      q: "지하 1층에는 무엇이 있나요?",
+      a: "층별개요 기준으로 지하 1층에는 공장(지식산업센터), 지원시설(구내식당), 주차장이 있습니다.",
+      src: "page-body.ts amenities.html",
+    },
+  ],
+};

@@ -12,7 +12,7 @@ import {
   getPage,
   pageImage,
 } from "@/lib/site-data";
-import { LOCATION_FAQ, PAGE_BODY } from "@/lib/page-body";
+import { LOCATION_FAQ, PAGE_BODY, PAGE_FAQ } from "@/lib/page-body";
 import { Img, imgDims } from "./Img";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
@@ -74,7 +74,7 @@ export function ContentPage({ slug }: { slug: string }) {
       </div>
       <main className="sub-main">
         <p className="sub-en-label">{page.en}</p>
-        <h3 className="sub-ko">{page.title}</h3>
+        <p className="sub-ko">{page.title}</p>
         {page.kind === "image" || page.kind === "location" ? (
           <Picture image={page.image} mobile={page.mobile} alt={page.title} />
         ) : null}
@@ -88,6 +88,7 @@ export function ContentPage({ slug }: { slug: string }) {
         {page.kind === "location" ? <MapButtons /> : null}
         {PAGE_BODY[page.slug] ? <PageBodyText slug={page.slug} /> : null}
         {page.slug === "location.html" ? <LocationFaq /> : null}
+        {PAGE_FAQ[page.slug] ? <PageFaq slug={page.slug} /> : null}
         {page.notes.length ? (
           <ul className="page-info">
             {page.notes.map((note) => (
@@ -367,6 +368,24 @@ function PageBodyText({ slug }: { slug: string }) {
 }
 
 // SEO_PUSH 2026-10-06 P0-5: 보이는 FAQ (FAQPage JSON-LD와 같은 문자열)
+
+function PageFaq({ slug }: { slug: string }) {
+  const items = PAGE_FAQ[slug] ?? [];
+  return (
+    <section className="overview-facts" aria-labelledby={`${slug}-faq-title`}>
+      <h2 id={`${slug}-faq-title`} className="overview-facts-title">
+        자주 묻는 질문
+      </h2>
+      {items.map(({ q, a }) => (
+        <div className="overview-qa" key={q}>
+          <h3 className="page-body-h3">{q}</h3>
+          <p>{a}</p>
+        </div>
+      ))}
+    </section>
+  );
+}
+
 function LocationFaq() {
   return (
     <section className="overview-facts" aria-labelledby="location-faq-title">

@@ -115,7 +115,7 @@ const photoNote = "상기 사진은 2025년 6월 중 현장을 촬영한 실제�
 const cgNote = "상기 CG는 소비자의 이해를 돕기 위해 제작된 것으로 실제와 다를 수 있습니다.";
 
 export const PAGES: PageDef[] = [
-  page("overview.html", "사업개요", "OVERVIEW", "image", [], "sub/overview.jpg", "m/assets/images/sub/m_overview.jpg"),
+  page("overview.html", "사업개요", "OVERVIEW", "image", [], "sub/overview.webp", "m/assets/images/sub/m_overview.webp"),
   page(
     "environment.html",
     "입지환경",
@@ -130,8 +130,8 @@ export const PAGES: PageDef[] = [
       "청라 시티타워 관련 내용은 [인천경제자유구역 보도자료(20.06.12)], 로봇랜드 관련 내용은 [인천경제자유구역 보도자료(21.06.09)]를 참고한 것이며 개발사업과 관련된 사항은 지자체 및 개발주체, 관계기관의 사정에 따라 변경 또는 취소될 수 있으며, 당사와는 무관합니다.",
       "스타필드 청라(예정), 서울아산청라병원(예정)은 네이버지도 정보 기준으로 오픈 시기는 변경될 수 있으며 당사와는 무관합니다.",
     ],
-    "sub/environment.jpg",
-    "m/assets/images/sub/m_environment.jpg",
+    "sub/environment.webp",
+    "m/assets/images/sub/m_environment.webp",
   ),
   page(
     "environment_02.html",
@@ -144,7 +144,7 @@ export const PAGES: PageDef[] = [
       "7호선 종착역인 석남역까지 네이버 최소 시간 측정 기준이며, 석남역에서 개통 예정(개통 시기 미정)인 커넬웨이역까지 3개 구간의 소요시간은 네이버 기준 소요 시간을 임의로 더한 것으로 실제 운영 시간과 다를 수 있습니다.",
       "상기 개발사업과 관련된 사항은 지자체 및 개발주체, 관계기관의 사정에 따라 변경 또는 취소될 수 있으며, 당사와는 무관합니다.",
     ],
-    "sub/environment_02.jpg",
+    "sub/environment_02.webp",
   ),
   page(
     "regional.html",
@@ -155,22 +155,22 @@ export const PAGES: PageDef[] = [
       "상기 CG는 소비자의 이해를 돕기 위해 제작된 것으로 실제와 다를 수 있습니다.",
       "상기 CG는 소비자의 이해를 돕기 위해 제작된 것으로 실제 크기 및 거리 등과 차이가 있습니다.",
     ],
-    "sub/regional.jpg",
-    "m/assets/images/sub/m_regional.jpg",
+    "sub/regional.webp",
+    "m/assets/images/sub/m_regional.webp",
   ),
-  page("drive.html", "제조물류 특화", "DRIVE-IN", "image", [cgNote, photoNote], "sub/drive.jpg"),
-  page("office.html", "오피스업무 특화", "OFFICE", "image", [cgNote, photoNote], "sub/office.jpg"),
-  page("managesystey.html", "시스템 특화", "SYSTEM", "image", [cgNote, photoNote], "sub/managesystey.jpg"),
-  page("amenities.html", "부대시설 특화", "AMENITIES", "image", [cgNote, photoNote], "sub/amenities.webp", "m/assets/images/sub/m_amenities.jpg"),
-  page("place.html", "배치도", "SITE PLAN", "image", [], "sub/place.webp", "m/assets/images/sub/m_place.jpg"),
+  page("drive.html", "제조물류 특화", "DRIVE-IN", "image", [cgNote, photoNote], "sub/drive.webp"),
+  page("office.html", "오피스업무 특화", "OFFICE", "image", [cgNote, photoNote], "sub/office.webp"),
+  page("managesystey.html", "시스템 특화", "SYSTEM", "image", [cgNote, photoNote], "sub/managesystey.webp"),
+  page("amenities.html", "부대시설 특화", "AMENITIES", "image", [cgNote, photoNote], "sub/amenities.webp", "m/assets/images/sub/m_amenities.webp"),
+  page("place.html", "배치도", "SITE PLAN", "image", [], "sub/place.webp", "m/assets/images/sub/m_place.webp"),
   page(
     "floorplan.html",
     "횡단면도",
     "SECTION",
     "image",
     ["상기 CG(일러스트)는 소비자의 이해를 돕기 위해 제작된 것으로 실제와 다를 수 있습니다."],
-    "sub/floorplan.jpg",
-    "m/assets/images/sub/m_floorplan.jpg",
+    "sub/floorplan.webp",
+    "m/assets/images/sub/m_floorplan.webp",
   ),
   page(
     "floor.html",
@@ -196,8 +196,8 @@ export const PAGES: PageDef[] = [
     "FINANCE",
     "image",
     ["적용대상 및 추징사항 등 세부조건은 관계법령 및 관할 지자체에 확인 바랍니다."],
-    "sub/finance.jpg",
-    "m/assets/images/sub/m_finance.jpg",
+    "sub/finance.webp",
+    "m/assets/images/sub/m_finance.webp",
   ),
   page(
     "benefit.html",
@@ -205,8 +205,8 @@ export const PAGES: PageDef[] = [
     "BENEFIT",
     "image",
     ["적용대상 및 추징사항 등 세부조건은 관계법령 및 관할 지자체에 확인 바랍니다."],
-    "sub/benefit.jpg",
-    "m/assets/images/sub/m_benefit.jpg",
+    "sub/benefit.webp",
+    "m/assets/images/sub/m_benefit.webp",
   ),
   page("media.html", "언론보도", "MEDIA", "news", []),
   page("tv.html", "홍보영상", "FILM", "tv", []),
@@ -217,8 +217,8 @@ export const PAGES: PageDef[] = [
     "CONTACT",
     "location",
     ["셔틀버스의 운영 주체는 인천 서해구청으로 당사와는 무관합니다."],
-    "sub/location.jpg",
-    "m/assets/images/sub/m_location.jpg",
+    "sub/location.webp",
+    "m/assets/images/sub/m_location.webp",
   ),
 ];
 
@@ -347,25 +347,25 @@ export function pageImage(file?: string) {
 }
 
 export const FLOORS = [
-  ["B2F", "sub/floor_b2f.jpg", "m/assets/images/sub/m_floor_b2f.jpg"],
-  ["B1F", "sub/floor_b1f.jpg", "m/assets/images/sub/m_floor_b1f.jpg"],
-  ["1F", "sub/floor_1f.jpg", "m/assets/images/sub/m_floor_1f.jpg"],
-  ["2F", "sub/floor_2f.jpg", "m/assets/images/sub/m_floor_2f.jpg"],
-  ["3F", "sub/floor_3f.jpg", "m/assets/images/sub/m_floor_3f.jpg"],
-  ["4F", "sub/floor_4f.jpg", "m/assets/images/sub/m_floor_4f.jpg"],
-  ["5F", "sub/floor_5f.jpg", "m/assets/images/sub/m_floor_5f.jpg"],
-  ["6F", "sub/floor_6f.jpg", "m/assets/images/sub/m_floor_6f.jpg"],
-  ["7F", "sub/floor_7f.jpg", "m/assets/images/sub/m_floor_7f.jpg"],
-  ["8F", "sub/floor_8f.jpg", "m/assets/images/sub/m_floor_8f.jpg"],
-  ["9F", "sub/floor_9f.jpg", "m/assets/images/sub/m_floor_9f.jpg"],
-  ["10F", "sub/floor_10f.jpg", "m/assets/images/sub/m_floor_10f.jpg"],
+  ["B2F", "sub/floor_b2f.webp", "m/assets/images/sub/m_floor_b2f.webp"],
+  ["B1F", "sub/floor_b1f.webp", "m/assets/images/sub/m_floor_b1f.webp"],
+  ["1F", "sub/floor_1f.webp", "m/assets/images/sub/m_floor_1f.webp"],
+  ["2F", "sub/floor_2f.webp", "m/assets/images/sub/m_floor_2f.webp"],
+  ["3F", "sub/floor_3f.webp", "m/assets/images/sub/m_floor_3f.webp"],
+  ["4F", "sub/floor_4f.webp", "m/assets/images/sub/m_floor_4f.webp"],
+  ["5F", "sub/floor_5f.webp", "m/assets/images/sub/m_floor_5f.webp"],
+  ["6F", "sub/floor_6f.webp", "m/assets/images/sub/m_floor_6f.webp"],
+  ["7F", "sub/floor_7f.webp", "m/assets/images/sub/m_floor_7f.webp"],
+  ["8F", "sub/floor_8f.webp", "m/assets/images/sub/m_floor_8f.webp"],
+  ["9F", "sub/floor_9f.webp", "m/assets/images/sub/m_floor_9f.webp"],
+  ["10F", "sub/floor_10f.webp", "m/assets/images/sub/m_floor_10f.webp"],
 ] as const;
 
 export const UNITS = [
-  ["A TYPE", "sub/unit_a.jpg", "m/assets/images/sub/m_unit_a.jpg"],
-  ["B TYPE", "sub/unit_b.jpg", "m/assets/images/sub/m_unit_b.jpg"],
-  ["C TYPE", "sub/unit_c.jpg", "m/assets/images/sub/m_unit_c.jpg"],
-  ["D TYPE", "sub/unit_d.jpg", "m/assets/images/sub/m_unit_d.jpg"],
+  ["A TYPE", "sub/unit_a.webp", "m/assets/images/sub/m_unit_a.webp"],
+  ["B TYPE", "sub/unit_b.webp", "m/assets/images/sub/m_unit_b.webp"],
+  ["C TYPE", "sub/unit_c.webp", "m/assets/images/sub/m_unit_c.webp"],
+  ["D TYPE", "sub/unit_d.webp", "m/assets/images/sub/m_unit_d.webp"],
 ] as const;
 
 export type NewsItem = {
@@ -379,20 +379,20 @@ export type NewsItem = {
 export const NEWS = news as NewsItem[];
 
 export const MAP_TABS = [
-  { id: "00", label: "전체 보기", image: webp(img("main/envi6-map.jpg")) },
-  { id: "01", label: "청라하늘대교(제3연륙교) 개통", image: webp(img("main/envi6-map-01.jpg")) },
-  { id: "02", label: "인천지하철2호선", image: webp(img("main/envi6-map-02.jpg")) },
-  { id: "03", label: "7호선연장 (예정·개통 시기 미정)", image: webp(img("main/envi6-map-03.jpg")) },
-  { id: "04", label: "청라국제도시", image: webp(img("main/envi6-map-04.jpg")) },
-  { id: "05", label: "GRT노선 (702번)", image: webp(img("main/envi6-map-05.jpg")) },
-  { id: "06", label: "GRT노선 (701번)", image: webp(img("main/envi6-map-06.jpg")) },
+  { id: "00", label: "전체 보기", image: webp(img("main/envi6-map.webp")) },
+  { id: "01", label: "청라하늘대교(제3연륙교) 개통", image: webp(img("main/envi6-map-01.webp")) },
+  { id: "02", label: "인천지하철2호선", image: webp(img("main/envi6-map-02.webp")) },
+  { id: "03", label: "7호선연장 (예정·개통 시기 미정)", image: webp(img("main/envi6-map-03.webp")) },
+  { id: "04", label: "청라국제도시", image: webp(img("main/envi6-map-04.webp")) },
+  { id: "05", label: "GRT노선 (702번)", image: webp(img("main/envi6-map-05.webp")) },
+  { id: "06", label: "GRT노선 (701번)", image: webp(img("main/envi6-map-06.webp")) },
 ];
 
 export const PILLARS = [
   {
     key: "Traffic",
     sign: img("main/envi2-sign.png"),
-    bg: webp(img("main/envi2-bg.jpg")),
+    bg: webp(img("main/envi2-bg.webp")),
     title: "청라하늘대교(제3연륙교) 개통으로\n쾌속교통",
     points: [
       "청라하늘대교(제3연륙교) 개통으로, 여의도~인천공항 이동 시간 단축",
@@ -402,7 +402,7 @@ export const PILLARS = [
   {
     key: "Business",
     sign: img("main/envi5-sign.png"),
-    bg: webp(img("main/business-bg.jpg")),
+    bg: webp(img("main/business-bg.webp")),
     title: "4차 산업 연계\n비즈니스 거점",
     points: [
       "현대 무벡스 R&D센터, 지엠테크니컬센터",
@@ -412,15 +412,15 @@ export const PILLARS = [
   {
     key: "Vision",
     sign: img("main/envi4-sign.png"),
-    bg: webp(img("main/envi4-bg.jpg")),
+    bg: webp(img("main/envi4-bg.webp")),
     title: "빛나는 청라의\n미래비전",
     points: ["청라 하나드림타운 그룹헤드쿼터 ’26.5.21 준공", "청라 호수공원에 조성되는 시티타워 예정"],
   },
   {
     key: "Infra",
     sign: img("main/envi3-sign.png"),
-    bg: webp(img("main/infra-bg.jpg")),
-    mobile: webp("/skv1/m/assets/images/main/m_infra-bg.png"),
+    bg: webp(img("main/infra-bg.webp")),
+    mobile: webp("/skv1/m/assets/images/main/m_infra-bg.webp"),
     title: "더 가깝게 누리는\n생활인프라",
     points: [
       "코스트코 청라점, 스타필드 청라(예정)",
@@ -432,22 +432,22 @@ export const PILLARS = [
 export const SPECIALS = [
   {
     no: "01",
-    thumb: webp(img("main/special-img-02-new-01.jpg")),
-    image: webp(img("main/special-img-01-new.jpg")),
+    thumb: webp(img("main/special-img-02-new-01.webp")),
+    image: webp(img("main/special-img-01-new.webp")),
     lines: ["3번 회전만으로", "7층까지 도달하여 동선이 편리한"],
     title: ["직선형", "드라이브인 시스템"],
   },
   {
     no: "02",
-    thumb: webp(img("main/special-img-02-new-02.jpg")),
-    image: webp(img("main/special-img-02-new.jpg")),
+    thumb: webp(img("main/special-img-02-new-02.webp")),
+    image: webp(img("main/special-img-02-new.webp")),
     lines: ["차량이 각 사업장 안으로 진입하여 운반,", "물류 작업에 유리한"],
     title: ["도어투도어", "시스템 적용"],
   },
   {
     no: "03",
-    thumb: webp(img("main/special-img-02-new-03.jpg")),
-    image: webp(img("main/special-img-03-new.jpg")),
+    thumb: webp(img("main/special-img-02-new-03.webp")),
+    image: webp(img("main/special-img-03-new.webp")),
     lines: ["오피스 전호실 발코니 특화,", "라이브오피스 테라스설계, 옥상정원 등"],
     title: ["쾌적하고", "개방감·채광을 고려한 설계"],
   },

@@ -222,7 +222,7 @@ function PromoFilm() {
       className="film"
       controls
       playsInline
-      poster="/skv1/assets/images/sub/media_thum.jpg"
+      poster="/skv1/assets/images/sub/media_thum.webp"
       preload="metadata"
     >
       <source src="/media/promo.mp4?v=20260907" type="video/mp4" />

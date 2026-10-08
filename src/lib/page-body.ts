@@ -22,10 +22,10 @@ export const PAGE_BODY: Record<string, PageBody> = {
         h3: "현장·홍보관 주소",
         head: ["구분", "내용"],
         rows: [
-          { cells: ["현장", "인천광역시 서해구 파랑로 451 (종전 표기: 인천시 서구 파랑로 451)"], src: "IMG:sub/location.jpg 현장 · SITE:홈 오시는길 현장 · CB p29" },
-          { cells: ["홍보관", "인천광역시 서해구 파랑로 451 (청라 SK V1, 105호)"], src: "IMG:sub/location.jpg 홍보관 · SITE:홈 오시는길 홍보관 · CB p29" },
-          { cells: ["셔틀버스", "무료운영 중 (청라 SK V1 ~ 가정역)"], src: "IMG:sub/location.jpg · SITE:홈 오시는길 셔틀 버스" },
-          { cells: ["입주", "즉시 입주 가능"], src: "IMG:sub/location.jpg 원형 표기 '즉시 입주 가능'" },
+          { cells: ["현장", "인천광역시 서해구 파랑로 451 (종전 표기: 인천시 서구 파랑로 451)"], src: "IMG:sub/location.webp 현장 · SITE:홈 오시는길 현장 · CB p29" },
+          { cells: ["홍보관", "인천광역시 서해구 파랑로 451 (청라 SK V1, 105호)"], src: "IMG:sub/location.webp 홍보관 · SITE:홈 오시는길 홍보관 · CB p29" },
+          { cells: ["셔틀버스", "무료운영 중 (청라 SK V1 ~ 가정역)"], src: "IMG:sub/location.webp · SITE:홈 오시는길 셔틀 버스" },
+          { cells: ["입주", "즉시 입주 가능"], src: "IMG:sub/location.webp 원형 표기 '즉시 입주 가능'" },
           { cells: ["분양 문의", "1833-3872"], src: "SITE:홈 오시는길 분양 문의 · SITE_PHONE" },
         ],
       },
@@ -34,15 +34,15 @@ export const PAGE_BODY: Record<string, PageBody> = {
         p: [
           {
             t: "오시는길 위치도에는 청라 SK V1과 함께 청라3동 행정복지센터, 해원고, 청라호반베르디움 4차, 심곡천, 중봉로 교차로, 인천그랜드CC, 남청라IC, SK인천 석유화학이 표시되어 있습니다.",
-            src: "IMG:sub/location.jpg 지도 표기 · CB p29",
+            src: "IMG:sub/location.webp 지도 표기 · CB p29",
           },
           {
             t: "배치도에는 파랑로(20m), 봉수대로501번길(30m)과 함께 차량진입구·차량진출구, 주출입구·부출입구, 공개공지가 표기되어 있습니다.",
-            src: "IMG:sub/place.jpg · CB p10 배치도",
+            src: "IMG:sub/place.webp · CB p10 배치도",
           },
           {
             t: "네이버 지도보기와 다음(카카오맵) 지도보기 버튼으로 길찾기를 이용할 수 있습니다.",
-            src: "IMG:sub/location.jpg 버튼 '네이버 지도보기'·'다음 지도보기' · SITE:오시는길 지도 버튼",
+            src: "IMG:sub/location.webp 버튼 '네이버 지도보기'·'다음 지도보기' · SITE:오시는길 지도 버튼",
           },
         ],
       },
@@ -64,17 +64,17 @@ export const PAGE_BODY: Record<string, PageBody> = {
       {
         h3: "직선형 드라이브인 시스템 (STRAIGHT DRIVE SYSTEM)",
         p: [
-          { t: "3번 회전으로 7층까지 도달하는 직선형 드라이브인 설계입니다.", src: "IMG:sub/drive.jpg · CB p11" },
+          { t: "3번 회전으로 7층까지 도달하는 직선형 드라이브인 설계입니다.", src: "IMG:sub/drive.webp · CB p11" },
           {
             t: "3번 회전만으로 7층까지 도달하여 동선이 편리한 구조로, 물류 효율을 위한 특화설계입니다.",
-            src: "SITE:홈 특화설계 01 · IMG:sub/drive.jpg '물류 효율을 위한 특화설계'",
+            src: "SITE:홈 특화설계 01 · IMG:sub/drive.webp '물류 효율을 위한 특화설계'",
           },
         ],
       },
       {
         h3: "도어투도어 시스템 (DOOR TO DOOR SYSTEM)",
         p: [
-          { t: "각 사업장 안으로 들어가는 도어투도어 시스템이 적용되었습니다.", src: "IMG:sub/drive.jpg · CB p12" },
+          { t: "각 사업장 안으로 들어가는 도어투도어 시스템이 적용되었습니다.", src: "IMG:sub/drive.webp · CB p12" },
           {
             t: "차량이 각 사업장 안으로 진입하여 운반, 물류 작업에 유리한 구조입니다.",
             src: "SITE:홈 특화설계 02",
@@ -111,7 +111,7 @@ export const PAGE_BODY: Record<string, PageBody> = {
         p: [
           {
             t: "개방감과 채광을 고려한 공간 디자인과 전호실 발코니가 있는(지상 2~9층 공장 기준) 뉴트렌드 오피스 특화설계입니다.",
-            src: "IMG:sub/office.jpg 스페셜 디자인 01",
+            src: "IMG:sub/office.webp 스페셜 디자인 01",
           },
         ],
       },
@@ -120,7 +120,7 @@ export const PAGE_BODY: Record<string, PageBody> = {
         p: [
           {
             t: "채광과 환기를 고려하고, 타 세대 대비 서비스 면적 추가 효과가 기대되는 라이브오피스 테라스 설계입니다.",
-            src: "IMG:sub/office.jpg 스페셜 디자인 02 (원문 '채광과 환기를 극대화'의 '극대화'만 '고려'로 완화)",
+            src: "IMG:sub/office.webp 스페셜 디자인 02 (원문 '채광과 환기를 극대화'의 '극대화'만 '고려'로 완화)",
           },
         ],
       },
@@ -129,7 +129,7 @@ export const PAGE_BODY: Record<string, PageBody> = {
         p: [
           {
             t: "사무실 공간과 함께 화장실, 다락 공간으로 설계된 라이브 오피스는 각 호실별 다락을 서비스공간으로 제공합니다.",
-            src: "IMG:sub/office.jpg 스페셜 디자인 03",
+            src: "IMG:sub/office.webp 스페셜 디자인 03",
           },
           {
             t: "오피스 전호실 발코니 특화, 라이브오피스 테라스설계, 옥상정원 등 개방감·채광을 고려한 설계가 적용되었습니다.",
@@ -154,17 +154,17 @@ export const PAGE_BODY: Record<string, PageBody> = {
     blocks: [
       {
         h3: "24시간 통합 감시 시스템",
-        p: [{ t: "24시간 CCTV 운영을 통해 회사보안 및 직원 안전을 강화합니다.", src: "IMG:sub/managesystey.jpg" }],
+        p: [{ t: "24시간 CCTV 운영을 통해 회사보안 및 직원 안전을 강화합니다.", src: "IMG:sub/managesystey.webp" }],
       },
       {
         h3: "에너지 절감 시스템",
-        p: [{ t: "로이복층 유리, 기밀성 높은 창호 설치 등으로 관리비 절감 효과를 기대할 수 있습니다.", src: "IMG:sub/managesystey.jpg" }],
+        p: [{ t: "로이복층 유리, 기밀성 높은 창호 설치 등으로 관리비 절감 효과를 기대할 수 있습니다.", src: "IMG:sub/managesystey.webp" }],
       },
       {
         h3: "첨단 정보통신 설계",
         p: [
-          { t: "광케이블을 이용한 정보통신 인프라를 구축하여 입주 기업의 업무 효율성을 높입니다.", src: "IMG:sub/managesystey.jpg" },
-          { t: "각 항목의 사진은 이해를 돕기 위한 이미지컷입니다.", src: "IMG:sub/managesystey.jpg '이미지컷' 표기" },
+          { t: "광케이블을 이용한 정보통신 인프라를 구축하여 입주 기업의 업무 효율성을 높입니다.", src: "IMG:sub/managesystey.webp" },
+          { t: "각 항목의 사진은 이해를 돕기 위한 이미지컷입니다.", src: "IMG:sub/managesystey.webp '이미지컷' 표기" },
         ],
       },
       {
@@ -186,21 +186,21 @@ export const PAGE_BODY: Record<string, PageBody> = {
       {
         h3: "옥상 하늘정원",
         p: [
-          { t: "하늘 정원에서 힐링을 누리는 입주사 편의시설입니다.", src: "IMG:sub/amenities.jpg '옥상 하늘정원' · CB p13" },
-          { t: "배치도에는 건물 옥상 여러 곳에 옥상정원과 테라스가 표기되어 있습니다.", src: "IMG:sub/place.jpg · CB p10 (옥상정원 5곳·테라스 표기)" },
+          { t: "하늘 정원에서 힐링을 누리는 입주사 편의시설입니다.", src: "IMG:sub/amenities.webp '옥상 하늘정원' · CB p13" },
+          { t: "배치도에는 건물 옥상 여러 곳에 옥상정원과 테라스가 표기되어 있습니다.", src: "IMG:sub/place.webp · CB p10 (옥상정원 5곳·테라스 표기)" },
         ],
       },
       {
         h3: "8층 휴게공간 · 8층 테라스정원",
         p: [
-          { t: "테라스 정원, 휴게공간 등 입주사 편의시설이 마련되어 있습니다.", src: "CB p14 · IMG:sub/amenities.jpg '8층 휴게공간'·'8층 테라스정원'" },
+          { t: "테라스 정원, 휴게공간 등 입주사 편의시설이 마련되어 있습니다.", src: "CB p14 · IMG:sub/amenities.webp '8층 휴게공간'·'8층 테라스정원'" },
           { t: "횡단면도 기준으로 지상 8층 업무형 층에 휴게공간이 계획되어 있습니다.", src: "CB p16 · SITE:부대시설 요약표" },
         ],
       },
       {
         h3: "1층 세미나실 · 지하 1층 구내식당",
         p: [
-          { t: "이미지에는 1층 세미나실 내부 사진이 함께 소개되어 있습니다.", src: "IMG:sub/amenities.jpg '1층 세미나실'" },
+          { t: "이미지에는 1층 세미나실 내부 사진이 함께 소개되어 있습니다.", src: "IMG:sub/amenities.webp '1층 세미나실'" },
           { t: "층별개요 기준으로 지하 1층에는 공장(지식산업센터), 지원시설(구내식당), 주차장이 있습니다.", src: "CB p3 층별개요 지하 1층" },
         ],
       },
@@ -215,7 +215,7 @@ export const PAGE_BODY: Record<string, PageBody> = {
         p: [
           {
             t: "금융기관의 사정으로 대출금액 축소 및 법률 변경·정부정책 변경 또는 계약자의 사정으로 대출한도가 축소되거나 불가할 수 있습니다.",
-            src: "IMG:sub/finance.jpg 혜택.1 주석",
+            src: "IMG:sub/finance.webp 혜택.1 주석",
           },
         ],
       },
@@ -224,11 +224,11 @@ export const PAGE_BODY: Record<string, PageBody> = {
         p: [
           {
             t: "최초로 분양받은 입주자가 「중소기업기본법」 제2조에 따른 중소기업을 영위하는 경우에 한합니다.",
-            src: "IMG:sub/finance.jpg 혜택.2 주석 · CB p15",
+            src: "IMG:sub/finance.webp 혜택.2 주석 · CB p15",
           },
           {
             t: "[지방세특례제한법 제58조의 2] 2028년 12월 31일까지(잔금완납 후 취득시점) 적용되는 한시적 법령이며, 정부정책에 따라 변동될 수 있습니다.",
-            src: "IMG:sub/finance.jpg 혜택.2 주석 (상담자료 2025-09의 2025년 표기 대신 현재 게시 이미지의 2028년 표기 사용)",
+            src: "IMG:sub/finance.webp 혜택.2 주석 (상담자료 2025-09의 2025년 표기 대신 현재 게시 이미지의 2028년 표기 사용)",
           },
         ],
       },
@@ -242,7 +242,7 @@ export const PAGE_BODY: Record<string, PageBody> = {
         p: [
           {
             t: "성장관리권역으로 이전시 혜택(수도권 과밀억제권역에서 이전시)을 안내합니다.",
-            src: "IMG:sub/benefit.jpg 제목",
+            src: "IMG:sub/benefit.webp 제목",
           },
         ],
       },
@@ -252,11 +252,11 @@ export const PAGE_BODY: Record<string, PageBody> = {
         p: [
           {
             t: "[조세특례제한법 제63조] 2028년 12월 31일까지 사업을 개시하는 경우에 적용되는 한시적 법령이며 정책에 따라 변동될 수 있습니다.",
-            src: "IMG:sub/benefit.jpg 혜택.1 주석",
+            src: "IMG:sub/benefit.webp 혜택.1 주석",
           },
           {
             t: "수도권과밀억제권역에 2년 이상 계속하여 공장시설을 갖추고 사업을 한 기업에 한합니다.",
-            src: "IMG:sub/benefit.jpg 혜택.1 주석 · CB p15",
+            src: "IMG:sub/benefit.webp 혜택.1 주석 · CB p15",
           },
         ],
       },
@@ -265,11 +265,11 @@ export const PAGE_BODY: Record<string, PageBody> = {
         p: [
           {
             t: "[지방세특례제한법 제79조] 2027년 12월 31일까지 적용되는 한시적 법령이며 정부정책에 따라 변동될 수 있습니다.",
-            src: "IMG:sub/benefit.jpg 혜택.2 주석 · CB p15",
+            src: "IMG:sub/benefit.webp 혜택.2 주석 · CB p15",
           },
           {
             t: "본점 또는 주사무소에서 사업을 직접하는 법인이 해당 본점 또는 주사무소를 매각, 임차를 종료하고 이전하는 경우에 한합니다.",
-            src: "IMG:sub/benefit.jpg 혜택.2 주석 · CB p15",
+            src: "IMG:sub/benefit.webp 혜택.2 주석 · CB p15",
           },
         ],
       },
@@ -287,7 +287,7 @@ export const PAGE_BODY: Record<string, PageBody> = {
           },
           {
             t: "사무실 공간과 함께 화장실, 다락 공간으로 설계된 라이브 오피스는 각 호실별 다락을 서비스공간으로 제공합니다.",
-            src: "IMG:sub/office.jpg 스페셜 디자인 03",
+            src: "IMG:sub/office.webp 스페셜 디자인 03",
           },
           {
             t: "타입별 평면은 'TYPE - 다락'과 'TYPE - 1층' 두 장면으로 나누어 표시되어 있습니다.",
@@ -299,10 +299,10 @@ export const PAGE_BODY: Record<string, PageBody> = {
         h3: "타입별 면적 (단위: ㎡, 타입 이미지 표기 기준)",
         head: ["타입", "호실", "전용면적", "공용면적", "주차장면적", "계약면적"],
         rows: [
-          { cells: ["A TYPE", "1002호~1017호", "51.41", "16.27", "36.03", "103.71"], src: "IMG:sub/unit_a.jpg" },
-          { cells: ["B TYPE", "1024호~1045호, 1067호~1073호", "49.81", "15.77", "34.91", "100.49"], src: "IMG:sub/unit_b.jpg" },
-          { cells: ["C TYPE", "1052호~1057호, 1060호~1065호", "40.26", "12.74", "28.22", "81.22"], src: "IMG:sub/unit_c.jpg" },
-          { cells: ["D TYPE", "홍보관 확인", "51.11", "16.18", "35.82", "103.11"], src: "IMG:sub/unit_d.jpg (이미지의 호실 표기가 C TYPE과 같아 옮기지 않음)" },
+          { cells: ["A TYPE", "1002호~1017호", "51.41", "16.27", "36.03", "103.71"], src: "IMG:sub/unit_a.webp" },
+          { cells: ["B TYPE", "1024호~1045호, 1067호~1073호", "49.81", "15.77", "34.91", "100.49"], src: "IMG:sub/unit_b.webp" },
+          { cells: ["C TYPE", "1052호~1057호, 1060호~1065호", "40.26", "12.74", "28.22", "81.22"], src: "IMG:sub/unit_c.webp" },
+          { cells: ["D TYPE", "홍보관 확인", "51.11", "16.18", "35.82", "103.11"], src: "IMG:sub/unit_d.webp (이미지의 호실 표기가 C TYPE과 같아 옮기지 않음)" },
         ],
       },
     ],
@@ -318,7 +318,7 @@ export const PAGE_BODY: Record<string, PageBody> = {
           { cells: ["9F", "공장(업무형)", "공장(지식산업센터)", "8,504.17㎡"], src: "CB p27 · CB p3" },
           { cells: ["8F", "공장(업무형)", "공장(지식산업센터)", "9,188.63㎡"], src: "CB p26 · CB p3" },
           { cells: ["3F~7F", "공장(제조형)", "공장(지식산업센터) / DRIVE IN 주차장", "3F 10,624.92㎡ · 4~6F 각 10,648.46㎡ · 7F 10,287.32㎡"], src: "CB p21~25 · CB p3" },
-          { cells: ["2F", "공장(제조형)·분양창고", "공장(지식산업센터 / 부대창고) / DRIVE IN 주차장", "10,688.26㎡"], src: "CB p20 · CB p3 · IMG:sub/floor_2f.jpg" },
+          { cells: ["2F", "공장(제조형)·분양창고", "공장(지식산업센터 / 부대창고) / DRIVE IN 주차장", "10,688.26㎡"], src: "CB p20 · CB p3 · IMG:sub/floor_2f.webp" },
           { cells: ["1F", "공장·지원시설", "공장(지식산업센터) / 지원시설(근생) / 주차장", "10,128.12㎡"], src: "CB p19 · CB p3" },
           { cells: ["B1F", "공장·지원시설", "공장(지식산업센터) / 지원시설(구내식당) / 주차장", "13,536.92㎡"], src: "CB p18 · CB p3" },
           { cells: ["B2F", "분양창고", "공장(부대창고) / 주차장 / 기계실 / 전기실", "13,750.30㎡"], src: "CB p17 · CB p3" },
@@ -328,7 +328,7 @@ export const PAGE_BODY: Record<string, PageBody> = {
         p: [
           {
             t: "층별 평면 이미지에는 호수별 전용면적, 주거공용면적, 공급면적, 기타공용면적, 계약면적이 ㎡ 단위로 표기되어 있습니다.",
-            src: "IMG:sub/floor_2f.jpg 등 표 머리글",
+            src: "IMG:sub/floor_2f.webp 등 표 머리글",
           },
           {
             t: "지상층 소계는 98,724.51㎡, 지하층 소계는 27,287.22㎡로 연면적 합계 126,011.73㎡입니다. 호실은 공장(지식산업센터) 574실, 공장(부대창고) 26실, 지원시설(근린생활시설) 46실입니다.",

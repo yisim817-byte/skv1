@@ -28,7 +28,7 @@ export function HomePage() {
           muted
           loop
           playsInline
-          poster="/media/hero-poster.jpg"
+          poster="/media/hero-poster.webp"
         >
           <source src="/media/hero.mp4" type="video/mp4" />
         </video>

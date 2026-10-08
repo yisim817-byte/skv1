@@ -193,7 +193,7 @@ function NewsBoard() {
           <li key={item.href + item.date}>
             <a href={item.href} target="_blank" rel="noreferrer">
               <p className="press">{item.press}</p>
-              <h4>{item.title}</h4>
+              <h2>{item.title}</h2>
               <p className="info">{item.info}</p>
               <p className="date">{item.date}</p>
             </a>

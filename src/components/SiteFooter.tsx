@@ -25,7 +25,7 @@ export function SiteFooter() {
           <li>근린생활시설 : 46호실</li>
         </ul>
         <p className="footer-info">
-          인천서구 청라동202-2번지 지산, 공장 및 근생 신축사 / 교보자산신탁(주) / 사업자번호 :
+          인천광역시 서해구(구 서구) 청라동 202-2 지산, 공장 및 근생 신축사 / 교보자산신탁(주) / 사업자번호 :
           205-59-00603
         </p>
         <ul className="footer-notes">

@@ -297,7 +297,7 @@ export const PAGE_TITLES: Record<string, string> = {
   "location.html": "청라 SK V1 주소·오시는길 | 서해구 파랑로 451",
   "drive.html": "청라 SK V1 드라이브인 | 제조물류 특화설계",
   "unit.html": "청라 SK V1 라이브오피스 | 타입별 평면",
-  "overview.html": "청라 SK V1 사업개요 | 청라 지식산업센터 646실",
+  "overview.html": "분양 상담자료(2025-09 상담북) 용도별 분양면적표 기준 청라 SK V1은 지하 2층~지상 10층이며, 공장(지식산업센터) 574실 · 공장(부대창고) 26실 · 지원시설(근린생활시설) 46실입니다. 청라 SK V1 사업개요 | 청라 지식산업센터 646실",
 };
 
 export const PAGE_DESCRIPTIONS: Record<string, string> = {

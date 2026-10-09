@@ -318,7 +318,7 @@ export const PAGE_DESCRIPTIONS: Record<string, string> = {
   "media.html": "청라 SK V1 언론보도 — 청라 SK V1 관련 언론 기사 목록과 원문 링크를 모았습니다.",
   "tv.html": "청라 SK V1 홍보영상 — 청라 SK V1 홍보영상을 시청할 수 있습니다.",
   "tv2.html": "청라 SK V1 유튜브영상 — 유튜브에 게시된 청라 SK V1 영상을 안내합니다.",
-  "location.html": "청라 SK V1 오시는길 — 현장·홍보관 위치와 네이버 지도·카카오맵 길찾기, 셔틀버스 운행을 안내합니다. 문의 1833-3872.",
+  "location.html": "청라 SK V1 오시는길 — 현장·홍보관 위치와 네이버 지도·카카오맵 길찾기, 셔틀버스 운행을 안내합니다. 청라하늘대교(구 제3연륙교)는 2026년 1월 5일 개통했습니다. 문의 1833-3872.",
 };
 
 export const SITE_JSON_LD = {

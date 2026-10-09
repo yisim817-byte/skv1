@@ -380,7 +380,7 @@ export const NEWS = news as NewsItem[];
 
 export const MAP_TABS = [
   { id: "00", label: "전체 보기", image: webp(img("main/envi6-map.webp")) },
-  { id: "01", label: "청라하늘대교(청라하늘대교(구 제3연륙교)) 개통", image: webp(img("main/envi6-map-01.webp")) },
+  { id: "01", label: "청라하늘대교(구 제3연륙교) 개통", image: webp(img("main/envi6-map-01.webp")) },
   { id: "02", label: "인천지하철2호선", image: webp(img("main/envi6-map-02.webp")) },
   { id: "03", label: "7호선연장 (예정·개통 시기 미정)", image: webp(img("main/envi6-map-03.webp")) },
   { id: "04", label: "청라국제도시", image: webp(img("main/envi6-map-04.webp")) },
@@ -393,9 +393,9 @@ export const PILLARS = [
     key: "Traffic",
     sign: img("main/envi2-sign.png"),
     bg: webp(img("main/envi2-bg.webp")),
-    title: "청라하늘대교(청라하늘대교(구 제3연륙교)) 개통으로\n쾌속교통",
+    title: "청라하늘대교(구 제3연륙교) 개통으로\n쾌속교통",
     points: [
-      "청라하늘대교(청라하늘대교(구 제3연륙교)) 개통으로, 여의도~인천공항 이동 시간 단축",
+      "청라하늘대교(구 제3연륙교) 개통으로, 여의도~인천공항 이동 시간 단축",
       "지하철 7호선 연장(예정·개통 시기 미정)으로 서울 수도권을 더 가깝게",
     ],
   },

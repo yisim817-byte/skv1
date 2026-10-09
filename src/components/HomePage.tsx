@@ -99,7 +99,7 @@ export function HomePage() {
           </ul>
           <div className="map-stage">
             <Img src={active.image} alt={active.label} />
-            <Img className="map-logo" src="/skv1/assets/images/main/envi6-logo.png" alt="" />
+            <Img className="map-logo" src="/skv1/assets/images/main/envi6-logo.png" alt="청라 SK V1" />
           </div>
         </div>
         <p className="fine center">※ 클릭하시면 해당 영역을 확인하실 수 있습니다.</p>

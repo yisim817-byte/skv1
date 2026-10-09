@@ -121,7 +121,7 @@ export function HomePage() {
           <div className="special-copy">
             <p className="special-lead">물류부터 첨단 제조 비즈니스를 위한</p>
             <h2>특화설계</h2>
-            <Img className="special-thumb" src={feature.thumb} alt="" />
+            <Img className="special-thumb" src={feature.thumb} alt="직선형 드라이브인 차량 램프" />
             <p className="special-en">Special Design {feature.no}</p>
             <p className="special-sub">
               {feature.lines.map((line) => (

@@ -296,7 +296,7 @@
   function start() {
     // v14.0 §3 (2026-10-12): 휴대폰(767px 이하)에서는 자동으로 열지 않는다. 칩만 보이고, 칩을 누르면 기존 팝업을 연다.
     // 타이머·스크롤·터치 리스너를 걸지 않는다. 데스크톱 동작·문구·수치·CONFIG.version은 그대로다.
-    if (isMobile()) { showChip(); return; }
+    if (isMobile()) { if (!hiddenToday() && !isExpired()) showChip(); return; }
     if (getItem("session", KEY_CLOSED)) { showChip(); return; }
     var opened = false;
     function showLater() {

@@ -199,14 +199,14 @@ export const PAGES: PageDef[] = [
     "sub/finance.webp",
     "m/assets/images/sub/m_finance.webp",
   ),
+  // 2026-10-12 세무 확인 전 비노출(대표 방침 2026-07-02): 과밀억제권역 이전 감면(조특법 63조·지특법 79조) 문구·이미지. 파일은 보존.
+  // (이미지 인자 "sub/benefit.webp", "m/assets/images/sub/m_benefit.webp" 제거 — 파일은 public에 그대로 둔다)
   page(
     "benefit.html",
     "이전 혜택",
     "BENEFIT",
     "image",
     ["적용대상 및 추징사항 등 세부조건은 관계법령 및 관할 지자체에 확인 바랍니다."],
-    "sub/benefit.webp",
-    "m/assets/images/sub/m_benefit.webp",
   ),
   page("media.html", "언론보도", "MEDIA", "news", []),
   page("tv.html", "홍보영상", "FILM", "tv", []),
@@ -456,6 +456,7 @@ export const SPECIALS = [
 // AEO/GEO (2026-10-04): 사업개요 페이지 질문형 요약 — OVERVIEW_FACTS(분양 상담자료 2025-09)에 있는 사실만 사용
 export const PAGE_LAST_MODIFIED = "2026-10-04";
 // SEO_PUSH 2026-10-06: 본문을 바꾼 페이지는 dateModified 갱신
+export const PAGE_MODIFIED_20261012 = new Set(["benefit.html"]); // v14.0 §2 세제 비노출
 export const PAGE_MODIFIED_20261009 = new Set(["managesystey.html", "floor.html"]);
 export const PAGE_MODIFIED_20261008 = new Set(["drive.html", "unit.html", "office.html", "amenities.html"]);
 export const PAGE_MODIFIED_20261006 = new Set([
@@ -501,7 +502,7 @@ export function pageJsonLd(slug: string, title: string, description: string) {
       inLanguage: "ko-KR",
       isPartOf: { "@id": `${SITE_ORIGIN}/#website` },
       publisher: ORG_REF,
-      dateModified: PAGE_MODIFIED_20261009.has(slug) ? "2026-10-09" : PAGE_MODIFIED_20261008.has(slug) ? "2026-10-08" : PAGE_MODIFIED_20261006.has(slug) ? "2026-10-06" : PAGE_LAST_MODIFIED,
+      dateModified: PAGE_MODIFIED_20261012.has(slug) ? "2026-10-12" : PAGE_MODIFIED_20261009.has(slug) ? "2026-10-09" : PAGE_MODIFIED_20261008.has(slug) ? "2026-10-08" : PAGE_MODIFIED_20261006.has(slug) ? "2026-10-06" : PAGE_LAST_MODIFIED,
     },
   ];
   if (slug) {

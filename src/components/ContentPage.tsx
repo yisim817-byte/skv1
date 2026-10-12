@@ -326,7 +326,17 @@ function PageBodyText({ slug }: { slug: string }) {
         <div className="page-body-block" key={bi}>
           {block.h3 ? <h3 className="page-body-h3">{block.h3}</h3> : null}
           {block.p?.map((para) => (
-            <p key={para.t}>{para.t}</p>
+            <p key={para.t}>
+              {para.link && para.t.includes(para.link.text) ? (
+                <>
+                  {para.t.slice(0, para.t.indexOf(para.link.text))}
+                  <a href={para.link.href}>{para.link.text}</a>
+                  {para.t.slice(para.t.indexOf(para.link.text) + para.link.text.length)}
+                </>
+              ) : (
+                para.t
+              )}
+            </p>
           ))}
           {block.rows ? (
             <div className="page-body-table">

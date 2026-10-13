@@ -37,15 +37,8 @@ export function SiteFooter() {
             개발사업과 관련된 사항은 지자체 및 개발주체, 관계기관의 사정에 따라 변경 또는 취소될 수
             있으며, 당사와는 무관합니다.
           </li>
-          <li>
-            본 사이트는 SK V1 분양 정보 안내를 위한 홍보 페이지입니다. 공식 정보는 사업주체 공고를 확인하시기 바랍니다. 홈페이지운영 휴메인코리아
-          </li>
-          <li>
-            HUMANE KOREA 현장전략본부 · 정보 기준일: 분양 상담자료(2025-09), 2026.10.04 게시 확인
-          </li>
         </ul>
-        <p className="footer-copy">© 휴메인코리아</p>
-        <p className="footer-op">홈페이지운영 휴메인코리아</p>
+        <p className="footer-copy">© HUMANE KOREA</p>
         <div className="footer-btn-box">
           <a href={TERMS_URL} target="_blank" rel="noreferrer">
             이용약관

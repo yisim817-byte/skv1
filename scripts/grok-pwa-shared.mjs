@@ -423,8 +423,26 @@ function canonicalHref(html) {
   return "";
 }
 
+function metaContent(html, key) {
+  const tags = String(html).match(/<meta\b[^>]*>/gi) || [];
+  const want = String(key).toLowerCase();
+  for (const tag of tags) {
+    const prop = tag.match(/\b(?:property|name)\s*=\s*["']([^"']+)["']/i);
+    if (!prop || prop[1].toLowerCase() !== want) continue;
+    const content = tag.match(/\bcontent\s*=\s*["']([^"']*)["']/i);
+    if (content) return content[1];
+  }
+  return "";
+}
+
 export function injectGrokPwaHead(html, ctx = {}) {
   if (typeof html !== "string") return html;
+  const pageImage = metaContent(html, "og:image");
+  const pageImageAlt = metaContent(html, "og:image:alt");
+  const pageImageW = metaContent(html, "og:image:width");
+  const pageImageH = metaContent(html, "og:image:height");
+  const pageTwImage = metaContent(html, "twitter:image");
+  const pageCard = metaContent(html, "twitter:card");
   const { site, projectId, creator, creatorId, host, cwd } = normalizeHeadContext(ctx);
   const documentTitle = titleFromDocument(html);
   const appName = resolveOgTitle(
@@ -435,9 +453,24 @@ export function injectGrokPwaHead(html, ctx = {}) {
   );
   let next = stripShareMetaTags(html);
   const canon = canonicalHref(next);
-  const ogBlock =
-    grokOgHeadTags({ host, appName, site, documentTitle, cwd }).join("") +
-    (canon ? `<meta property="og:url" content="${escapeHtml(canon)}">` : "");
+  let grok = grokOgHeadTags({ host, appName, site, documentTitle, cwd }).join("");
+  if (pageImage) {
+    grok = grok.replace(
+      /<meta\b[^>]*(?:property|name)=["'](?:og:image(?::\w+)?|twitter:image(?::\w+)?|twitter:card)["'][^>]*>/gi,
+      "",
+    );
+  }
+  const imageTags = pageImage
+    ? [
+        `<meta property="og:image" content="${escapeHtml(pageImage)}">`,
+        pageImageW ? `<meta property="og:image:width" content="${escapeHtml(pageImageW)}">` : "",
+        pageImageH ? `<meta property="og:image:height" content="${escapeHtml(pageImageH)}">` : "",
+        pageImageAlt ? `<meta property="og:image:alt" content="${escapeHtml(pageImageAlt)}">` : "",
+        `<meta name="twitter:card" content="${escapeHtml(pageCard || "summary_large_image")}">`,
+        `<meta name="twitter:image" content="${escapeHtml(pageTwImage || pageImage)}">`,
+      ].join("")
+    : "";
+  const ogBlock = imageTags + grok + (canon ? `<meta property="og:url" content="${escapeHtml(canon)}">` : "");
 
   const missing = grokPwaHeadTags(appName)
     .filter(([key]) => {

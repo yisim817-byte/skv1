@@ -7,7 +7,10 @@ import {
   OVERVIEW_FACTS,
   OVERVIEW_FACTS_NOTE,
   OVERVIEW_QA,
+  PAGE_LEADS,
   PAGE_SUMMARIES,
+  SOURCE_LINE,
+  ASOF_20261009,
   UNITS,
   getPage,
   pageImage,
@@ -53,6 +56,14 @@ export function ContentPage({ slug }: { slug: string }) {
             <span style={VISUALLY_HIDDEN}>청라 SK V1 </span>
             {page.title}
           </h1>
+          {PAGE_LEADS[page.slug] ? (
+            <p style={{ margin: "16px 0 0", maxWidth: 760, fontSize: 16, lineHeight: 1.65, fontWeight: 400 }}>
+              {PAGE_LEADS[page.slug]}
+            </p>
+          ) : null}
+          {ASOF_20261009.has(page.slug) ? (
+            <p style={{ margin: "10px 0 0", maxWidth: 760, fontSize: 13, lineHeight: 1.5 }}>{SOURCE_LINE}</p>
+          ) : null}
         </div>
       </section>
       <div className="crumb-bar">
@@ -76,7 +87,7 @@ export function ContentPage({ slug }: { slug: string }) {
         <p className="sub-en-label">{page.en}</p>
         <p className="sub-ko">{page.title}</p>
         {page.kind === "image" || page.kind === "location" ? (
-          <Picture image={page.image} mobile={page.mobile} alt={page.title} />
+          <Picture image={page.image} mobile={page.mobile} alt={`청라 SK V1 ${page.title} 안내 이미지`} />
         ) : null}
         {page.slug === "overview.html" ? <OverviewFacts /> : null}
         {PAGE_SUMMARIES[page.slug] ? <PageSummaryTable slug={page.slug} /> : null}
@@ -150,7 +161,7 @@ function FloorBoard() {
           </button>
         ))}
       </div>
-      <Picture image={current[1]} mobile={current[2]} alt={`${current[0]} 층별안내`} lazy={index !== 2} />
+      <Picture image={current[1]} mobile={current[2]} alt={`청라 SK V1 ${current[0]} 층 평면`} lazy={index !== 2} />
     </div>
   );
 }
@@ -174,7 +185,7 @@ function UnitBoard() {
           </button>
         ))}
       </div>
-      <Picture image={current[1]} mobile={current[2]} alt={current[0]} lazy={index !== 0} />
+      <Picture image={current[1]} mobile={current[2]} alt={`청라 SK V1 라이브오피스 ${current[0]} 평면`} lazy={index !== 0} />
     </div>
   );
 }
@@ -247,11 +258,11 @@ function MapButtons() {
   return (
     <div className="map-links sub-maps">
       <a className="naver" href={NAVER_MAP} target="_blank" rel="noreferrer">
-        <Img src="/skv1/assets/images/main/naver.png" alt="네이버 지도" />
-        <Img className="hover" src="/skv1/assets/images/main/naver-hover.png" alt="" />
+        <Img src="/skv1/assets/images/main/naver.png" alt="네이버 지도 길찾기" />
+        <Img className="hover" src="/skv1/assets/images/main/naver-hover.png" alt="네이버 지도 버튼 호버" />
       </a>
       <a className="kakao" href={KAKAO_MAP} target="_blank" rel="noreferrer">
-        <Img src="/skv1/assets/images/main/kakao.png" alt="카카오맵" />
+        <Img src="/skv1/assets/images/main/kakao.png" alt="카카오맵 길찾기" />
       </a>
     </div>
   );

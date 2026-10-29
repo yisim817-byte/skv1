@@ -16,7 +16,7 @@ export function SiteFooter() {
             src="/skv1/assets/images/common/footer-logo-white.png"
             alt="청라 SK V1"
           />
-          <Img className="sigong" src="/skv1/assets/images/common/sigong.png" alt="교보자산신탁" />
+          <Img className="sigong" src="/skv1/assets/images/common/sigong.png" alt="교보자산신탁 로고" />
         </div>
         <ul className="footer-address">
           <li>현장 : 인천광역시 서해구 파랑로 451</li>

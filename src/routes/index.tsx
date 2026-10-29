@@ -5,6 +5,7 @@ import { SITE_DESCRIPTION, pageJsonLd } from "@/lib/site-data";
 export const Route = createFileRoute("/")({
   head: () => ({
     links: [{ rel: "canonical", href: "https://www.skv1.site/" }],
+    meta: [{ property: "og:url", content: "https://www.skv1.site/" }],
     scripts: [
       {
         type: "application/ld+json",

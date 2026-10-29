@@ -1,11 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HomePage } from "@/components/HomePage";
-import { SITE_DESCRIPTION, pageJsonLd } from "@/lib/site-data";
+import { SITE_DESCRIPTION, pageJsonLd, pageOgMeta } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     links: [{ rel: "canonical", href: "https://www.skv1.site/" }],
-    meta: [{ property: "og:url", content: "https://www.skv1.site/" }],
+    meta: [
+      { property: "og:url", content: "https://www.skv1.site/" },
+      { name: "twitter:card", content: "summary_large_image" },
+      ...pageOgMeta(""),
+    ],
     scripts: [
       {
         type: "application/ld+json",

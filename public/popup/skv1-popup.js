@@ -12,7 +12,7 @@
 
   var CONFIG = {
     enabled: true,
-    version: "2026-10-07-v1",
+    version: "2026-10-07-v2",
     expires: null, // 예: "2026-12-31"
     delayMs: 3000,
     phoneDisplay: "1833-3872",
@@ -23,6 +23,7 @@
     items: [
       { label: "직접할인", value: "23%", size: "xl", note: "분양가 기준 · 전 호실 적용", noteShort: "분양가 기준 · 전 호실 적용" },
       { label: "계약자 페이백", value: "15%", size: "l", note: "할인된 분양가 기준 · 잔금 완납 후 시행사 지급 · 약정서 체결 조건", noteShort: "할인된 분양가 기준 · 잔금 완납 후 지급 · 약정 조건" },
+      { label: "인테리어 비용 지원", value: "1,000만원", size: "l", note: "계약업체 대상", noteShort: "계약업체 대상" },
       { label: "분양가 일부 대여", value: "운영 중", size: "s", note: "심사 및 담보 조건에 따라 적용 · 상세 조건은 상담 시 안내", noteShort: "심사·담보 조건에 따라 적용 · 상담 시 안내" }
     ],
     notice: "조건은 호실·계약 시점·심사 결과에 따라 달라질 수 있으며 사전 고지 없이 변경될 수 있습니다. 지식산업센터는 관계 법령에 따른 입주 업종·자격 요건이 있습니다.",

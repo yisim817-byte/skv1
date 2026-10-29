@@ -12,6 +12,13 @@ import { Img } from "./Img";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 
+const PILLAR_ALT: Record<string, [string, string, string]> = {
+  Traffic: ["청라하늘대교 개통 교통 배경", "청라하늘대교 쾌속교통 표지", "청라하늘대교 개통 교통 배경"],
+  Business: ["4차산업 비즈니스 거점 배경", "4차산업 비즈니스 거점 표지", "4차산업 비즈니스 거점 배경"],
+  Vision: ["청라 하나드림타운 비전 배경", "청라 미래비전 안내 표지", "청라 하나드림타운 비전 배경"],
+  Infra: ["청라 생활인프라 안내 배경", "청라 생활인프라 안내 표지", "청라 생활인프라 모바일 배경"],
+};
+
 export function HomePage() {
   const [map, setMap] = useState(0);
   const [special, setSpecial] = useState(0);
@@ -45,15 +52,29 @@ export function HomePage() {
             <br />
             청라에서 다시 없을 비즈니스 캠퍼스!
           </p>
+          <p className="hero-sub" style={{ marginTop: 16, fontSize: 15, lineHeight: 1.65, maxWidth: 640 }}>
+            청라 SK V1은 인천 서해구 파랑로 451의 지식산업센터입니다. 지식산업센터 574실·분양창고
+            26실·근린생활시설 46실과 직선형 드라이브인으로 구성됩니다. 호실 조건은 분양
+            상담자료(2025-09)로 확인합니다.
+          </p>
+          <p className="hero-sub" style={{ marginTop: 8, fontSize: 13 }}>
+            자료 기준일 2026-10-09 · 출처 분양 상담자료(2025-09)
+          </p>
         </div>
       </section>
 
-      {PILLARS.map((pillar) => (
+      {PILLARS.map((pillar) => {
+        const alt = PILLAR_ALT[pillar.key] ?? ["청라 SK V1 입지 배경", "청라 SK V1 입지 표지", "청라 SK V1 입지 모바일"];
+        return (
         <section className="pillar" key={pillar.key}>
-          <Img className="pillar-bg pc-only" src={pillar.bg} alt="" />
-          <Img className="pillar-bg mo-only" src={pillar.mobile ?? pillar.bg} alt="" />
+          <Img className="pillar-bg pc-only" src={pillar.bg} alt={alt[0]} />
+          <Img
+            className="pillar-bg mo-only"
+            src={pillar.mobile ?? pillar.bg}
+            alt={pillar.mobile ? alt[2] : alt[0]}
+          />
           <div className="pillar-copy">
-            <Img className="pillar-sign" src={pillar.sign} alt="" />
+            <Img className="pillar-sign" src={pillar.sign} alt={alt[1]} />
             <h2>
               {pillar.title.split("\n").map((line) => (
                 <span key={line}>
@@ -70,7 +91,8 @@ export function HomePage() {
             <p className="fine">※ 상기 이미지는 이해를 돕기 위한 컷입니다.</p>
           </div>
         </section>
-      ))}
+        );
+      })}
 
       <p className="more-wrap">
         <a className="more" href="/pages/environment.html">
@@ -98,7 +120,7 @@ export function HomePage() {
             ))}
           </ul>
           <div className="map-stage">
-            <Img src={active.image} alt={active.label} />
+            <Img src={active.image} alt={active.label.length >= 8 ? active.label : `청라 SK V1 입지 ${active.label}`} />
             <Img className="map-logo" src="/skv1/assets/images/main/envi6-logo.png" alt="청라 SK V1" />
           </div>
         </div>
@@ -207,11 +229,11 @@ export function HomePage() {
           </ul>
           <div className="map-links">
             <a className="naver" href={NAVER_MAP} target="_blank" rel="noreferrer">
-              <Img src="/skv1/assets/images/main/naver.png" alt="네이버 지도" />
-              <Img className="hover" src="/skv1/assets/images/main/naver-hover.png" alt="" />
+              <Img src="/skv1/assets/images/main/naver.png" alt="네이버 지도 길찾기" />
+              <Img className="hover" src="/skv1/assets/images/main/naver-hover.png" alt="네이버 지도 버튼 호버" />
             </a>
             <a className="kakao" href={KAKAO_MAP} target="_blank" rel="noreferrer">
-              <Img src="/skv1/assets/images/main/kakao.png" alt="카카오맵" />
+              <Img src="/skv1/assets/images/main/kakao.png" alt="카카오맵 길찾기" />
             </a>
           </div>
           <a className="more" href="/pages/location.html">

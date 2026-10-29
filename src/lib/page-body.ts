@@ -352,6 +352,11 @@ export const PAGE_FAQ: Record<string, { q: string; a: string; src: string }[]> =
       a: "차량이 각 사업장 안으로 진입하여 운반, 물류 작업에 유리한 구조입니다.",
       src: "page-body.ts drive.html",
     },
+    {
+      q: "청라 SK V1 드라이브인은 어느 건물의 설계인가요?",
+      a: "청라 SK V1 드라이브인은 인천 서해구 파랑로 451 지식산업센터의 직선형 차량 진입 설계입니다.",
+      src: "페이지 정답 문단과 같은 사실",
+    },
   ],
   "unit.html": [
     {
@@ -368,6 +373,11 @@ export const PAGE_FAQ: Record<string, { q: string; a: string; src: string }[]> =
       q: "타입별 평면은 어떻게 표시되나요?",
       a: "타입별 평면은 'TYPE - 다락'과 'TYPE - 1층' 두 장면으로 나누어 표시되어 있습니다.",
       src: "page-body.ts unit.html",
+    },
+    {
+      q: "라이브오피스 타입은 몇 가지인가요?",
+      a: "라이브오피스 평면은 A TYPE·B TYPE·C TYPE·D TYPE 네 가지로 안내됩니다.",
+      src: "unit 탭 표기",
     },
   ],
   "office.html": [
@@ -427,6 +437,20 @@ export const PAGE_FAQ: Record<string, { q: string; a: string; src: string }[]> =
       q: "지하 1층에는 무엇이 있나요?",
       a: "층별개요 기준으로 지하 1층에는 공장(지식산업센터), 지원시설(구내식당), 주차장이 있습니다.",
       src: "page-body.ts amenities.html",
+    },
+  ],
+  "finance.html": [
+    {
+      q: "호실별 분양가는 이 페이지에 있나요?",
+      a: "호실별 분양가 숫자는 이 페이지에 없습니다. 금액은 홍보관 또는 대표번호 1833-3872로 확인합니다.",
+      src: "금융 페이지에 금액표가 없음",
+    },
+  ],
+  "overview.html": [
+    {
+      q: "분양창고는 몇 실인가요?",
+      a: "공장(부대창고)은 26실이고 지식산업센터는 574실이며 근린생활시설은 46실입니다.",
+      src: "사업개요 호실 구성",
     },
   ],
 };

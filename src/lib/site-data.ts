@@ -290,35 +290,35 @@ export const PAGE_SUMMARIES: Record<string, PageSummary> = {
 // SEO_PUSH 2026-10-06 P0-2: 'SKV1' 붙여쓰기 병기 + 홈 title '분양'. 수치·주소는 사업개요 표·푸터에 이미 있는 값만 사용.
 export const SITE_TITLE = "청라 SK V1 | 청라 지식산업센터 분양 안내";
 export const SITE_DESCRIPTION =
-  "청라 SK V1(SKV1)은 인천 서해구 파랑로 451 청라국제도시 지식산업센터입니다. 지식산업센터 574실·분양창고 26실·근린생활시설 46실, 직선형 드라이브인 설계. 분양 문의 1833-3872.";
+  "청라 SK V1(SKV1)은 인천 서해구 파랑로 451 지식산업센터입니다. 574실·분양창고 26실·근린생활시설 46실과 직선형 드라이브인으로 구성됩니다.";
 
 // SEO_PUSH 2026-10-06 P0-3: 하위 페이지 <title> (og:title·H1은 그대로). 없는 페이지는 기존 형식 "청라 SK V1 {제목} | 청라 지식산업센터".
 export const PAGE_TITLES: Record<string, string> = {
   "location.html": "청라 SK V1 주소·오시는길 | 서해구 파랑로 451",
   "drive.html": "청라 SK V1 드라이브인 | 제조물류 특화설계",
   "unit.html": "청라 SK V1 라이브오피스 | 타입별 평면",
-  "overview.html": "분양 상담자료(2025-09 상담북) 용도별 분양면적표 기준 청라 SK V1은 지하 2층~지상 10층이며, 공장(지식산업센터) 574실 · 공장(부대창고) 26실 · 지원시설(근린생활시설) 46실입니다. 청라 SK V1 사업개요 | 청라 지식산업센터 646실",
+  "overview.html": "청라 SK V1 사업개요 | 지하2층~지상10층 646실",
 };
 
 export const PAGE_DESCRIPTIONS: Record<string, string> = {
-  "overview.html": "청라 SK V1 사업개요 — 지식산업센터·분양창고·근린생활시설로 구성된 청라 SK V1의 사업 개요를 이미지로 안내합니다.",
-  "environment.html": "청라 SK V1 입지환경 — 청라하늘대교(구 제3연륙교)는 2026년 1월 5일 개통했습니다. 7호선 연장(예정·개통 시기 미정), 청라의료복합타운, 청라 시티타워, 로봇랜드 등 주변 교통·개발 여건을 참고 보도자료와 함께 안내합니다.",
-  "environment_02.html": "청라 SK V1 개발계획 — 청라하늘대교(구 제3연륙교)는 2026년 1월 5일 개통했습니다. 7호선 연장(예정·개통 시기 미정) 등 청라 주변 개발계획을 안내합니다. 개발사업은 관계기관 사정에 따라 변경 또는 취소될 수 있습니다.",
-  "regional.html": "청라 SK V1 광역 위치도 — 광역 교통망 속 청라 SK V1의 위치를 CG로 안내합니다. 청라하늘대교(구 제3연륙교)는 영종하늘도시와 청라국제도시를 잇는 해상교량으로, 2026년 1월 5일 개통했습니다. 실제 크기 및 거리와 차이가 있습니다.",
+  "overview.html": "청라 SK V1 사업개요 — 인천 서해구 파랑로 451, 지하 2층~지상 10층, 지식산업센터 574실·부대창고 26실·근린생활시설 46실 구성. 상담 1833-3872",
+  "environment.html": "청라 SK V1 입지환경 — 청라하늘대교는 2026년 1월 5일 개통했습니다. 7호선 연장(예정·개통 시기 미정)과 주변 개발 여건을 참고 보도로 안내합니다.",
+  "environment_02.html": "청라 SK V1 개발계획 — 청라하늘대교는 2026년 1월 5일 개통했습니다. 7호선 연장(예정·개통 시기 미정) 등 주변 계획은 관계기관 사정에 따라 바뀔 수 있습니다.",
+  "regional.html": "청라 SK V1 광역 위치도 — 청라하늘대교는 영종과 청라를 잇고 2026년 1월 5일 개통했습니다. CG는 실제 거리와 다를 수 있습니다.",
   "drive.html": "청라 SK V1 제조물류 특화 — 직선형 드라이브인 시스템과 도어투도어 시스템 등 제조·물류 특화설계를 CG와 현장 실사 사진으로 안내합니다.",
   "office.html": "청라 SK V1 오피스업무 특화 — 발코니 특화 등 오피스 업무공간 특화설계를 CG와 현장 실사 사진으로 안내합니다.",
   "managesystey.html": "청라 SK V1 시스템 특화 — 청라 SK V1의 시스템 특화설계를 CG와 현장 실사 사진으로 안내합니다.",
   "amenities.html": "청라 SK V1 부대시설 특화 — 테라스, 옥상정원 등 부대시설 특화설계를 CG와 현장 실사 사진으로 안내합니다.",
-  "place.html": "청라 SK V1 배치도 — 청라 SK V1의 건물 배치를 이미지로 안내합니다.",
+  "place.html": "청라 SK V1 배치도 — 인천 서해구 파랑로 451 지식산업센터의 건물 배치 이미지입니다. 실제와 다를 수 있습니다.",
   "floorplan.html": "청라 SK V1 횡단면도 — 층별 구성을 보여주는 횡단면 일러스트(CG)를 안내합니다. 실제와 다를 수 있습니다.",
   "floor.html": "청라 SK V1 층별안내 — 지하 2층부터 지상 10층까지 층별 평면을 안내합니다. 면적·호실은 홍보관에서 확인하시기 바랍니다.",
   "unit.html": "청라 SK V1 라이브오피스 — A·B·C·D 타입별 라이브오피스 평면 이미지를 안내합니다. 실제와 차이가 있을 수 있으니 현장에서 확인하시기 바랍니다.",
   "finance.html": "청라 SK V1 금융&세제 혜택 — 금융·세제 관련 안내입니다. 적용대상 및 추징사항 등 세부조건은 관계법령 및 관할 지자체에 확인하시기 바랍니다.",
   "benefit.html": "청라 SK V1 이전 혜택 — 기업 이전 관련 혜택 안내입니다. 적용대상 및 추징사항 등 세부조건은 관계법령 및 관할 지자체에 확인하시기 바랍니다.",
   "media.html": "청라 SK V1 언론보도 — 청라 SK V1 관련 언론 기사 목록과 원문 링크를 모았습니다.",
-  "tv.html": "청라 SK V1 홍보영상 — 청라 SK V1 홍보영상을 시청할 수 있습니다.",
-  "tv2.html": "청라 SK V1 유튜브영상 — 유튜브에 게시된 청라 SK V1 영상을 안내합니다.",
-  "location.html": "청라 SK V1 오시는길 — 현장·홍보관 위치와 네이버 지도·카카오맵 길찾기, 셔틀버스 운행을 안내합니다. 청라하늘대교(구 제3연륙교)는 2026년 1월 5일 개통했습니다. 문의 1833-3872.",
+  "tv.html": "청라 SK V1 홍보영상 — 인천 서해구 청라국제도시 지식산업센터 청라 SK V1 홍보영상을 이 페이지에서 시청합니다.",
+  "tv2.html": "청라 SK V1 유튜브영상 — 유튜브에 올라온 청라 SK V1 지식산업센터 영상을 모아서 안내합니다.",
+  "location.html": "청라 SK V1 오시는길 — 인천 서해구 파랑로 451 현장과 네이버·카카오 길찾기. 청라하늘대교는 2026년 1월 5일 개통했습니다.",
 };
 
 export const SITE_JSON_LD = {
@@ -455,6 +455,37 @@ export const SPECIALS = [
 
 // AEO/GEO (2026-10-04): 사업개요 페이지 질문형 요약 — OVERVIEW_FACTS(분양 상담자료 2025-09)에 있는 사실만 사용
 export const PAGE_LAST_MODIFIED = "2026-10-04";
+// 화면에 적는 자료 기준일(개요 문답에 이미 있는 2026-10-09)과 WebPage dateModified를 맞춘다.
+export const ASOF_20261009 = new Set([
+  "",
+  "overview.html",
+  "location.html",
+  "finance.html",
+  "benefit.html",
+  "drive.html",
+  "office.html",
+  "unit.html",
+  "floor.html",
+  "environment.html",
+  "environment_02.html",
+]);
+export const SOURCE_LINE = "자료 기준일 2026-10-09 · 출처 분양 상담자료(2025-09)";
+export const PAGE_LEADS: Record<string, string> = {
+  "overview.html":
+    "청라 SK V1은 인천 서해구 파랑로 451의 지식산업센터입니다. 지하 2층~지상 10층에 지식산업센터 574실·분양창고 26실·근린생활시설 46실이 있습니다. 호실별 면적과 분양조건은 분양 상담자료(2025-09)로 확인합니다.",
+  "location.html":
+    "청라 SK V1 현장은 인천광역시 서해구 파랑로 451(청라동 202-2)입니다. 지식산업센터·분양창고·근린생활시설이 있는 사업지입니다. 청라하늘대교는 2026년 1월 5일 개통했고 방문 전에는 운행 안내를 확인합니다.",
+  "environment.html":
+    "청라 SK V1은 인천 서해구 파랑로 451 지식산업센터입니다. 청라하늘대교는 2026년 1월 5일 개통했고 7호선 연장은 예정이며 개통 시기는 미정입니다. 주변 개발 일정은 관계기관 자료를 확인합니다.",
+  "finance.html":
+    "청라 SK V1 금융·세제 안내는 인천 서해구 파랑로 451 지식산업센터의 조건을 설명합니다. 호실별 분양가 숫자는 이 페이지에 없습니다. 적용 요건은 관계 법령과 관할 지자체 기준으로 확인합니다.",
+  "drive.html":
+    "청라 SK V1 드라이브인은 인천 서해구 파랑로 451 지식산업센터의 직선형 차량 진입 설계입니다. 3번 회전으로 7층까지 도달하는 구조로 안내됩니다. 차량 제원과 실제 동선은 현장에서 확인합니다.",
+  "office.html":
+    "청라 SK V1 업무형 오피스는 인천 서해구 파랑로 451 지식산업센터의 오피스 업무공간입니다. 전호실 발코니 특화와 채광을 고려한 설계로 안내됩니다. 호실 조건은 현장에서 확인합니다.",
+  "unit.html":
+    "청라 SK V1 라이브오피스는 인천 서해구 파랑로 451 지식산업센터의 지상 10층 업무공간입니다. A·B·C·D 타입 평면으로 안내됩니다. 면적과 잔여 여부는 현장에서 확인합니다.",
+};
 // SEO_PUSH 2026-10-06: 본문을 바꾼 페이지는 dateModified 갱신
 export const PAGE_MODIFIED_20261012 = new Set(["benefit.html"]); // v14.0 §2 세제 비노출
 export const PAGE_MODIFIED_20261009 = new Set(["managesystey.html", "floor.html"]);
@@ -502,7 +533,7 @@ export function pageJsonLd(slug: string, title: string, description: string) {
       inLanguage: "ko-KR",
       isPartOf: { "@id": `${SITE_ORIGIN}/#website` },
       publisher: ORG_REF,
-      dateModified: PAGE_MODIFIED_20261012.has(slug) ? "2026-10-12" : PAGE_MODIFIED_20261009.has(slug) ? "2026-10-09" : PAGE_MODIFIED_20261008.has(slug) ? "2026-10-08" : PAGE_MODIFIED_20261006.has(slug) ? "2026-10-06" : PAGE_LAST_MODIFIED,
+      dateModified: ASOF_20261009.has(slug) ? "2026-10-09" : PAGE_MODIFIED_20261012.has(slug) ? "2026-10-12" : PAGE_MODIFIED_20261009.has(slug) ? "2026-10-09" : PAGE_MODIFIED_20261008.has(slug) ? "2026-10-08" : PAGE_MODIFIED_20261006.has(slug) ? "2026-10-06" : PAGE_LAST_MODIFIED,
     },
   ];
   if (slug) {

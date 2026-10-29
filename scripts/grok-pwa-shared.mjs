@@ -412,6 +412,17 @@ export function normalizeHeadContext(ctx = {}) {
   };
 }
 
+function canonicalHref(html) {
+  const tags = String(html).match(/<link\b[^>]*>/gi) || [];
+  for (const tag of tags) {
+    const rel = tag.match(/\brel\s*=\s*["']([^"']+)["']/i);
+    if (!rel || !/\bcanonical\b/i.test(rel[1])) continue;
+    const href = tag.match(/\bhref\s*=\s*["']([^"']+)["']/i);
+    if (href) return href[1];
+  }
+  return "";
+}
+
 export function injectGrokPwaHead(html, ctx = {}) {
   if (typeof html !== "string") return html;
   const { site, projectId, creator, creatorId, host, cwd } = normalizeHeadContext(ctx);
@@ -423,6 +434,10 @@ export function injectGrokPwaHead(html, ctx = {}) {
     documentTitle,
   );
   let next = stripShareMetaTags(html);
+  const canon = canonicalHref(next);
+  const ogBlock =
+    grokOgHeadTags({ host, appName, site, documentTitle, cwd }).join("") +
+    (canon ? `<meta property="og:url" content="${escapeHtml(canon)}">` : "");
 
   const missing = grokPwaHeadTags(appName)
     .filter(([key]) => {
@@ -432,10 +447,7 @@ export function injectGrokPwaHead(html, ctx = {}) {
     })
     .map(([, tag]) => tag);
 
-  next = insertAfterHeadOpen(
-    next,
-    grokOgHeadTags({ host, appName, site, documentTitle, cwd }).join(""),
-  );
+  next = insertAfterHeadOpen(next, ogBlock);
 
   if (projectId && !next.includes('name="grok-project-id"')) {
     missing.push(`<meta name="grok-project-id" content="${escapeHtml(projectId)}">`);

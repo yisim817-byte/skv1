@@ -494,10 +494,5 @@ export const PAGE_FAQ: Record<string, { q: string; a: string; src: string }[]> =
       a: "스타필드 청라(예정), 서울아산청라병원(예정)은 네이버지도 정보 기준으로 오픈 시기는 변경될 수 있으며 당사와는 무관합니다.",
       src: "environment.html 각주",
     },
-    {
-      q: "서울아산청라병원 개원은 어떻게 안내되나요?",
-      a: "청라의료복합타운 관련 내용은 [서울아산병원 보도자료(21.10.15)]를 참고한 것입니다.",
-      src: "environment.html 각주",
-    },
   ],
 };

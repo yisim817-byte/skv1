@@ -39,6 +39,9 @@ export function SiteFooter() {
           </li>
         </ul>
         <p className="footer-copy">© HUMANE KOREA</p>
+        <p className="footer-info">
+          상세 검토 자료: <a href="https://www.xn--oi2bo8o9lax7cl5fvuh0tfgyk.store/">청라지식산업센터.store</a>
+        </p>
         <div className="footer-btn-box">
           <a href={TERMS_URL} target="_blank" rel="noreferrer">
             이용약관

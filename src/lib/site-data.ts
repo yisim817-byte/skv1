@@ -524,6 +524,29 @@ export const PAGE_MODIFIED_20261006 = new Set([
   "benefit.html",
 ]);
 
+// R59에서 PAGE_LASTMOD로 대체. 값은 운영 sitemap lastmod 그대로. 화면 자료 기준일 문구는 바꾸지 않는다.
+export const PAGE_LASTMOD: Record<string, string> = {
+  "": "2026-10-06",
+  "overview.html": "2026-11-05",
+  "location.html": "2026-11-05",
+  "office.html": "2026-10-08",
+  "unit.html": "2026-10-08",
+  "floor.html": "2026-10-09",
+  "floorplan.html": "2026-10-04",
+  "finance.html": "2026-10-06",
+  "benefit.html": "2026-10-12",
+  "amenities.html": "2026-10-08",
+  "drive.html": "2026-10-08",
+  "environment.html": "2026-11-05",
+  "environment_02.html": "2026-10-04",
+  "managesystey.html": "2026-10-09",
+  "media.html": "2026-10-04",
+  "place.html": "2026-10-04",
+  "regional.html": "2026-10-04",
+  "tv.html": "2026-10-04",
+  "tv2.html": "2026-10-04",
+};
+
 export const OVERVIEW_QA: [string, string][] = [
   [
     "청라 SK V1은 어디에 있나요?",
@@ -553,7 +576,7 @@ export function pageJsonLd(slug: string, title: string, description: string) {
       inLanguage: "ko-KR",
       isPartOf: { "@id": `${SITE_ORIGIN}/#website` },
       publisher: ORG_REF,
-      dateModified: ASOF_20261009.has(slug) ? "2026-10-09" : PAGE_MODIFIED_20261012.has(slug) ? "2026-10-12" : PAGE_MODIFIED_20261009.has(slug) ? "2026-10-09" : PAGE_MODIFIED_20261008.has(slug) ? "2026-10-08" : PAGE_MODIFIED_20261006.has(slug) ? "2026-10-06" : PAGE_LAST_MODIFIED,
+      dateModified: PAGE_LASTMOD[slug],
     },
   ];
   if (slug) {

@@ -536,7 +536,7 @@ export const PAGE_LASTMOD: Record<string, string> = {
   "finance.html": "2026-10-06",
   "benefit.html": "2026-10-12",
   "amenities.html": "2026-10-08",
-  "drive.html": "2026-10-08",
+  "drive.html": "2026-11-05",
   "environment.html": "2026-11-05",
   "environment_02.html": "2026-10-04",
   "managesystey.html": "2026-10-09",

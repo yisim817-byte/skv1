@@ -337,6 +337,11 @@ export const LOCATION_FAQ: { q: string; a: string; src: string }[] = [
     a: "인천광역시 서해구 파랑로 451 (청라 SK V1, 105호)",
     src: "location.html 홍보관 칸 · 홈 오시는길 홍보관",
   },
+  {
+    q: "청라 SK V1 입주 시기는 언제인가요?",
+    a: "입주 즉시 입주 가능",
+    src: "location.html 입주 칸",
+  },
 ];
 
 // 2026-10-08: 해당 페이지 page-body 문장만. 새 숫자 없음. 화면 FAQ와 JSON-LD가 같은 문자열.
@@ -361,6 +366,26 @@ export const PAGE_FAQ: Record<string, { q: string; a: string; src: string }[]> =
       q: "청라 SK V1 드라이브인은 어느 건물의 설계인가요?",
       a: "청라 SK V1 드라이브인은 인천 서해구 파랑로 451 지식산업센터의 직선형 차량 진입 설계입니다.",
       src: "페이지 정답 문단과 같은 사실",
+    },
+    {
+      q: "청라 SK V1 드라이브인 몇 층까지 차량 진입 가능한가요?",
+      a: "3번 회전으로 7층까지 도달하는 직선형 드라이브인 설계입니다.",
+      src: "page-body.ts drive.html",
+    },
+    {
+      q: "청라 SK V1 층고는 얼마인가요?",
+      a: "제조형 공장 층고 지상 2~7층 5,600mm (천정마감 없음)",
+      src: "page-body.ts drive.html",
+    },
+    {
+      q: "청라 SK V1 바닥하중은 얼마인가요?",
+      a: "바닥하중은 현장에서 확인하시기 바랍니다.",
+      src: "page-body.ts drive.html",
+    },
+    {
+      q: "청라 SK V1 호실 출입문 크기는 얼마인가요?",
+      a: "호실 출입문 지하 1층~지상 7층 제조형 호실 약 폭 2.5m × 높이 3.0m (위치에 따라 차량 출입 제한 가능)",
+      src: "page-body.ts drive.html",
     },
   ],
   "unit.html": [
@@ -481,6 +506,11 @@ export const PAGE_FAQ: Record<string, { q: string; a: string; src: string }[]> =
       q: "청라 SK V1 분양 상담은 어디서 확인하나요?",
       a: "호실별 면적과 분양조건은 분양 상담자료(2025-09)로 확인합니다.",
       src: "overview.html 본문 첫 문단",
+    },
+    {
+      q: "청라 SK V1 층별 용도는 무엇인가요?",
+      a: "층별 용도 지하 2층 부대창고·주차장·기계실·전기실 / 지하 1층~지상 7층 공장(지식산업센터)·지원시설, 지상 2~7층 드라이브인 주차장 / 지상 8~10층 공장(지식산업센터: 8~9층 업무형 오피스, 10층 라이브오피스)",
+      src: "overview.html 층별 용도 칸",
     },
   ],
   "environment.html": [

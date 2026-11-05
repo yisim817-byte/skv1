@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { ContentPage } from "@/components/ContentPage";
-import { PAGE_DESCRIPTIONS, PAGE_TITLES, SITE_DESCRIPTION, getPage, pageJsonLd } from "@/lib/site-data";
+import { PAGE_DESCRIPTIONS, PAGE_TITLES, SITE_DESCRIPTION, getPage, pageJsonLd, pageOgMeta } from "@/lib/site-data";
 
 export const Route = createFileRoute("/pages/$")({
   beforeLoad: ({ params }) => {
@@ -30,9 +30,10 @@ export const Route = createFileRoute("/pages/$")({
         { property: "og:title", content: shareTitle },
         { property: "og:description", content: description },
         { property: "og:url", content: url },
-        { name: "twitter:card", content: "summary" },
+        { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: shareTitle },
         { name: "twitter:description", content: description },
+        ...pageOgMeta(slug),
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: page

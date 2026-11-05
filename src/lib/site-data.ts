@@ -292,6 +292,26 @@ export const SITE_TITLE = "청라 SK V1 | 청라 지식산업센터 분양 안�
 export const SITE_DESCRIPTION =
   "청라 SK V1(SKV1)은 인천 서해구 파랑로 451 지식산업센터입니다. 574실·분양창고 26실·근린생활시설 46실과 직선형 드라이브인으로 구성됩니다.";
 
+const OG_COVER = { src: "https://www.skv1.site/og/cover.jpg", alt: "청라 SK V1 건물 외관" };
+const OG_BY_SLUG: Record<string, { src: string; alt: string }> = {
+  "office.html": { src: "https://www.skv1.site/og/office.jpg", alt: "청라 SK V1 업무형 오피스 호실 내부" },
+  "drive.html": { src: "https://www.skv1.site/og/drive.jpg", alt: "청라 SK V1 직선형 드라이브인 내부" },
+  "floor.html": { src: "https://www.skv1.site/og/floor.jpg", alt: "청라 SK V1 1층 평면" },
+  "floorplan.html": { src: "https://www.skv1.site/og/section.jpg", alt: "청라 SK V1 횡단면 도면" },
+};
+
+export function pageOgMeta(slug = "") {
+  const og = OG_BY_SLUG[slug] ?? OG_COVER;
+  return [
+    { property: "og:image", content: og.src },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
+    { property: "og:image:alt", content: og.alt },
+    { name: "twitter:image", content: og.src },
+    { name: "twitter:image:alt", content: og.alt },
+  ];
+}
+
 // SEO_PUSH 2026-10-06 P0-3: 하위 페이지 <title> (og:title·H1은 그대로). 없는 페이지는 기존 형식 "청라 SK V1 {제목} | 청라 지식산업센터".
 export const PAGE_TITLES: Record<string, string> = {
   "location.html": "청라 SK V1 주소·오시는길 | 서해구 파랑로 451",

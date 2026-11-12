@@ -15,7 +15,7 @@ import {
   getPage,
   pageImage,
 } from "@/lib/site-data";
-import { LOCATION_FAQ, PAGE_BODY, PAGE_FAQ } from "@/lib/page-body";
+import { LOCATION_FAQ, PAGE_BODY, PAGE_CAPTIONS, PAGE_FAQ } from "@/lib/page-body";
 import { Img, imgDims } from "./Img";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
@@ -96,6 +96,8 @@ export function ContentPage({ slug }: { slug: string }) {
         {page.kind === "news" ? <NewsBoard /> : null}
         {page.kind === "tv" ? <PromoFilm /> : null}
         {page.kind === "youtube" ? <YoutubeFilm /> : null}
+        {/* R103 D10: 이미지·영상이 보여 주는 내용을 글자로 옮긴 캡션 */}
+        {PAGE_CAPTIONS[page.slug] ? <p className="overview-facts-note">{PAGE_CAPTIONS[page.slug]}</p> : null}
         {page.kind === "location" ? <MapButtons /> : null}
         {PAGE_BODY[page.slug] ? <PageBodyText slug={page.slug} /> : null}
         {page.slug === "location.html" ? <LocationFaq /> : null}
@@ -258,11 +260,11 @@ function MapButtons() {
   return (
     <div className="map-links sub-maps">
       <a className="naver" href={NAVER_MAP} target="_blank" rel="noreferrer">
-        <Img src="/skv1/assets/images/main/naver.png" alt="네이버 지도 길찾기" />
-        <Img className="hover" src="/skv1/assets/images/main/naver-hover.png" alt="네이버 지도 버튼 호버" />
+        <Img src="/skv1/assets/images/main/naver.png" alt="청라 SK V1 네이버 지도 길찾기" />
+        <Img className="hover" src="/skv1/assets/images/main/naver-hover.png" alt="청라 SK V1 네이버 지도 버튼 호버" />
       </a>
       <a className="kakao" href={KAKAO_MAP} target="_blank" rel="noreferrer">
-        <Img src="/skv1/assets/images/main/kakao.png" alt="카카오맵 길찾기" />
+        <Img src="/skv1/assets/images/main/kakao.png" alt="청라 SK V1 카카오맵 길찾기" />
       </a>
     </div>
   );

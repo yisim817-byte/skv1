@@ -1,5 +1,5 @@
 import news from "./news.json";
-import { LOCATION_FAQ, PAGE_FAQ } from "./page-body";
+import { HOME_QA, LOCATION_FAQ, PAGE_FAQ } from "./page-body";
 
 export const SITE_PHONE = "1833-3872";
 export const SITE_PHONE_TEL = "18333872";
@@ -341,19 +341,42 @@ export const PAGE_DESCRIPTIONS: Record<string, string> = {
   "location.html": "청라 SK V1 오시는길 — 인천 서해구 파랑로 451 현장과 네이버·카카오 길찾기. 청라하늘대교는 2026년 1월 5일 개통했습니다.",
 };
 
+// R103 D6·D17: K1·K2가 같은 건물을 같은 @id로 가리킨다. 주소는 화면 표기 「인천광역시 서해구 파랑로 451」을 나눠 담는다(우편번호는 화면에 없어 넣지 않음).
+export const BUILDING_ID = `${SITE_ORIGIN}/#building`;
+export const BUILDING_ADDRESS = {
+  "@type": "PostalAddress",
+  streetAddress: "파랑로 451",
+  addressLocality: "서해구",
+  addressRegion: "인천광역시",
+  addressCountry: "KR",
+};
+
 export const SITE_JSON_LD = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": `${SITE_ORIGIN}/#website`,
-  name: SITE_NAME,
-  url: `${SITE_ORIGIN}/`,
-  inLanguage: "ko-KR",
-  publisher: {
-    "@type": "Organization",
-    "@id": "https://www.humanekorea.co.kr/#organization",
-    name: "휴메인코리아",
-    telephone: SITE_PHONE,
-  },
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_ORIGIN}/#website`,
+      name: SITE_NAME,
+      // R103 D5: 화면·설명문에 쓰인 표기만(설명문 「청라 SK V1(SKV1)」, 홈 제목 「SK V1」)
+      alternateName: ["SKV1", "SK V1"],
+      url: `${SITE_ORIGIN}/`,
+      inLanguage: "ko-KR",
+      about: { "@id": BUILDING_ID },
+      publisher: {
+        "@type": "Organization",
+        "@id": "https://www.humanekorea.co.kr/#organization",
+        name: "휴메인코리아",
+        telephone: SITE_PHONE,
+      },
+    },
+    {
+      "@type": "Place",
+      "@id": BUILDING_ID,
+      name: SITE_NAME,
+      address: BUILDING_ADDRESS,
+    },
+  ],
 };
 
 export function getPage(slug: string) {
@@ -524,11 +547,12 @@ export const PAGE_MODIFIED_20261006 = new Set([
   "benefit.html",
 ]);
 
+// R103: 본문(main)을 바꾼 6페이지(홈·overview·location·place·regional·tv)만 2026-11-12. 공용 푸터 로고 alt만 바뀐 페이지는 날짜를 두지 않는다.
 // R59에서 PAGE_LASTMOD로 대체. 값은 운영 sitemap lastmod 그대로. 화면 자료 기준일 문구는 바꾸지 않는다.
 export const PAGE_LASTMOD: Record<string, string> = {
-  "": "2026-10-06",
-  "overview.html": "2026-11-05",
-  "location.html": "2026-11-05",
+  "": "2026-11-12",
+  "overview.html": "2026-11-12",
+  "location.html": "2026-11-12",
   "office.html": "2026-10-08",
   "unit.html": "2026-10-08",
   "floor.html": "2026-10-09",
@@ -541,9 +565,9 @@ export const PAGE_LASTMOD: Record<string, string> = {
   "environment_02.html": "2026-10-04",
   "managesystey.html": "2026-10-09",
   "media.html": "2026-10-04",
-  "place.html": "2026-10-04",
-  "regional.html": "2026-10-04",
-  "tv.html": "2026-10-04",
+  "place.html": "2026-11-12",
+  "regional.html": "2026-11-12",
+  "tv.html": "2026-11-12",
   "tv2.html": "2026-10-04",
 };
 
@@ -554,7 +578,8 @@ export const OVERVIEW_QA: [string, string][] = [
   ],
   [
     "청라 SK V1의 건물 규모는 어떻게 되나요?",
-    "지하 2층~지상 10층 철근콘크리트구조이며, 대지면적 16,159.1㎡, 연면적 126,011.73㎡입니다. 주차는 895대(전기차 22대 제외)로 안내되어 있습니다.",
+    // R103 D9: 같은 페이지 기존 문장만 이어 붙임(소개 문단 첫 문장 + 기존 답 + 자료 기준일 줄). 근거 R103_PROVENANCE.csv
+    "청라 SK V1은 인천 서해구 파랑로 451의 지식산업센터입니다. 지하 2층~지상 10층 철근콘크리트구조이며, 대지면적 16,159.1㎡, 연면적 126,011.73㎡입니다. 주차는 895대(전기차 22대 제외)로 안내되어 있습니다. 자료 기준일 2026-10-09 · 출처 분양 상담자료(2025-09)",
   ],
   [
     "청라 SK V1의 호실은 어떻게 구성되나요?",
@@ -577,8 +602,30 @@ export function pageJsonLd(slug: string, title: string, description: string) {
       isPartOf: { "@id": `${SITE_ORIGIN}/#website` },
       publisher: ORG_REF,
       dateModified: PAGE_LASTMOD[slug],
+      // R103 D6: 모든 페이지가 같은 건물 노드를 가리킨다.
+      about: { "@id": BUILDING_ID },
     },
   ];
+  // R103 D13: 화면에 문답이 있는 페이지는 FAQPage 1개를 WebPage.mainEntity로 연결한다(orphan 0).
+  const faqItems: [string, string][] = [
+    ...(slug === "overview.html" ? OVERVIEW_QA : []),
+    ...(PAGE_FAQ[slug] ?? []).map(({ q, a }) => [q, a] as [string, string]),
+    ...(slug === "location.html" ? LOCATION_FAQ.map(({ q, a }) => [q, a] as [string, string]) : []),
+    ...(slug === "" ? HOME_QA.map(({ q, a }) => [q, a] as [string, string]) : []),
+  ];
+  if (faqItems.length) {
+    (graph[0] as Record<string, unknown>).mainEntity = { "@id": `${url}#faq` };
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      isPartOf: { "@id": `${url}#webpage` },
+      mainEntity: faqItems.map(([q, a]) => ({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: { "@type": "Answer", text: a },
+      })),
+    });
+  }
   if (slug) {
     graph.push({
       "@type": "BreadcrumbList",
@@ -590,57 +637,7 @@ export function pageJsonLd(slug: string, title: string, description: string) {
     });
     (graph[0] as Record<string, unknown>).breadcrumb = { "@id": `${url}#breadcrumb` };
   }
-  if (slug === "overview.html") {
-    graph.push({
-      "@type": "FAQPage",
-      "@id": `${url}#faq`,
-      isPartOf: { "@id": `${url}#webpage` },
-      mainEntity: OVERVIEW_QA.map(([q, a]) => ({
-        "@type": "Question",
-        name: q,
-        acceptedAnswer: { "@type": "Answer", text: a },
-      })),
-    });
-  }
-  if (PAGE_FAQ[slug]) {
-    graph.push({
-      "@type": "FAQPage",
-      "@id": `${url}#faq`,
-      isPartOf: { "@id": `${url}#webpage` },
-      mainEntity: PAGE_FAQ[slug].map(({ q, a }) => ({
-        "@type": "Question",
-        name: q,
-        acceptedAnswer: { "@type": "Answer", text: a },
-      })),
-    });
-  }
-  if (slug === "location.html") {
-    // P0-5: 화면에 보이는 FAQ 2문항과 같은 문자열
-    graph.push({
-      "@type": "FAQPage",
-      "@id": `${url}#faq`,
-      isPartOf: { "@id": `${url}#webpage` },
-      mainEntity: LOCATION_FAQ.map(({ q, a }) => ({
-        "@type": "Question",
-        name: q,
-        acceptedAnswer: { "@type": "Answer", text: a },
-      })),
-    });
-    // P1-7: 본문 주소 표와 같은 값만 사용 (우편번호 등 화면에 없는 값은 넣지 않음)
-    graph.push({
-      "@type": "Place",
-      "@id": `${SITE_ORIGIN}/#place`,
-      name: SITE_NAME,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "파랑로 451",
-        addressLocality: "서해구",
-        addressRegion: "인천광역시",
-        addressCountry: "KR",
-      },
-      telephone: SITE_PHONE,
-    });
-    (graph[0] as Record<string, unknown>).about = { "@id": `${SITE_ORIGIN}/#place` };
-  }
+  // R103 D13: 같은 @id의 FAQPage가 2개(overview: OVERVIEW_QA·PAGE_FAQ) 나가던 것을 위에서 1개로 합쳤다.
+  // R103 D6: location 전용 Place(#place)는 사이트 공통 건물 노드(#building)로 바꿨다.
   return { "@context": "https://schema.org", "@graph": graph };
 }

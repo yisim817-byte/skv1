@@ -443,6 +443,8 @@ export function injectGrokPwaHead(html, ctx = {}) {
   const pageImageH = metaContent(html, "og:image:height");
   const pageTwImage = metaContent(html, "twitter:image");
   const pageCard = metaContent(html, "twitter:card");
+  // R103 D19: 페이지가 직접 넣은 og:site_name은 공유 태그를 정리한 뒤에도 그대로 남긴다(WebSite.name과 같은 값).
+  const pageSiteName = metaContent(html, "og:site_name");
   const { site, projectId, creator, creatorId, host, cwd } = normalizeHeadContext(ctx);
   const documentTitle = titleFromDocument(html);
   const appName = resolveOgTitle(
@@ -470,12 +472,17 @@ export function injectGrokPwaHead(html, ctx = {}) {
         `<meta name="twitter:image" content="${escapeHtml(pageTwImage || pageImage)}">`,
       ].join("")
     : "";
-  const ogBlock = imageTags + grok + (canon ? `<meta property="og:url" content="${escapeHtml(canon)}">` : "");
+  const ogBlock =
+    imageTags +
+    grok +
+    (pageSiteName ? `<meta property="og:site_name" content="${escapeHtml(pageSiteName)}">` : "") +
+    (canon ? `<meta property="og:url" content="${escapeHtml(canon)}">` : "");
 
   const missing = grokPwaHeadTags(appName)
     .filter(([key]) => {
-      if (key === "manifest") return !next.includes('href="/__grok/manifest.webmanifest"');
-      if (key === "apple-touch-icon") return !next.includes('href="/__grok/icon-180.png"');
+      // R103 D4: 페이지에 manifest·apple-touch-icon이 이미 있으면(/site.webmanifest·/apple-touch-icon.png) 두 번째 링크를 넣지 않는다.
+      if (key === "manifest") return !/rel=["']manifest["']/i.test(next);
+      if (key === "apple-touch-icon") return !/rel=["']apple-touch-icon["']/i.test(next);
       return !next.includes(`name="${key}"`);
     })
     .map(([, tag]) => tag);

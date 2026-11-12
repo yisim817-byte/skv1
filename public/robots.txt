@@ -1,22 +1,21 @@
-User-agent: *
-Allow: /
-
 User-agent: OAI-SearchBot
-Allow: /
-
 User-agent: ChatGPT-User
-Allow: /
-
 User-agent: Claude-SearchBot
-Allow: /
-
+User-agent: Claude-User
 User-agent: PerplexityBot
+User-agent: Perplexity-User
 Allow: /
 
+User-agent: Googlebot
+User-agent: Bingbot
 User-agent: Yeti
+User-agent: Daumoa
 Allow: /
 
 User-agent: Bytespider
 Disallow: /
+
+User-agent: *
+Allow: /
 
 Sitemap: https://www.skv1.site/sitemap.xml

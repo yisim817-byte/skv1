@@ -8,13 +8,14 @@ import {
   SITE_PHONE_TEL,
   SPECIALS,
 } from "@/lib/site-data";
+import { HOME_QA } from "@/lib/page-body";
 import { Img } from "./Img";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 
 const PILLAR_ALT: Record<string, [string, string, string]> = {
   Traffic: ["청라하늘대교 개통 교통 배경", "청라하늘대교 쾌속교통 표지", "청라하늘대교 개통 교통 배경"],
-  Business: ["4차산업 비즈니스 거점 배경", "4차산업 비즈니스 거점 표지", "4차산업 비즈니스 거점 배경"],
+  Business: ["청라 4차산업 비즈니스 거점 배경", "청라 4차산업 비즈니스 거점 표지", "청라 4차산업 비즈니스 거점 배경"],
   Vision: ["청라 하나드림타운 비전 배경", "청라 미래비전 안내 표지", "청라 하나드림타운 비전 배경"],
   Infra: ["청라 생활인프라 안내 배경", "청라 생활인프라 안내 표지", "청라 생활인프라 모바일 배경"],
 };
@@ -143,7 +144,7 @@ export function HomePage() {
           <div className="special-copy">
             <p className="special-lead">물류부터 첨단 제조 비즈니스를 위한</p>
             <h2>특화설계</h2>
-            <Img className="special-thumb" src={feature.thumb} alt="직선형 드라이브인 차량 램프" />
+            <Img className="special-thumb" src={feature.thumb} alt="청라 SK V1 직선형 드라이브인 차량 램프" />
             <p className="special-en">Special Design {feature.no}</p>
             <p className="special-sub">
               {feature.lines.map((line) => (
@@ -229,11 +230,11 @@ export function HomePage() {
           </ul>
           <div className="map-links">
             <a className="naver" href={NAVER_MAP} target="_blank" rel="noreferrer">
-              <Img src="/skv1/assets/images/main/naver.png" alt="네이버 지도 길찾기" />
-              <Img className="hover" src="/skv1/assets/images/main/naver-hover.png" alt="네이버 지도 버튼 호버" />
+              <Img src="/skv1/assets/images/main/naver.png" alt="청라 SK V1 네이버 지도보기" />
+              <Img className="hover" src="/skv1/assets/images/main/naver-hover.png" alt="청라 SK V1 네이버 지도보기 버튼(마우스 올림)" />
             </a>
             <a className="kakao" href={KAKAO_MAP} target="_blank" rel="noreferrer">
-              <Img src="/skv1/assets/images/main/kakao.png" alt="카카오맵 길찾기" />
+              <Img src="/skv1/assets/images/main/kakao.png" alt="청라 SK V1 다음 지도보기" />
             </a>
           </div>
           <a className="more" href="/pages/location.html">
@@ -245,6 +246,15 @@ export function HomePage() {
           src="/skv1/assets/images/main/contact-map.webp"
           alt="청라 SK V1 위치"
         />
+      </section>
+      {/* R103 D8·D9: 질문형 소제목 + 답 문단(히어로 소개 문단 문장 그대로). 기존 문답 블록 클래스를 그대로 쓴다. */}
+      <section className="overview-facts" style={{ maxWidth: 1200, margin: "0 auto", padding: "56px 20px" }}>
+        {HOME_QA.map(({ q, a }) => (
+          <div className="overview-qa" key={q}>
+            <h2 className="overview-facts-title">{q}</h2>
+            <p>{a}</p>
+          </div>
+        ))}
       </section>
       <SiteFooter />
     </div>

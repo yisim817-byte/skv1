@@ -20,13 +20,15 @@ export const Route = createRootRoute({
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      // R103 D4: 기존 favicon.svg를 그대로 변환한 /favicon.ico(16·32·48)·/apple-touch-icon.png(180)·/site.webmanifest
+      { rel: "icon", href: "/favicon.ico", sizes: "48x48" },
       { rel: "alternate", type: "application/rss+xml", title: "청라 SK V1 RSS", href: "https://www.skv1.site/rss.xml" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://cdn.jsdelivr.net" },
       { rel: "preload", as: "style", href: "https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css" },
       { rel: "stylesheet", href: "https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css" },
-      { rel: "manifest", href: "/__grok/manifest.webmanifest" },
-      { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
+      { rel: "manifest", href: "/site.webmanifest" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
     ],
     scripts: [
       {

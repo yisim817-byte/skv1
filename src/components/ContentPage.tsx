@@ -295,7 +295,7 @@ function OverviewFacts() {
         </div>
       ))}
       <p className="overview-facts-note">
-        출처: 분양 상담자료(2025-09) 사업개요 · 기준일 2026.10.04 게시 확인
+        출처: 분양 상담자료(2025-09) 사업개요 · 자료 기준일 2026-10-09
       </p>
     </section>
   );

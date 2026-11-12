@@ -230,11 +230,11 @@ export function HomePage() {
           </ul>
           <div className="map-links">
             <a className="naver" href={NAVER_MAP} target="_blank" rel="noreferrer">
-              <Img src="/skv1/assets/images/main/naver.png" alt="청라 SK V1 네이버 지도 길찾기" />
-              <Img className="hover" src="/skv1/assets/images/main/naver-hover.png" alt="청라 SK V1 네이버 지도 버튼 호버" />
+              <Img src="/skv1/assets/images/main/naver.png" alt="청라 SK V1 네이버 지도보기" />
+              <Img className="hover" src="/skv1/assets/images/main/naver-hover.png" alt="청라 SK V1 네이버 지도보기 버튼(마우스 올림)" />
             </a>
             <a className="kakao" href={KAKAO_MAP} target="_blank" rel="noreferrer">
-              <Img src="/skv1/assets/images/main/kakao.png" alt="청라 SK V1 카카오맵 길찾기" />
+              <Img src="/skv1/assets/images/main/kakao.png" alt="청라 SK V1 다음 지도보기" />
             </a>
           </div>
           <a className="more" href="/pages/location.html">

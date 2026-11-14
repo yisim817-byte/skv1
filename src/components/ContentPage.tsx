@@ -15,7 +15,7 @@ import {
   getPage,
   pageImage,
 } from "@/lib/site-data";
-import { LOCATION_FAQ, PAGE_BODY, PAGE_CAPTIONS, PAGE_FAQ, IMAGE_COPY, DIRECT_QA, CROSS_LINK } from "@/lib/page-body";
+import { LOCATION_FAQ, PAGE_BODY, PAGE_CAPTIONS, PAGE_FAQ, IMAGE_COPY, DIRECT_QA, CROSS_LINK, CAPACITY_QA } from "@/lib/page-body";
 import { Img, imgDims } from "./Img";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
@@ -105,6 +105,7 @@ export function ContentPage({ slug }: { slug: string }) {
         {page.slug === "location.html" ? <LocationFaq /> : null}
         {PAGE_FAQ[page.slug] ? <PageFaq slug={page.slug} /> : null}
         <DirectQa slug={page.slug} />
+        <CapacityQa slug={page.slug} />
         {page.notes.length ? (
           <ul className="page-info">
             {page.notes.map((note) => (
@@ -442,6 +443,24 @@ function DirectQa({ slug }: { slug: string }) {
         </section>
       ))}
     </>
+  );
+}
+
+function CapacityQa({ slug }: { slug: string }) {
+  const items = CAPACITY_QA[slug];
+  if (!items?.length) return null;
+  return (
+    <section className="overview-facts" aria-labelledby={`${slug}-capacity`}>
+      <p id={`${slug}-capacity`} className="overview-facts-note">
+        용량·사양 문의
+      </p>
+      {items.map(({ q, a }) => (
+        <div key={q}>
+          <h2 className="overview-facts-title">{q}</h2>
+          <p>{a}</p>
+        </div>
+      ))}
+    </section>
   );
 }
 

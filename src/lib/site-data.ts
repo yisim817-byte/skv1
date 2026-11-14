@@ -1,5 +1,5 @@
 import news from "./news.json";
-import { HOME_QA, LOCATION_FAQ, PAGE_FAQ } from "./page-body";
+import { HOME_QA, LOCATION_FAQ, PAGE_FAQ, DIRECT_QA } from "./page-body";
 
 export const SITE_PHONE = "1833-3872";
 export const SITE_PHONE_TEL = "18333872";
@@ -368,6 +368,11 @@ export const SITE_JSON_LD = {
         "@id": "https://www.humanekorea.co.kr/#organization",
         name: "휴메인코리아",
         telephone: SITE_PHONE,
+        // R114 D2: K2·K3. 유튜브 @휴메인코리아청라는 K1 화면과 K2 푸터(표기는 @HUNMANEKOREA)에 없어 넣지 않음.
+        sameAs: [
+          "https://www.xn--oi2bo8o9lax7cl5fvuh0tfgyk.store/",
+          "https://www.xn--oi2bo8o9lax7cl5fvuh0tfgyk.site/",
+        ],
       },
     },
     {
@@ -551,20 +556,20 @@ export const PAGE_MODIFIED_20261006 = new Set([
 // R59에서 PAGE_LASTMOD로 대체. 값은 운영 sitemap lastmod 그대로. 화면 자료 기준일 문구는 바꾸지 않는다.
 export const PAGE_LASTMOD: Record<string, string> = {
   "": "2026-11-12",
-  "overview.html": "2026-11-12",
-  "location.html": "2026-11-12",
-  "office.html": "2026-10-08",
-  "unit.html": "2026-10-08",
+  "overview.html": "2026-11-14",
+  "location.html": "2026-11-14",
+  "office.html": "2026-11-14",
+  "unit.html": "2026-11-14",
   "floor.html": "2026-10-09",
   "floorplan.html": "2026-11-12",
   "finance.html": "2026-10-06",
-  "benefit.html": "2026-10-12",
-  "amenities.html": "2026-10-08",
-  "drive.html": "2026-11-05",
+  "benefit.html": "2026-11-14",
+  "amenities.html": "2026-11-14",
+  "drive.html": "2026-11-14",
   "environment.html": "2026-11-05",
   "environment_02.html": "2026-11-12",
-  "managesystey.html": "2026-10-09",
-  "media.html": "2026-10-04",
+  "managesystey.html": "2026-11-14",
+  "media.html": "2026-11-14",
   "place.html": "2026-11-12",
   "regional.html": "2026-11-12",
   "tv.html": "2026-11-12",
@@ -589,6 +594,38 @@ export const OVERVIEW_QA: [string, string][] = [
 
 const ORG_REF = { "@id": "https://www.humanekorea.co.kr/#organization" };
 
+// R114 D3: 화면에 있는 영상만. uploadDate는 파일의 저장소 최초 커밋일(2026-09-25). hero.mp4 파일은 바꾸지 않음.
+const PAGE_VIDEOS: Record<string, { slug: string; name: string; description: string; thumbnailUrl: string; contentUrl: string; uploadDate: string }[]> = {
+  "": [
+    {
+      slug: "hero",
+      name: "다시 없을 SK V1",
+      description: "혁신적인 직선형 드라이브인을 갖춘 청라에서 다시 없을 비즈니스 캠퍼스!",
+      thumbnailUrl: `${SITE_ORIGIN}/media/hero-poster.webp`,
+      contentUrl: `${SITE_ORIGIN}/media/hero.mp4`,
+      uploadDate: "2026-09-25",
+    },
+    {
+      slug: "promo",
+      name: "SK V1 성공의 기어를 올리다",
+      description: "청라 SK V1 에서 비즈니스의 성공 가도에 오르십시오!",
+      thumbnailUrl: `${SITE_ORIGIN}/skv1/assets/images/main/video-poster-new.webp`,
+      contentUrl: `${SITE_ORIGIN}/media/promo.mp4`,
+      uploadDate: "2026-09-25",
+    },
+  ],
+  "tv.html": [
+    {
+      slug: "promo",
+      name: "청라 SK V1 홍보영상",
+      description: "청라 SK V1 홍보영상입니다. 첫 화면에는 SK V1 간판이 보이는 건물 외관이 나옵니다.",
+      thumbnailUrl: `${SITE_ORIGIN}/skv1/assets/images/sub/media_thum.webp`,
+      contentUrl: `${SITE_ORIGIN}/media/promo.mp4`,
+      uploadDate: "2026-09-25",
+    },
+  ],
+};
+
 export function pageJsonLd(slug: string, title: string, description: string) {
   const url = slug ? `${SITE_ORIGIN}/pages/${slug}` : `${SITE_ORIGIN}/`;
   const graph: Record<string, unknown>[] = [
@@ -610,6 +647,7 @@ export function pageJsonLd(slug: string, title: string, description: string) {
   const faqItems: [string, string][] = [
     ...(slug === "overview.html" ? OVERVIEW_QA : []),
     ...(PAGE_FAQ[slug] ?? []).map(({ q, a }) => [q, a] as [string, string]),
+    ...(DIRECT_QA[slug] ?? []).map(({ q, a }) => [q, a] as [string, string]),
     ...(slug === "location.html" ? LOCATION_FAQ.map(({ q, a }) => [q, a] as [string, string]) : []),
     ...(slug === "" ? HOME_QA.map(({ q, a }) => [q, a] as [string, string]) : []),
   ];
@@ -636,6 +674,23 @@ export function pageJsonLd(slug: string, title: string, description: string) {
       ],
     });
     (graph[0] as Record<string, unknown>).breadcrumb = { "@id": `${url}#breadcrumb` };
+  }
+  const videos = PAGE_VIDEOS[slug] ?? [];
+  if (videos.length) {
+    const videoIds = videos.map((video) => ({ "@id": `${url}#video-${video.slug}` }));
+    (graph[0] as Record<string, unknown>).video = videoIds.length === 1 ? videoIds[0] : videoIds;
+    for (const video of videos) {
+      graph.push({
+        "@type": "VideoObject",
+        "@id": `${url}#video-${video.slug}`,
+        name: video.name,
+        description: video.description,
+        thumbnailUrl: video.thumbnailUrl,
+        contentUrl: video.contentUrl,
+        uploadDate: video.uploadDate,
+        isPartOf: { "@id": `${url}#webpage` },
+      });
+    }
   }
   // R103 D13: 같은 @id의 FAQPage가 2개(overview: OVERVIEW_QA·PAGE_FAQ) 나가던 것을 위에서 1개로 합쳤다.
   // R103 D6: location 전용 Place(#place)는 사이트 공통 건물 노드(#building)로 바꿨다.

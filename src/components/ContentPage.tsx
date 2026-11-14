@@ -15,7 +15,7 @@ import {
   getPage,
   pageImage,
 } from "@/lib/site-data";
-import { LOCATION_FAQ, PAGE_BODY, PAGE_CAPTIONS, PAGE_FAQ } from "@/lib/page-body";
+import { LOCATION_FAQ, PAGE_BODY, PAGE_CAPTIONS, PAGE_FAQ, IMAGE_COPY, DIRECT_QA, CROSS_LINK } from "@/lib/page-body";
 import { Img, imgDims } from "./Img";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
@@ -89,10 +89,12 @@ export function ContentPage({ slug }: { slug: string }) {
         {page.kind === "image" || page.kind === "location" ? (
           <Picture image={page.image} mobile={page.mobile} alt={`청라 SK V1 ${page.title} 안내 이미지`} />
         ) : null}
+        {page.kind === "image" ? <ImageCopy slug={page.slug} /> : null}
         {page.slug === "overview.html" ? <OverviewFacts /> : null}
         {PAGE_SUMMARIES[page.slug] ? <PageSummaryTable slug={page.slug} /> : null}
         {page.kind === "floor" ? <FloorBoard /> : null}
         {page.kind === "unit" ? <UnitBoard /> : null}
+        {page.kind === "unit" ? <ImageCopy slug={page.slug} /> : null}
         {page.kind === "news" ? <NewsBoard /> : null}
         {page.kind === "tv" ? <PromoFilm /> : null}
         {page.kind === "youtube" ? <YoutubeFilm /> : null}
@@ -102,6 +104,7 @@ export function ContentPage({ slug }: { slug: string }) {
         {PAGE_BODY[page.slug] ? <PageBodyText slug={page.slug} /> : null}
         {page.slug === "location.html" ? <LocationFaq /> : null}
         {PAGE_FAQ[page.slug] ? <PageFaq slug={page.slug} /> : null}
+        <DirectQa slug={page.slug} />
         {page.notes.length ? (
           <ul className="page-info">
             {page.notes.map((note) => (
@@ -109,6 +112,7 @@ export function ContentPage({ slug }: { slug: string }) {
             ))}
           </ul>
         ) : null}
+        <CrossLink slug={page.slug} />
       </main>
       <SiteFooter />
     </div>
@@ -406,6 +410,48 @@ function PageFaq({ slug }: { slug: string }) {
         </div>
       ))}
     </section>
+  );
+}
+
+function ImageCopy({ slug }: { slug: string }) {
+  const lines = IMAGE_COPY[slug];
+  if (!lines) return null;
+  return (
+    <section className="overview-facts" aria-labelledby={`${slug}-image-copy`}>
+      <h2 id={`${slug}-image-copy`} className="overview-facts-title">
+        이미지 안내 글자
+      </h2>
+      {lines.map((line) => (
+        <p className="overview-facts-note" key={line}>
+          {line}
+        </p>
+      ))}
+    </section>
+  );
+}
+
+function DirectQa({ slug }: { slug: string }) {
+  const items = DIRECT_QA[slug];
+  if (!items) return null;
+  return (
+    <>
+      {items.map(({ q, a }) => (
+        <section className="overview-facts" key={q}>
+          <h2 className="overview-facts-title">{q}</h2>
+          <p>{a}</p>
+        </section>
+      ))}
+    </>
+  );
+}
+
+function CrossLink({ slug }: { slug: string }) {
+  const link = CROSS_LINK[slug];
+  if (!link) return null;
+  return (
+    <p className="overview-facts-note">
+      <a href={link.href}>{link.text}</a>
+    </p>
   );
 }
 

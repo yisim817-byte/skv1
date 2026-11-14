@@ -445,6 +445,8 @@ export function injectGrokPwaHead(html, ctx = {}) {
   const pageCard = metaContent(html, "twitter:card");
   // R103 D19: 페이지가 직접 넣은 og:site_name은 공유 태그를 정리한 뒤에도 그대로 남긴다(WebSite.name과 같은 값).
   const pageSiteName = metaContent(html, "og:site_name");
+  const pageOgDescription = unescapeHtml(metaContent(html, "og:description"));
+  const pageTwitterDescription = unescapeHtml(metaContent(html, "twitter:description"));
   const { site, projectId, creator, creatorId, host, cwd } = normalizeHeadContext(ctx);
   const documentTitle = titleFromDocument(html);
   const appName = resolveOgTitle(
@@ -456,6 +458,19 @@ export function injectGrokPwaHead(html, ctx = {}) {
   let next = stripShareMetaTags(html);
   const canon = canonicalHref(next);
   let grok = grokOgHeadTags({ host, appName, site, documentTitle, cwd }).join("");
+  // R114 D1: 페이지가 넣은 og/twitter description을 site.json 문장으로 덮지 않는다. twitter:description은 공유 태그를 지운 뒤 다시 넣는다.
+  const fallbackDesc = String(site.description ?? "").trim();
+  const ogDesc = pageOgDescription || fallbackDesc;
+  const twDesc = pageTwitterDescription || ogDesc;
+  if (pageOgDescription) {
+    grok = grok.replace(
+      /<meta property="og:description" content="[^"]*">/,
+      `<meta property="og:description" content="${escapeHtml(pageOgDescription)}">`,
+    );
+  }
+  if (twDesc) {
+    grok += `<meta name="twitter:description" content="${escapeHtml(twDesc)}">`;
+  }
   if (pageImage) {
     grok = grok.replace(
       /<meta\b[^>]*(?:property|name)=["'](?:og:image(?::\w+)?|twitter:image(?::\w+)?|twitter:card)["'][^>]*>/gi,

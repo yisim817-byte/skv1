@@ -1,5 +1,5 @@
 import news from "./news.json";
-import { HOME_QA, LOCATION_FAQ, PAGE_FAQ, DIRECT_QA } from "./page-body";
+import { HOME_QA, LOCATION_FAQ, PAGE_FAQ, DIRECT_QA, CAPACITY_QA } from "./page-body";
 
 export const SITE_PHONE = "1833-3872";
 export const SITE_PHONE_TEL = "18333872";
@@ -648,6 +648,7 @@ export function pageJsonLd(slug: string, title: string, description: string) {
     ...(slug === "overview.html" ? OVERVIEW_QA : []),
     ...(PAGE_FAQ[slug] ?? []).map(({ q, a }) => [q, a] as [string, string]),
     ...(DIRECT_QA[slug] ?? []).map(({ q, a }) => [q, a] as [string, string]),
+    ...(CAPACITY_QA[slug] ?? []).map(({ q, a }) => [q, a] as [string, string]),
     ...(slug === "location.html" ? LOCATION_FAQ.map(({ q, a }) => [q, a] as [string, string]) : []),
     ...(slug === "" ? HOME_QA.map(({ q, a }) => [q, a] as [string, string]) : []),
   ];

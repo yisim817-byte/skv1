@@ -555,7 +555,7 @@ export const PAGE_MODIFIED_20261006 = new Set([
 // R103: 본문(main)을 바꾼 6페이지(홈·overview·location·place·regional·tv)만 2026-11-12. 공용 푸터 로고 alt만 바뀐 페이지는 날짜를 두지 않는다.
 // R59에서 PAGE_LASTMOD로 대체. 값은 운영 sitemap lastmod 그대로. 화면 자료 기준일 문구는 바꾸지 않는다.
 export const PAGE_LASTMOD: Record<string, string> = {
-  "": "2026-11-12",
+  "": "2026-11-21",
   "overview.html": "2026-11-14",
   "location.html": "2026-11-14",
   "office.html": "2026-11-14",
@@ -572,7 +572,7 @@ export const PAGE_LASTMOD: Record<string, string> = {
   "media.html": "2026-11-14",
   "place.html": "2026-11-12",
   "regional.html": "2026-11-12",
-  "tv.html": "2026-11-12",
+  "tv.html": "2026-11-21",
   "tv2.html": "2026-10-04",
 };
 
@@ -594,8 +594,8 @@ export const OVERVIEW_QA: [string, string][] = [
 
 const ORG_REF = { "@id": "https://www.humanekorea.co.kr/#organization" };
 
-// R114 D3: 화면에 있는 영상만. uploadDate는 파일의 저장소 최초 커밋일(2026-09-25). hero.mp4 파일은 바꾸지 않음.
-const PAGE_VIDEOS: Record<string, { slug: string; name: string; description: string; thumbnailUrl: string; contentUrl: string; uploadDate: string }[]> = {
+// SKV1120 K1-V: uploadDate는 시간대 포함. duration은 public/media mvhd 실측(hero 34.09초→PT34S, promo 239.352초→PT3M59S). name·description은 그대로.
+const PAGE_VIDEOS: Record<string, { slug: string; name: string; description: string; thumbnailUrl: string; contentUrl: string; uploadDate: string; duration: string }[]> = {
   "": [
     {
       slug: "hero",
@@ -603,7 +603,8 @@ const PAGE_VIDEOS: Record<string, { slug: string; name: string; description: str
       description: "혁신적인 직선형 드라이브인을 갖춘 청라에서 다시 없을 비즈니스 캠퍼스!",
       thumbnailUrl: `${SITE_ORIGIN}/media/hero-poster.webp`,
       contentUrl: `${SITE_ORIGIN}/media/hero.mp4`,
-      uploadDate: "2026-09-25",
+      uploadDate: "2026-09-25T00:00:00+09:00",
+      duration: "PT34S",
     },
     {
       slug: "promo",
@@ -611,7 +612,8 @@ const PAGE_VIDEOS: Record<string, { slug: string; name: string; description: str
       description: "청라 SK V1 에서 비즈니스의 성공 가도에 오르십시오!",
       thumbnailUrl: `${SITE_ORIGIN}/skv1/assets/images/main/video-poster-new.webp`,
       contentUrl: `${SITE_ORIGIN}/media/promo.mp4`,
-      uploadDate: "2026-09-25",
+      uploadDate: "2026-09-25T00:00:00+09:00",
+      duration: "PT3M59S",
     },
   ],
   "tv.html": [
@@ -621,7 +623,8 @@ const PAGE_VIDEOS: Record<string, { slug: string; name: string; description: str
       description: "청라 SK V1 홍보영상입니다. 첫 화면에는 SK V1 간판이 보이는 건물 외관이 나옵니다.",
       thumbnailUrl: `${SITE_ORIGIN}/skv1/assets/images/sub/media_thum.webp`,
       contentUrl: `${SITE_ORIGIN}/media/promo.mp4`,
-      uploadDate: "2026-09-25",
+      uploadDate: "2026-09-25T00:00:00+09:00",
+      duration: "PT3M59S",
     },
   ],
 };
@@ -689,6 +692,7 @@ export function pageJsonLd(slug: string, title: string, description: string) {
         thumbnailUrl: video.thumbnailUrl,
         contentUrl: video.contentUrl,
         uploadDate: video.uploadDate,
+        duration: video.duration,
         isPartOf: { "@id": `${url}#webpage` },
       });
     }

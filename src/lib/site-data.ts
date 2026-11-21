@@ -324,21 +324,21 @@ export const PAGE_DESCRIPTIONS: Record<string, string> = {
   "overview.html": "청라 SK V1 사업개요 — 인천 서해구 파랑로 451, 지하 2층~지상 10층, 지식산업센터 574실·부대창고 26실·근린생활시설 46실 구성. 상담 1833-3872",
   "environment.html": "청라 SK V1 입지환경 — 청라하늘대교는 2026년 1월 5일 개통했습니다. 7호선 연장(예정·개통 시기 미정)과 주변 개발 여건을 참고 보도로 안내합니다.",
   "environment_02.html": "청라 SK V1 개발계획 — 청라하늘대교는 2026년 1월 5일 개통했습니다. 7호선 연장(예정·개통 시기 미정) 등 주변 계획은 관계기관 사정에 따라 바뀔 수 있습니다.",
-  "regional.html": "청라 SK V1 광역 위치도 — 청라하늘대교는 영종과 청라를 잇고 2026년 1월 5일 개통했습니다. CG는 실제 거리와 다를 수 있습니다.",
-  "drive.html": "청라 SK V1 제조물류 특화 — 직선형 드라이브인 시스템과 도어투도어 시스템 등 제조·물류 특화설계를 CG와 현장 실사 사진으로 안내합니다.",
-  "office.html": "청라 SK V1 오피스업무 특화 — 발코니 특화 등 오피스 업무공간 특화설계를 CG와 현장 실사 사진으로 안내합니다.",
-  "managesystey.html": "청라 SK V1 시스템 특화 — 청라 SK V1의 시스템 특화설계를 CG와 현장 실사 사진으로 안내합니다.",
-  "amenities.html": "청라 SK V1 부대시설 특화 — 테라스, 옥상정원 등 부대시설 특화설계를 CG와 현장 실사 사진으로 안내합니다.",
-  "place.html": "청라 SK V1 배치도 — 인천 서해구 파랑로 451 지식산업센터의 건물 배치 이미지입니다. 실제와 다를 수 있습니다.",
-  "floorplan.html": "청라 SK V1 횡단면도 — 층별 구성을 보여주는 횡단면 일러스트(CG)를 안내합니다. 실제와 다를 수 있습니다.",
-  "floor.html": "청라 SK V1 층별안내 — 지하 2층부터 지상 10층까지 층별 평면을 안내합니다. 면적·호실은 홍보관에서 확인하시기 바랍니다.",
+  "regional.html": "청라 SK V1 광역 위치도 — 청라하늘대교는 영종과 청라를 잇고 2026년 1월 5일 개통했습니다. CG는 실제 거리와 다를 수 있습니다. 커넬웨이역은 예정입니다.",
+  "drive.html": "청라 SK V1 제조물류 특화 — 직선형 드라이브인 시스템과 도어투도어 시스템 등 제조·물류 특화설계를 CG와 현장 실사 사진으로 안내합니다. 현장에서 확인합니다.",
+  "office.html": "청라 SK V1 오피스업무 특화 — 전호실 발코니(지상2~9층 공장기준)와 라이브오피스 테라스 설계를 CG와 현장 실사 사진으로도 함께 안내합니다.",
+  "managesystey.html": "청라 SK V1 시스템 특화 — 24시간 통합 감시 시스템과 에너지 절감 시스템, 첨단 정보통신 설계를 CG와 현장 실사 사진으로도 안내합니다.",
+  "amenities.html": "청라 SK V1 부대시설 특화 — 옥상 하늘정원, 8층 휴게공간, 8층 테라스정원, 1층 세미나실 등 편의시설을 CG와 현장 실사로 안내합니다.",
+  "place.html": "청라 SK V1 배치도 — 대지경계선 안의 옥상정원·테라스와 주출입구, 주출입구 쪽 파랑로와 반대편 녹지가 함께 표시되어 있는 배치 CG입니다.",
+  "floorplan.html": "청라 SK V1 횡단면도 — 공장(제조형)·공장(업무형)·라이브오피스·지원시설·분양창고, 지상·지하 주차장과 하역장이 층별로 표시된 CG입니다.",
+  "floor.html": "청라 SK V1 층별안내 — 지하 2층부터 지상 10층까지 층별 평면을 안내합니다. 면적·호실은 홍보관에서 확인하시기 바랍니다. 면적은 ㎡ 단위입니다.",
   "unit.html": "청라 SK V1 라이브오피스 — A·B·C·D 타입별 라이브오피스 평면 이미지를 안내합니다. 실제와 차이가 있을 수 있으니 현장에서 확인하시기 바랍니다.",
   "finance.html": "청라 SK V1 금융&세제 혜택 — 금융·세제 관련 안내입니다. 적용대상 및 추징사항 등 세부조건은 관계법령 및 관할 지자체에 확인하시기 바랍니다.",
   "benefit.html": "청라 SK V1 이전 혜택 — 기업 이전 관련 혜택 안내입니다. 적용대상 및 추징사항 등 세부조건은 관계법령 및 관할 지자체에 확인하시기 바랍니다.",
-  "media.html": "청라 SK V1 언론보도 — 청라 SK V1 관련 언론 기사 목록과 원문 링크를 모았습니다.",
-  "tv.html": "청라 SK V1 홍보영상 — 인천 서해구 청라국제도시 지식산업센터 청라 SK V1 홍보영상을 이 페이지에서 시청합니다.",
+  "media.html": "청라 SK V1 언론보도 — 대한경제, 뉴스핌, 한경머니, 서울경제TV, AP신문, 파이낸셜뉴스의 청라 SK V1 기사 목록과 원문 링크입니다.",
+  "tv.html": "청라 SK V1 홍보영상 — 청라 SK V1 홍보영상을 이 페이지에서 바로 시청합니다. 첫 화면에는 SK V1 간판이 보이는 건물 외관이 나옵니다.",
   "tv2.html": "청라 SK V1 유튜브영상 — 유튜브에 올라온 청라 SK V1 지식산업센터 영상을 모아서 안내합니다.",
-  "location.html": "청라 SK V1 오시는길 — 인천 서해구 파랑로 451 현장과 네이버·카카오 길찾기. 청라하늘대교는 2026년 1월 5일 개통했습니다.",
+  "location.html": "청라 SK V1 오시는길 — 인천 서해구 파랑로 451 현장과 네이버·카카오 길찾기. 청라하늘대교는 2026년 1월 5일 개통했습니다. 방문 전 운행 안내를 확인합니다.",
 };
 
 // R103 D6·D17: K1·K2가 같은 건물을 같은 @id로 가리킨다. 주소는 화면 표기 「인천광역시 서해구 파랑로 451」을 나눠 담는다(우편번호는 화면에 없어 넣지 않음).
@@ -555,24 +555,24 @@ export const PAGE_MODIFIED_20261006 = new Set([
 // R103: 본문(main)을 바꾼 6페이지(홈·overview·location·place·regional·tv)만 2026-11-12. 공용 푸터 로고 alt만 바뀐 페이지는 날짜를 두지 않는다.
 // R59에서 PAGE_LASTMOD로 대체. 값은 운영 sitemap lastmod 그대로. 화면 자료 기준일 문구는 바꾸지 않는다.
 export const PAGE_LASTMOD: Record<string, string> = {
-  "": "2026-11-12",
-  "overview.html": "2026-11-14",
-  "location.html": "2026-11-14",
-  "office.html": "2026-11-14",
+  "": "2026-11-21",
+  "overview.html": "2026-11-21",
+  "location.html": "2026-11-21",
+  "office.html": "2026-11-21",
   "unit.html": "2026-11-14",
-  "floor.html": "2026-10-09",
-  "floorplan.html": "2026-11-12",
-  "finance.html": "2026-10-06",
+  "floor.html": "2026-11-21",
+  "floorplan.html": "2026-11-21",
+  "finance.html": "2026-11-21",
   "benefit.html": "2026-11-14",
-  "amenities.html": "2026-11-14",
-  "drive.html": "2026-11-14",
+  "amenities.html": "2026-11-21",
+  "drive.html": "2026-11-21",
   "environment.html": "2026-11-05",
-  "environment_02.html": "2026-11-12",
-  "managesystey.html": "2026-11-14",
-  "media.html": "2026-11-14",
-  "place.html": "2026-11-12",
-  "regional.html": "2026-11-12",
-  "tv.html": "2026-11-12",
+  "environment_02.html": "2026-11-21",
+  "managesystey.html": "2026-11-21",
+  "media.html": "2026-11-21",
+  "place.html": "2026-11-21",
+  "regional.html": "2026-11-21",
+  "tv.html": "2026-11-21",
   "tv2.html": "2026-10-04",
 };
 
@@ -594,8 +594,8 @@ export const OVERVIEW_QA: [string, string][] = [
 
 const ORG_REF = { "@id": "https://www.humanekorea.co.kr/#organization" };
 
-// R114 D3: 화면에 있는 영상만. uploadDate는 파일의 저장소 최초 커밋일(2026-09-25). hero.mp4 파일은 바꾸지 않음.
-const PAGE_VIDEOS: Record<string, { slug: string; name: string; description: string; thumbnailUrl: string; contentUrl: string; uploadDate: string }[]> = {
+// SKV1120 K1-V: uploadDate는 시간대 포함. duration은 public/media mvhd 실측(hero 34.09초→PT34S, promo 239.352초→PT3M59S). name·description은 그대로.
+const PAGE_VIDEOS: Record<string, { slug: string; name: string; description: string; thumbnailUrl: string; contentUrl: string; uploadDate: string; duration: string }[]> = {
   "": [
     {
       slug: "hero",
@@ -603,7 +603,8 @@ const PAGE_VIDEOS: Record<string, { slug: string; name: string; description: str
       description: "혁신적인 직선형 드라이브인을 갖춘 청라에서 다시 없을 비즈니스 캠퍼스!",
       thumbnailUrl: `${SITE_ORIGIN}/media/hero-poster.webp`,
       contentUrl: `${SITE_ORIGIN}/media/hero.mp4`,
-      uploadDate: "2026-09-25",
+      uploadDate: "2026-09-25T00:00:00+09:00",
+      duration: "PT34S",
     },
     {
       slug: "promo",
@@ -611,7 +612,8 @@ const PAGE_VIDEOS: Record<string, { slug: string; name: string; description: str
       description: "청라 SK V1 에서 비즈니스의 성공 가도에 오르십시오!",
       thumbnailUrl: `${SITE_ORIGIN}/skv1/assets/images/main/video-poster-new.webp`,
       contentUrl: `${SITE_ORIGIN}/media/promo.mp4`,
-      uploadDate: "2026-09-25",
+      uploadDate: "2026-09-25T00:00:00+09:00",
+      duration: "PT3M59S",
     },
   ],
   "tv.html": [
@@ -621,7 +623,8 @@ const PAGE_VIDEOS: Record<string, { slug: string; name: string; description: str
       description: "청라 SK V1 홍보영상입니다. 첫 화면에는 SK V1 간판이 보이는 건물 외관이 나옵니다.",
       thumbnailUrl: `${SITE_ORIGIN}/skv1/assets/images/sub/media_thum.webp`,
       contentUrl: `${SITE_ORIGIN}/media/promo.mp4`,
-      uploadDate: "2026-09-25",
+      uploadDate: "2026-09-25T00:00:00+09:00",
+      duration: "PT3M59S",
     },
   ],
 };
@@ -689,6 +692,7 @@ export function pageJsonLd(slug: string, title: string, description: string) {
         thumbnailUrl: video.thumbnailUrl,
         contentUrl: video.contentUrl,
         uploadDate: video.uploadDate,
+        duration: video.duration,
         isPartOf: { "@id": `${url}#webpage` },
       });
     }

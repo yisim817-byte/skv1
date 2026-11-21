@@ -436,10 +436,20 @@ function DirectQa({ slug }: { slug: string }) {
   if (!items) return null;
   return (
     <>
-      {items.map(({ q, a }) => (
+      {items.map(({ q, a, link }) => (
         <section className="overview-facts" key={q}>
           <h2 className="overview-facts-title">{q}</h2>
-          <p>{a}</p>
+          <p>
+            {link && a.includes(link.text) ? (
+              <>
+                {a.slice(0, a.indexOf(link.text))}
+                <a href={link.href}>{link.text}</a>
+                {a.slice(a.indexOf(link.text) + link.text.length)}
+              </>
+            ) : (
+              a
+            )}
+          </p>
         </section>
       ))}
     </>

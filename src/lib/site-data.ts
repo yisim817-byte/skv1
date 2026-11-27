@@ -518,6 +518,12 @@ export const ASOF_20261009 = new Set([
   "environment_02.html",
 ]);
 export const SOURCE_LINE = "자료 기준일 2026-10-09 · 출처 분양 상담자료(2025-09)";
+export const PAGE_DEFS: Record<string, string> = {
+  "floor.html":
+    "청라 SK V1은 지하 2층~지상 10층, 연면적 합계 126,011.73㎡의 지식산업센터로, 지하 2층은 부대창고·주차장, 지하 1층~지상 7층은 공장(지식산업센터)·지원시설, 지상 8~9층은 업무형 오피스, 10층은 라이브오피스입니다. (분양 상담자료 2025-09, 자료 기준일 2026-10-09)",
+  "finance.html":
+    "청라 SK V1 취득세·재산세 감면은 지식산업센터를 최초로 분양받은 입주자가 중소기업기본법 제2조에 따른 중소기업을 영위할 때 검토하는 취득세 35%·재산세 35% 감면입니다. (지방세특례제한법 제58조의2, 2028년 12월 31일까지, 자료 기준일 2026-10-09)",
+};
 export const PAGE_LEADS: Record<string, string> = {
   "overview.html":
     "청라 SK V1은 인천 서해구 파랑로 451의 지식산업센터입니다. 지하 2층~지상 10층에 지식산업센터 574실·분양창고 26실·근린생활시설 46실이 있습니다. 호실별 면적과 분양조건은 분양 상담자료(2025-09)로 확인합니다.",
@@ -558,11 +564,11 @@ export const PAGE_LASTMOD: Record<string, string> = {
   "": "2026-11-21",
   "overview.html": "2026-11-21",
   "location.html": "2026-11-21",
-  "office.html": "2026-11-21",
-  "unit.html": "2026-11-14",
-  "floor.html": "2026-11-21",
+  "office.html": "2026-11-28",
+  "unit.html": "2026-11-28",
+  "floor.html": "2026-11-28",
   "floorplan.html": "2026-11-21",
-  "finance.html": "2026-11-21",
+  "finance.html": "2026-11-28",
   "benefit.html": "2026-11-14",
   "amenities.html": "2026-11-21",
   "drive.html": "2026-11-21",

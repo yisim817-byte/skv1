@@ -8,6 +8,7 @@ import {
   OVERVIEW_FACTS_NOTE,
   OVERVIEW_QA,
   PAGE_LEADS,
+  PAGE_DEFS,
   PAGE_SUMMARIES,
   SOURCE_LINE,
   ASOF_20261009,
@@ -56,6 +57,11 @@ export function ContentPage({ slug }: { slug: string }) {
             <span style={VISUALLY_HIDDEN}>청라 SK V1 </span>
             {page.title}
           </h1>
+          {PAGE_DEFS[page.slug] ? (
+            <p style={{ margin: "16px 0 0", maxWidth: 760, fontSize: 16, lineHeight: 1.65, fontWeight: 400 }}>
+              {PAGE_DEFS[page.slug]}
+            </p>
+          ) : null}
           {PAGE_LEADS[page.slug] ? (
             <p style={{ margin: "16px 0 0", maxWidth: 760, fontSize: 16, lineHeight: 1.65, fontWeight: 400 }}>
               {PAGE_LEADS[page.slug]}
@@ -114,6 +120,7 @@ export function ContentPage({ slug }: { slug: string }) {
           </ul>
         ) : null}
         <CrossLink slug={page.slug} />
+        <EligibilityNote slug={page.slug} />
       </main>
       <SiteFooter />
     </div>
@@ -473,6 +480,37 @@ function CapacityQa({ slug }: { slug: string }) {
     </section>
   );
 }
+
+function EligibilityNote({ slug }: { slug: string }) {
+  const text = ELIGIBILITY_NOTE[slug];
+  if (!text) return null;
+  return (
+    <p className="overview-facts-note">
+      {text.before}
+      <a href={ELIGIBILITY_HREF}>{text.label}</a>
+      {text.after}
+    </p>
+  );
+}
+
+const ELIGIBILITY_HREF = "https://www.xn--oi2bo8o9lax7cl5fvuh0tfgyk.store/eligibility";
+const ELIGIBILITY_NOTE: Record<string, { before: string; label: string; after: string }> = {
+  "office.html": {
+    before: "입주 가능 업종과 입주 요건의 근거 조문은 ",
+    label: "청라지식산업센터.store 입주 요건 페이지",
+    after: "에서 확인합니다.",
+  },
+  "unit.html": {
+    before: "라이브오피스 호실을 고르기 전에, 입주 가능 업종과 입주 요건의 근거 조문은 ",
+    label: "청라지식산업센터.store 입주 요건 페이지",
+    after: "에서 확인합니다.",
+  },
+  "finance.html": {
+    before: "금융·세제와 별도로, 입주 가능 업종과 입주 요건의 근거 조문은 ",
+    label: "청라지식산업센터.store 입주 요건 페이지",
+    after: "에서 확인합니다.",
+  },
+};
 
 function CrossLink({ slug }: { slug: string }) {
   const link = CROSS_LINK[slug];

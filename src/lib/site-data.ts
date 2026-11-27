@@ -518,6 +518,20 @@ export const ASOF_20261009 = new Set([
   "environment_02.html",
 ]);
 export const SOURCE_LINE = "자료 기준일 2026-10-09 · 출처 분양 상담자료(2025-09)";
+export const PAGE_DEFS: Record<string, string> = {
+  "overview.html":
+    "청라 SK V1 실 구성은 서해구 파랑로 451에 있는 지식산업센터 574실·분양창고 26실·근린생활시설 46실을 적는 안내입니다. (지하 2층~지상 10층, 자료 기준일 2026-10-09)",
+  "drive.html":
+    "청라 SK V1 드라이브인은 인천 서해구 파랑로 451 지식산업센터에 적용된 직선형 차량 진입 설계의 안내입니다. (3번 회전으로 7층까지, 자료 기준일 2026-10-09) 현장에서 확인합니다.",
+  "office.html":
+    "청라 SK V1 업무형 오피스는 인천 서해구 파랑로 451 지식산업센터의 오피스 업무공간을 보여주는 안내입니다. (전호실 발코니 특화, 자료 기준일 2026-10-09) 호실 조건은 현장에서 확인합니다.",
+  "unit.html":
+    "청라 SK V1 라이브오피스는 인천 서해구 파랑로 451 지식산업센터 지상 10층 업무공간의 타입별 평면 안내입니다. (A·B·C·D 타입, 자료 기준일 2026-10-09) 면적은 현장에서 확인합니다.",
+  "floor.html":
+    "청라 SK V1 층별안내는 지하 2층부터 지상 10층까지 각 층의 평면을 이미지로 보여주는 안내입니다. (면적 단위는 ㎡, 호실은 홍보관에서 확인, 자료 기준일 2026-10-09)",
+  "finance.html":
+    "청라 SK V1 금융·세제 안내는 인천 서해구 파랑로 451 지식산업센터의 적용 조건을 관계 법령과 함께 설명하는 페이지입니다. (호실별 분양가 숫자는 이 페이지에 없음, 자료 기준일 2026-10-09)",
+};
 export const PAGE_LEADS: Record<string, string> = {
   "overview.html":
     "청라 SK V1은 인천 서해구 파랑로 451의 지식산업센터입니다. 지하 2층~지상 10층에 지식산업센터 574실·분양창고 26실·근린생활시설 46실이 있습니다. 호실별 면적과 분양조건은 분양 상담자료(2025-09)로 확인합니다.",
@@ -556,16 +570,16 @@ export const PAGE_MODIFIED_20261006 = new Set([
 // R59에서 PAGE_LASTMOD로 대체. 값은 운영 sitemap lastmod 그대로. 화면 자료 기준일 문구는 바꾸지 않는다.
 export const PAGE_LASTMOD: Record<string, string> = {
   "": "2026-11-21",
-  "overview.html": "2026-11-21",
+  "overview.html": "2026-11-28",
   "location.html": "2026-11-21",
-  "office.html": "2026-11-21",
-  "unit.html": "2026-11-14",
-  "floor.html": "2026-11-21",
+  "office.html": "2026-11-28",
+  "unit.html": "2026-11-28",
+  "floor.html": "2026-11-28",
   "floorplan.html": "2026-11-21",
-  "finance.html": "2026-11-21",
+  "finance.html": "2026-11-28",
   "benefit.html": "2026-11-14",
   "amenities.html": "2026-11-21",
-  "drive.html": "2026-11-21",
+  "drive.html": "2026-11-28",
   "environment.html": "2026-11-05",
   "environment_02.html": "2026-11-21",
   "managesystey.html": "2026-11-21",
